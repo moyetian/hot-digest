@@ -1,16 +1,59 @@
 <!DOCTYPE html>
 <html lang="zh-CN"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
 <title>往期日报归档 · 每日热点日报</title>
 <style>
-body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:#f6f4ee;color:#1f2937;max-width:720px;margin:0 auto;padding:40px 20px;line-height:2}
-h1{font-size:24px;margin-bottom:24px}
-a.item{display:flex;justify-content:space-between;background:#fff;border-radius:12px;padding:14px 20px;margin:10px 0;text-decoration:none;color:#1f2937;box-shadow:0 2px 12px rgba(31,41,55,.07);transition:transform .2s}
-a.item:hover{transform:translateX(6px)}
-a.item .d{font-weight:600}a.item .w{color:#6b7280;font-size:13px}
-.back{color:#4f46e5;text-decoration:none;font-size:14px}
+:root{
+  --bg:#fafafa; --card:#ffffff; --ink:#18181b; --ink2:#52525b; --muted:#a1a1aa;
+  --line:#e4e4e7; --accent:#2563eb;
+  --shadow:0 1px 2px rgba(24,24,27,.05);
+  --shadow-lg:0 18px 44px -18px rgba(24,24,27,.24);
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#09090b; --card:#121215; --ink:#f4f4f5; --ink2:#c9c9cf; --muted:#71717a;
+    --line:#26262b; --accent:#5b9dff;
+    --shadow:0 1px 2px rgba(0,0,0,.5);
+    --shadow-lg:0 20px 48px -16px rgba(0,0,0,.7);
+  }
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB",
+  "Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.75;
+  -webkit-font-smoothing:antialiased}
+.wrap{max-width:768px;margin:0 auto;padding:54px 20px 90px}
+.rule-double{border-top:1px solid var(--line);position:relative;margin-bottom:30px}
+.rule-double::after{content:"";display:block;border-top:1px solid var(--line);margin-top:3px}
+.kicker{text-align:center;font-size:11px;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--muted);font-weight:600}
+h1{text-align:center;font-size:clamp(30px,6vw,42px);font-weight:800;
+  letter-spacing:-.015em;margin:16px 0 8px}
+.sub{text-align:center;color:var(--muted);font-size:13.5px;margin-bottom:36px}
+a.item{display:flex;align-items:center;gap:14px;background:var(--card);
+  border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin:12px 0;
+  text-decoration:none;color:var(--ink);box-shadow:var(--shadow);
+  transition:transform .22s,box-shadow .22s,border-color .22s}
+a.item:hover{transform:translateX(5px);box-shadow:var(--shadow-lg);
+  border-color:var(--accent)}
+a.item .no{font-size:12px;font-weight:700;color:var(--accent);
+  font-variant-numeric:tabular-nums;min-width:44px}
+a.item .d{font-weight:700;font-size:16px;font-variant-numeric:tabular-nums}
+a.item .w{color:var(--muted);font-size:13px}
+a.item .c{margin-left:auto;font-size:12.5px;color:var(--muted);
+  background:var(--bg);border:1px solid var(--line);border-radius:999px;
+  padding:3px 12px;white-space:nowrap;font-variant-numeric:tabular-nums}
+a.item .go{color:var(--muted);font-size:16px}
+.back{display:inline-block;margin-bottom:8px;color:var(--accent);text-decoration:none;
+  font-size:13.5px;font-weight:600}
 </style></head><body>
+<div class="wrap">
 <a class="back" href="index.html">← 返回今日日报</a>
-<h1>🗂️ 往期日报归档</h1>
-<a class="item" href="2026-10-03.html"><span class="d">2026-10-03</span><span class="w">周六</span></a>
-</body></html>
+<div class="rule-double" style="margin-top:14px"></div>
+<div class="kicker">Archive</div>
+<h1>往期日报归档</h1>
+<div class="sub">每天一期 · 沉淀你的信息复利</div>
+<a class="item" href="2026-10-03.html"><span class="no">#002</span><span class="d">2026 年 10 月 3 日</span><span class="w">星期六</span><span class="c">20 条</span><span class="go">→</span></a>
+<a class="item" href="2026-10-02.html"><span class="no">#001</span><span class="d">2026 年 10 月 2 日</span><span class="w">星期五</span><span class="c">7 条</span><span class="go">→</span></a>
+</div></body></html>
