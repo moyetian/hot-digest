@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#09090b" media="(prefers-color-scheme: dark)">
+<title>专属热点日报 · 2026-10-02（周五）样刊 · 每日热点日报</title>
+<style>
+:root{
+  --bg:#fafafa; --card:#ffffff; --ink:#18181b; --ink2:#52525b; --muted:#a1a1aa;
+  --line:#e4e4e7; --soft:#f4f4f5; --accent:#2563eb;
+  --nav-bg:rgba(250,250,250,.86);
+  --shadow:0 1px 2px rgba(24,24,27,.05);
+  --shadow-lg:0 18px 44px -18px rgba(24,24,27,.24);
+  --pill-fg:#ffffff; --pill-bg:#18181b;
+  --streak-fg:#b45309; --streak-bg:#fef3c7;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#09090b; --card:#121215; --ink:#f4f4f5; --ink2:#c9c9cf; --muted:#71717a;
+    --line:#26262b; --soft:#1b1b1f; --accent:#5b9dff;
+    --nav-bg:rgba(9,9,11,.84);
+    --shadow:0 1px 2px rgba(0,0,0,.5);
+    --shadow-lg:0 20px 48px -16px rgba(0,0,0,.7);
+    --pill-fg:#18181b; --pill-bg:#f4f4f5;
+    --streak-fg:#fbbf24; --streak-bg:rgba(251,191,36,.12);
+  }
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB",
+  "Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.75;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+::selection{background:color-mix(in srgb,var(--accent) 22%,transparent)}
+#progress{position:fixed;top:0;left:0;height:2.5px;width:0;z-index:99;
+  background:linear-gradient(90deg,var(--accent),#7c3aed)}
+.wrap{max-width:768px;margin:0 auto;padding:0 20px 90px}
+/* ---- 刊头 ---- */
+.mast{padding:54px 0 10px;text-align:center}
+.rule-double{border-top:1px solid var(--line);position:relative;margin-bottom:30px}
+.rule-double::after{content:"";display:block;border-top:1px solid var(--line);margin-top:3px}
+.kicker{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;
+  font-size:11px;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--muted);font-weight:600}
+.kicker .issue{color:var(--accent);letter-spacing:.12em}
+.streak{display:inline-flex;align-items:center;gap:5px;letter-spacing:.02em;
+  text-transform:none;font-size:12.5px;font-weight:700;
+  color:var(--streak-fg);background:var(--streak-bg);
+  border-radius:999px;padding:4px 13px}
+.mast h1{font-size:clamp(38px,8.5vw,58px);font-weight:800;letter-spacing:-.015em;
+  margin:20px 0 10px;line-height:1.25}
+.dateline{color:var(--ink2);font-size:14.5px}
+.dateline b{color:var(--ink);font-weight:700}
+.stats{display:flex;justify-content:center;gap:12px;margin:28px 0 6px;flex-wrap:wrap}
+.stat{min-width:106px;background:var(--card);border:1px solid var(--line);
+  border-radius:14px;padding:12px 20px;box-shadow:var(--shadow)}
+.stat b{display:block;font-size:25px;font-weight:800;letter-spacing:-.01em;
+  font-variant-numeric:tabular-nums;line-height:1.3}
+.stat span{font-size:12px;color:var(--muted)}
+.mast>*{animation:fadeDown .7s cubic-bezier(.2,.7,.3,1) both}
+.mast>*:nth-child(2){animation-delay:.08s}.mast>*:nth-child(3){animation-delay:.16s}
+.mast>*:nth-child(4){animation-delay:.24s}.mast>*:nth-child(5){animation-delay:.32s}
+@keyframes fadeDown{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+/* ---- 吸顶导航 ---- */
+.nav{position:sticky;top:0;z-index:50;background:var(--nav-bg);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line)}
+.nav-inner{max-width:768px;margin:0 auto;display:flex;gap:8px;overflow-x:auto;
+  padding:12px 20px;scrollbar-width:none}
+.nav-inner::-webkit-scrollbar{display:none}
+.nav a{flex:0 0 auto;display:inline-flex;align-items:center;gap:7px;
+  font-size:13px;font-weight:600;color:var(--ink2);text-decoration:none;
+  padding:7px 15px;border-radius:999px;background:var(--soft);
+  transition:background .22s,color .22s,transform .22s;white-space:nowrap}
+.nav a:hover{color:var(--ink);transform:translateY(-1px)}
+.nav a.active{background:var(--pill-bg);color:var(--pill-fg)}
+.nav a .dot{width:7px;height:7px;border-radius:50%;background:var(--sc,#999)}
+/* ---- 章节 ---- */
+.sec{margin:46px 0 8px}
+.sec-head{display:flex;align-items:flex-end;gap:14px;margin-bottom:8px}
+.sec-head .num{font-size:46px;font-weight:800;line-height:1;color:var(--line);
+  font-variant-numeric:tabular-nums;letter-spacing:-.02em;user-select:none}
+.sec-head h2{font-size:21px;font-weight:750;letter-spacing:-.01em;line-height:1.4}
+.sec-head .rule{flex:1;height:1px;background:var(--line);margin-bottom:13px}
+.sec-head .cnt{font-size:12px;color:var(--muted);margin-bottom:11px;white-space:nowrap;
+  font-variant-numeric:tabular-nums}
+/* ---- 卡片 ---- */
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:20px 22px;margin:14px 0;box-shadow:var(--shadow);
+  opacity:0;transform:translateY(22px);
+  transition:opacity .55s ease,transform .55s ease,box-shadow .25s ease}
+.card.show{opacity:1;transform:none}
+.card:hover{box-shadow:var(--shadow-lg);transform:translateY(-2px)}
+.card h3{font-size:16px;font-weight:700;margin-bottom:8px;line-height:1.65}
+.card h3 .tag{display:inline-block;font-size:11.5px;font-weight:600;
+  color:var(--sc);background:color-mix(in srgb,var(--sc) 10%,transparent);
+  border-radius:6px;padding:2px 9px;margin-left:9px;vertical-align:2px;white-space:nowrap}
+.card p{font-size:14.5px;color:var(--ink2);margin:7px 0}
+.card p a{color:var(--accent);text-decoration:none;border-bottom:1px solid
+  color-mix(in srgb,var(--accent) 35%,transparent)}
+.card p a:hover{border-bottom-color:var(--accent)}
+.card p.note{font-size:13.5px;background:color-mix(in srgb,var(--sc) 7%,transparent);
+  border-left:3px solid var(--sc);padding:10px 14px;border-radius:0 10px 10px 0}
+.src{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px}
+.src a{font-size:12.5px;font-weight:600;color:var(--ink2);text-decoration:none;
+  border:1px solid var(--line);padding:4px 13px;border-radius:999px;
+  background:var(--card);transition:all .2s}
+.src a:hover{color:#fff;background:var(--accent);border-color:var(--accent)}
+.stars{font-size:12px;font-weight:700;color:var(--streak-fg);background:var(--streak-bg);
+  border-radius:999px;padding:3px 11px;white-space:nowrap}
+.empty{color:var(--muted);font-size:14px;padding:14px 4px}
+footer{margin-top:70px;border-top:1px solid var(--line);padding-top:26px;
+  text-align:center;color:var(--muted);font-size:12.5px}
+footer .arch{display:inline-block;margin-top:14px;padding:9px 24px;
+  border:1px solid var(--line);border-radius:999px;color:var(--ink2);
+  text-decoration:none;font-size:13px;font-weight:600;background:var(--card);
+  transition:all .22s}
+footer .arch:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px)}
+.top{position:fixed;right:18px;bottom:22px;width:44px;height:44px;border-radius:50%;
+  border:1px solid var(--line);cursor:pointer;background:var(--pill-bg);
+  color:var(--pill-fg);font-size:17px;box-shadow:var(--shadow-lg);
+  opacity:0;pointer-events:none;transition:opacity .3s,transform .2s}
+.top.show{opacity:1;pointer-events:auto}
+.top:hover{transform:translateY(-2px)}
+@media(max-width:640px){.card{padding:17px 18px}.mast{padding-top:42px}
+  .sec-head .num{font-size:38px}}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .card{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<div class="wrap">
+<header class="mast">
+  <div class="rule-double"></div>
+  <div class="kicker"><span>Daily Digest</span><span class="issue">Issue #001</span>
+  <span class="streak">🔥 连续更新 1 天</span></div>
+  <h1>每日热点日报</h1>
+  <div class="dateline"><b>2026 年 10 月 2 日 · 星期五</b> · 为 moye 定制：AI 大模型 / AI Agent 与开发工具 / 边缘智能 / 考研 / 宏观市场</div>
+  <div class="stats">
+    <div class="stat"><b>7</b><span>收录条目</span></div>
+    <div class="stat"><b>5</b><span>内容板块</span></div>
+    <div class="stat"><b>2′</b><span>预计阅读</span></div>
+  </div>
+</header>
+</div>
+<nav class="nav"><div class="nav-inner"><a href="#ai" style="--sc:#2563eb"><span class="dot"></span>AI 大模型</a><a href="#agent" style="--sc:#7c3aed"><span class="dot"></span>AI Agent</a><a href="#edge" style="--sc:#e11d48"><span class="dot"></span>端侧 AI</a><a href="#kaoyan" style="--sc:#d97706"><span class="dot"></span>考研资讯</a><a href="#ai" style="--sc:#2563eb"><span class="dot"></span>AI 大模型</a></div></nav>
+<main class="wrap"><section class="sec" id="ai" style="--sc:#2563eb"><div class="sec-head"><span class="num">01</span><h2>AI 大模型</h2><span class="rule"></span><span class="cnt">1 条</span></div><article class="card">
+<h3>Google 发布新一代旗舰 Gemini 4 Argon，单次输出上限拉到 100 万 token</h3>
+<p>美国时间 9 月 30 日发布，时隔近一年重返最高阶模型竞争；输出上限从 64K 直接提到 100 万 token（约 16 倍），主打长程 Agent 任务；DeepSWE v1.1 拿下 77.9% 刷新纪录，19 项对比测试中 14 项第一；推广期 API 定价 $2/$10 每百万 token（之后翻倍）。但普通用户暂时用不上：首批只给 Fairwind 计划的网络安全防御者，并进入美国政府预发布评估流程。</p>
+<div class="src"><a href="https://techorange.com/2026/10/01/gemini-4-argon-google/" target="_blank" rel="noopener">TechOrange</a><a href="https://www.woshipm.com/ai/6473057.html" target="_blank" rel="noopener">人人都是产品经理</a></div>
+</article></section><section class="sec" id="agent" style="--sc:#7c3aed"><div class="sec-head"><span class="num">02</span><h2>AI Agent 与开发工具</h2><span class="rule"></span><span class="cnt">2 条</span></div><article class="card">
+<h3>Manus 2.0 发布：推出个人助理 Cue，自研 Agent 框架 Cascade</h3>
+<p>9 月 28 日，北京蝴蝶效应科技面向海外用户发布 Manus 2.0 与个人智能助理 Cue。新版核心是自研 Agent 框架 Cascade：自动化从定时任务扩展到事件触发（新邮件、日历事件、Slack 消息等可唤醒 Agent 干活），把 Manus 从&quot;一次性任务执行器&quot;推向&quot;长期在线、持续维护项目&quot;的 Agent 平台；官方称 Token 消耗降 23.2%、运行成本降 32%。已覆盖网页/桌面/移动端。</p>
+<div class="src"><a href="https://www.openai-hub.net/news/1724/" target="_blank" rel="noopener">OpenAI Hub</a></div>
+</article><article class="card">
+<h3>Claude Code / Codex CLI / Cursor / opencode：今日无重要更新</h3>
+<p>近 48 小时内这几款编码代理工具均无大版本或重大功能新闻，处于日常迭代节奏。</p>
+</article></section><section class="sec" id="edge" style="--sc:#e11d48"><div class="sec-head"><span class="num">03</span><h2>边缘智能 / 端侧 AI</h2><span class="rule"></span><span class="cnt">1 条</span></div><article class="card">
+<h3>今日无重要更新</h3>
+<p>近 48 小时内无实质性新发布；此前的高通第六代骁龙 8（支持本地跑 30B+ 模型）、小米 15 Ultra 端侧能力等内容多为厂商营销稿，已过滤。</p>
+</article></section><section class="sec" id="kaoyan" style="--sc:#d97706"><div class="sec-head"><span class="num">04</span><h2>考研资讯</h2><span class="rule"></span><span class="cnt">2 条</span></div><article class="card">
+<h3>教育部《2027 年全国硕士研究生招生工作管理规定》正式印发</h3>
+<p>2027 年研考初试时间为 <b>2026 年 12 月 19 日至 20 日</b>；网上报名 <b>10 月 15 日至 24 日</b>，<b>预报名 10 月 9 日至 12 日</b>（每日 9:00—22:00，逾期不补）。今年报名系统升级：网上报名和网上确认一体化&quot;一站式&quot;完成，照片可直接通过学信网 App 在线拍摄上传。研招网 9 月 26—29 日的招生咨询活动已结束。</p>
+<div class="src"><a href="https://k.sina.cn/article_7517400647_1c0126e4705909af5u.html?from=edu" target="_blank" rel="noopener">光明日报 / 新浪新闻</a></div>
+</article><article class="card">
+<h3>⚠️ 下周五（10 月 9 日）预报名开始</h3>
+<p>，记得提前准备好证件照、学籍学历信息，研招网（yz.chsi.com.cn）报名。</p>
+</article></section><section class="sec" id="ai" style="--sc:#2563eb"><div class="sec-head"><span class="num">05</span><h2>AI 大模型</h2><span class="rule"></span><span class="cnt">1 条</span></div><article class="card">
+<h3>现货黄金</h3>
+<p>4,151.53 美元/盎司，日内 -0.10%（今晨实时报价）</p>
+<p>▪ <b>美股 10 月 1 日收盘</b>：道指 +0.04% 收 50,926.56 点；标普 500 +0.19% 收 7,666.45 点；纳指 +0.04% 收 26,871.60 点——三大指数小幅上涨。（来源：新华社）</p>
+<p class="note">以上仅为资讯与数据，不构成任何投资建议。</p>
+</article></section>
+<footer>由 Muse 每日自动生成 · 仅供学习交流<br>
+<a class="arch" href="archive.html">往期日报归档 →</a></footer>
+</main>
+<button class="top" aria-label="回到顶部">↑</button>
+<script>
+const cards=document.querySelectorAll('.card');
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){
+    const c=e.target;c.classList.add('show');io.unobserve(c);
+    setTimeout(()=>{c.style.transitionDelay='0ms';},650);
+  }
+}),{threshold:.06,rootMargin:'0px 0px -4% 0px'});
+cards.forEach((c,i)=>{c.style.transitionDelay=Math.min((i%4)*70,210)+'ms';io.observe(c);});
+const bar=document.getElementById('progress'),top=document.querySelector('.top');
+addEventListener('scroll',()=>{
+  const h=document.documentElement;
+  const max=h.scrollHeight-h.clientHeight;
+  bar.style.width=(max>0?h.scrollTop/max*100:0)+'%';
+  top.classList.toggle('show',h.scrollTop>600);
+},{passive:true});
+top.onclick=()=>scrollTo({top:0,behavior:'smooth'});
+const secs=[...document.querySelectorAll('.sec')];
+const links=[...document.querySelectorAll('.nav a')];
+const so=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){links.forEach(a=>a.classList.toggle('active',a.hash==='#'+e.target.id));}
+}),{rootMargin:'-38% 0px -55% 0px'});
+secs.forEach(s=>so.observe(s));
+</script>
+</body>
+</html>
