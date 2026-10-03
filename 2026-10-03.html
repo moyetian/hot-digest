@@ -90,9 +90,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans G
 /* ---- 卡片 ---- */
 .card{background:var(--card);border:1px solid var(--line);border-radius:14px;
   padding:20px 22px;margin:14px 0;box-shadow:var(--shadow);
-  opacity:0;transform:translateY(22px);
   transition:opacity .55s ease,transform .55s ease,box-shadow .25s ease}
-.card.show{opacity:1;transform:none}
+/* 卡片隐藏态只在 JS 可用时生效（html.js 由脚本添加），JS 失效时内容照常可见 */
+.js .card{opacity:0;transform:translateY(22px)}
+.js .card.show{opacity:1;transform:none}
 .card:hover{box-shadow:var(--shadow-lg);transform:translateY(-2px)}
 .card h3{font-size:16px;font-weight:700;margin-bottom:8px;line-height:1.65}
 .card h3 .tag{display:inline-block;font-size:11.5px;font-weight:600;
@@ -149,7 +150,7 @@ footer .arch:hover{border-color:var(--accent);color:var(--accent);transform:tran
   </div>
 </header>
 </div>
-<nav class="nav"><div class="nav-inner"><a href="#ai" style="--sc:#2563eb"><span class="dot"></span>AI 大模型</a><a href="#agent" style="--sc:#7c3aed"><span class="dot"></span>AI Agent</a><a href="#edge" style="--sc:#e11d48"><span class="dot"></span>端侧 AI</a><a href="#kaoyan" style="--sc:#d97706"><span class="dot"></span>考研资讯</a><a href="#ai" style="--sc:#2563eb"><span class="dot"></span>AI 大模型</a><a href="#github" style="--sc:#0284c7"><span class="dot"></span>社区热点</a></div></nav>
+<nav class="nav"><div class="nav-inner"><a href="#ai" style="--sc:#2563eb"><span class="dot"></span>AI 大模型</a><a href="#agent" style="--sc:#7c3aed"><span class="dot"></span>AI Agent</a><a href="#edge" style="--sc:#e11d48"><span class="dot"></span>端侧 AI</a><a href="#kaoyan" style="--sc:#d97706"><span class="dot"></span>考研资讯</a><a href="#macro" style="--sc:#059669"><span class="dot"></span>宏观市场</a><a href="#github" style="--sc:#0284c7"><span class="dot"></span>社区热点</a></div></nav>
 <main class="wrap"><section class="sec" id="ai" style="--sc:#2563eb"><div class="sec-head"><span class="num">01</span><h2>AI 大模型</h2><span class="rule"></span><span class="cnt">3 条</span></div><article class="card">
 <h3>Anthropic 下一代旗舰 Fable 5.5 疑似灰度上线，正式发布或在下周<span class="tag">10-02 曝光</span></h3>
 <p>10 月 2 日起大批开发者发现 Claude 网页端界面仍标着 &quot;Fable 5.1&quot;，但回答风格、速度和能力明显不同，社区首轮实测称能力断层式领先；值得看：新一轮旗舰模型竞赛的开场信号，且传闻用了 Anthropic 首次全新的预训练底座。</p>
@@ -197,7 +198,7 @@ footer .arch:hover{border-color:var(--accent);color:var(--accent);transform:tran
 <p>—国庆假期（10/1–10/3）期间无新的报考点公告、招生简章或政策变化；各高校 2027 年招生简章/专业目录基本已在 9 月发布完毕，省级报考点公告多集中在 9 月底出炉。</p>
 <p>⚠️ <b>网上预报名 10 月 9 日（周五）9:00 开始，至 10 月 12 日 22:00（每日 9:00—22:00，逾期不补），还剩 6 天。</b></p>
 <p>抓紧确认报考点要求（省级公告 9 月底已发布，研招网 9 月 26–29 日在线咨询已结束，错过只能电话/官网查）。今年报名与网上确认一体化&quot;一站式&quot;完成，照片直接用学信网 App 在线拍摄（白色背景）——提前准备好证件照与学籍学历信息。</p>
-</article></section><section class="sec" id="ai" style="--sc:#2563eb"><div class="sec-head"><span class="num">05</span><h2>AI 大模型</h2><span class="rule"></span><span class="cnt">1 条</span></div><article class="card">
+</article></section><section class="sec" id="macro" style="--sc:#059669"><div class="sec-head"><span class="num">05</span><h2>宏观市场</h2><span class="rule"></span><span class="cnt">1 条</span></div><article class="card">
 <h3>现货黄金（10/2）</h3>
 <p>4,137.70 美元/盎司，-0.96%（非农公布后一度冲高至 4,226 美元再回吐；本周累跌 3.40%）</p>
 <p>▪ <b>美股 10/2 收盘</b>：道指 +0.49% 收 51,176.96 点；标普 500 +0.73% 收 7,722.72 点；纳指 +1.19% 收 27,190.86 点（盘中创历史新高）——9 月非农仅增 2.9 万人、远逊预期，10 月加息概率从一周前 64% 降至约 23%</p>
@@ -244,6 +245,7 @@ footer .arch:hover{border-color:var(--accent);color:var(--accent);transform:tran
 </main>
 <button class="top" aria-label="回到顶部">↑</button>
 <script>
+document.documentElement.classList.add('js');
 const cards=document.querySelectorAll('.card');
 const io=new IntersectionObserver(es=>es.forEach(e=>{
   if(e.isIntersecting){
