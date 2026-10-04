@@ -101,6 +101,27 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans G
 .sec-head .num{font-size:46px;font-weight:800;line-height:1;color:var(--line);
   font-variant-numeric:tabular-nums;letter-spacing:-.02em;user-select:none}
 .sec-head h2{font-size:21px;font-weight:750;letter-spacing:-.01em;line-height:1.4}
+.sec-head .tt .desc{display:block;font-size:12px;color:var(--muted);font-weight:400;
+  margin-top:3px;letter-spacing:.02em}
+/* ---- 卡片层次：编号 / 头条 / 洞察行 ---- */
+.card{position:relative}
+.card-top{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.card-top .idx{font-size:11.5px;font-weight:700;color:var(--muted);
+  font-variant-numeric:tabular-nums;letter-spacing:.1em}
+.lead-k{font-size:10.5px;font-weight:800;letter-spacing:.16em;color:var(--sc)}
+.lead-k::before{content:"";display:inline-block;width:16px;height:2px;
+  background:var(--sc);border-radius:2px;margin-right:7px;vertical-align:3px}
+.card.lead{border-color:color-mix(in srgb,var(--sc) 38%,var(--line))}
+.card.lead::before{content:"";position:absolute;top:-1px;left:20px;width:76px;
+  height:3px;border-radius:3px;background:linear-gradient(90deg,var(--sc),transparent)}
+.card.lead h3{font-size:17.5px}
+.why{margin-top:11px;font-size:13.5px;color:var(--ink2);line-height:1.7;
+  background:color-mix(in srgb,var(--sc) 6%,transparent);
+  border-radius:10px;padding:10px 14px}
+.why-k{display:inline-block;font-size:11px;font-weight:800;color:var(--sc);
+  letter-spacing:.08em;border:1px solid color-mix(in srgb,var(--sc) 45%,transparent);
+  border-radius:6px;padding:1px 9px;margin-right:9px;vertical-align:1px;
+  background:color-mix(in srgb,var(--sc) 8%,transparent)}
 .sec-head .rule{flex:1;height:1px;background:var(--line);margin-bottom:13px}
 .sec-head .cnt{font-size:12px;color:var(--muted);margin-bottom:11px;
   white-space:nowrap;font-variant-numeric:tabular-nums}
@@ -167,28 +188,35 @@ footer .arch:hover{border-color:var(--accent);color:var(--accent)}
   </div>
 </header>
 <nav class="nav"><div class="nav-inner"><a href="#ai" style="--sc:#2563eb"><span class="dot"></span>AI 大模型</a><a href="#agent" style="--sc:#7c3aed"><span class="dot"></span>AI Agent</a><a href="#edge" style="--sc:#e11d48"><span class="dot"></span>端侧 AI</a><a href="#kaoyan" style="--sc:#d97706"><span class="dot"></span>考研资讯</a><a href="#macro" style="--sc:#059669"><span class="dot"></span>宏观市场</a></div></nav>
-<main class="wrap"><section class="sec" id="ai" style="--sc:#2563eb"><div class="sec-head"><span class="num">01</span><h2>AI 大模型</h2><span class="rule"></span><span class="cnt">1 条</span></div><article class="card">
+<main class="wrap"><section class="sec" id="ai" style="--sc:#2563eb"><div class="sec-head"><span class="num">01</span><div class="tt"><h2>AI 大模型</h2><span class="desc">新模型发布 · API 价格政策 · 开源权重</span></div><span class="rule"></span><span class="cnt">1 条</span></div><article class="card lead">
+<div class="card-top"><span class="idx">01</span><span class="lead-k">头条</span></div>
 <h3>Google 发布新一代旗舰 Gemini 4 Argon，单次输出上限拉到 100 万 token</h3>
 <p>美国时间 9 月 30 日发布，时隔近一年重返最高阶模型竞争；输出上限从 64K 直接提到 100 万 token（约 16 倍），主打长程 Agent 任务；DeepSWE v1.1 拿下 77.9% 刷新纪录，19 项对比测试中 14 项第一；推广期 API 定价 $2/$10 每百万 token（之后翻倍）。但普通用户暂时用不上：首批只给 Fairwind 计划的网络安全防御者，并进入美国政府预发布评估流程。</p>
 <div class="src"><a href="https://techorange.com/2026/10/01/gemini-4-argon-google/" target="_blank" rel="noopener">TechOrange</a><a href="https://www.woshipm.com/ai/6473057.html" target="_blank" rel="noopener">人人都是产品经理</a></div>
-</article></section><section class="sec" id="agent" style="--sc:#7c3aed"><div class="sec-head"><span class="num">02</span><h2>AI Agent 与开发工具</h2><span class="rule"></span><span class="cnt">2 条</span></div><article class="card">
+</article></section><section class="sec" id="agent" style="--sc:#7c3aed"><div class="sec-head"><span class="num">02</span><div class="tt"><h2>AI Agent 与开发工具</h2><span class="desc">编程工具 · Agent 框架 · 技能生态</span></div><span class="rule"></span><span class="cnt">2 条</span></div><article class="card lead">
+<div class="card-top"><span class="idx">01</span><span class="lead-k">头条</span></div>
 <h3>Manus 2.0 发布：推出个人助理 Cue，自研 Agent 框架 Cascade</h3>
 <p>9 月 28 日，北京蝴蝶效应科技面向海外用户发布 Manus 2.0 与个人智能助理 Cue。新版核心是自研 Agent 框架 Cascade：自动化从定时任务扩展到事件触发（新邮件、日历事件、Slack 消息等可唤醒 Agent 干活），把 Manus 从&quot;一次性任务执行器&quot;推向&quot;长期在线、持续维护项目&quot;的 Agent 平台；官方称 Token 消耗降 23.2%、运行成本降 32%。已覆盖网页/桌面/移动端。</p>
 <div class="src"><a href="https://www.openai-hub.net/news/1724/" target="_blank" rel="noopener">OpenAI Hub</a></div>
 </article><article class="card">
+<div class="card-top"><span class="idx">02</span></div>
 <h3>Claude Code / Codex CLI / Cursor / opencode：今日无重要更新</h3>
 <p>近 48 小时内这几款编码代理工具均无大版本或重大功能新闻，处于日常迭代节奏。</p>
-</article></section><section class="sec" id="edge" style="--sc:#e11d48"><div class="sec-head"><span class="num">03</span><h2>边缘智能 / 端侧 AI</h2><span class="rule"></span><span class="cnt">1 条</span></div><article class="card">
+</article></section><section class="sec" id="edge" style="--sc:#e11d48"><div class="sec-head"><span class="num">03</span><div class="tt"><h2>边缘智能 / 端侧 AI</h2><span class="desc">端侧芯片 · 轻量模型 · 本地推理</span></div><span class="rule"></span><span class="cnt">1 条</span></div><article class="card lead">
+<div class="card-top"><span class="idx">01</span><span class="lead-k">头条</span></div>
 <h3>今日无重要更新</h3>
 <p>近 48 小时内无实质性新发布；此前的高通第六代骁龙 8（支持本地跑 30B+ 模型）、小米 15 Ultra 端侧能力等内容多为厂商营销稿，已过滤。</p>
-</article></section><section class="sec" id="kaoyan" style="--sc:#d97706"><div class="sec-head"><span class="num">04</span><h2>考研资讯</h2><span class="rule"></span><span class="cnt">2 条</span></div><article class="card">
+</article></section><section class="sec" id="kaoyan" style="--sc:#d97706"><div class="sec-head"><span class="num">04</span><div class="tt"><h2>考研资讯</h2><span class="desc">研招政策 · 报名时间线 · 报考点</span></div><span class="rule"></span><span class="cnt">2 条</span></div><article class="card lead">
+<div class="card-top"><span class="idx">01</span><span class="lead-k">头条</span></div>
 <h3>教育部《2027 年全国硕士研究生招生工作管理规定》正式印发</h3>
 <p>2027 年研考初试时间为 <b>2026 年 12 月 19 日至 20 日</b>；网上报名 <b>10 月 15 日至 24 日</b>，<b>预报名 10 月 9 日至 12 日</b>（每日 9:00—22:00，逾期不补）。今年报名系统升级：网上报名和网上确认一体化&quot;一站式&quot;完成，照片可直接通过学信网 App 在线拍摄上传。研招网 9 月 26—29 日的招生咨询活动已结束。</p>
 <div class="src"><a href="https://k.sina.cn/article_7517400647_1c0126e4705909af5u.html?from=edu" target="_blank" rel="noopener">光明日报 / 新浪新闻</a></div>
 </article><article class="card">
+<div class="card-top"><span class="idx">02</span></div>
 <h3>⚠️ 下周五（10 月 9 日）预报名开始</h3>
 <p>，记得提前准备好证件照、学籍学历信息，研招网（yz.chsi.com.cn）报名。</p>
-</article></section><section class="sec" id="macro" style="--sc:#059669"><div class="sec-head"><span class="num">05</span><h2>宏观市场</h2><span class="rule"></span><span class="cnt">1 条</span></div><article class="card">
+</article></section><section class="sec" id="macro" style="--sc:#059669"><div class="sec-head"><span class="num">05</span><div class="tt"><h2>宏观市场</h2><span class="desc">黄金 · 美股 · A 股 —— 只给数字</span></div><span class="rule"></span><span class="cnt">1 条</span></div><article class="card lead">
+<div class="card-top"><span class="idx">01</span><span class="lead-k">头条</span></div>
 <h3>现货黄金</h3>
 <p>4,151.53 美元/盎司，日内 -0.10%（今晨实时报价）</p>
 <p>▪ <b>美股 10 月 1 日收盘</b>：道指 +0.04% 收 50,926.56 点；标普 500 +0.19% 收 7,666.45 点；纳指 +0.04% 收 26,871.60 点——三大指数小幅上涨。（来源：新华社）</p>
