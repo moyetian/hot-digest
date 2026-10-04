@@ -9,6 +9,7 @@
   --line:#e4e4e7; --accent:#2563eb;
   --shadow:0 1px 2px rgba(24,24,27,.05);
   --shadow-lg:0 18px 44px -18px rgba(24,24,27,.24);
+  --yolk:#FFC400;
 }
 @media (prefers-color-scheme:dark){
   :root{
@@ -23,14 +24,26 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans G
   "Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;
   background:var(--bg);color:var(--ink);line-height:1.75;
   -webkit-font-smoothing:antialiased}
-.wrap{max-width:768px;margin:0 auto;padding:54px 20px 90px}
-.rule-double{border-top:1px solid var(--line);position:relative;margin-bottom:30px}
-.rule-double::after{content:"";display:block;border-top:1px solid var(--line);margin-top:3px}
-.kicker{text-align:center;font-size:11px;letter-spacing:.24em;text-transform:uppercase;
-  color:var(--muted);font-weight:600}
-h1{text-align:center;font-size:clamp(30px,6vw,42px);font-weight:800;
-  letter-spacing:-.015em;margin:16px 0 8px}
-.sub{text-align:center;color:var(--muted);font-size:13.5px;margin-bottom:36px}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+/* 暗黑小刊头 */
+.hero{background:#0a0a0a;color:#fafafa;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(640px 300px at 50% -8%, rgba(255,196,0,.13), transparent 70%)}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(255,196,0,.5),transparent)}
+.hero-inner{max-width:768px;margin:0 auto;padding:50px 20px 42px;text-align:center;
+  position:relative}
+.hero .kicker{font-size:11px;letter-spacing:.26em;text-transform:uppercase;
+  color:#8e8e96;font-weight:600}
+.hero .kicker .y{color:var(--yolk)}
+.hero h1{font-size:clamp(30px,6vw,44px);font-weight:800;letter-spacing:-.015em;
+  margin:14px 0 6px;color:#fafafa}
+.hero h1 .hl{color:var(--yolk)}
+.hero .sub{color:#8e8e96;font-size:13.5px}
+.hero .back{display:inline-block;margin-bottom:20px;color:#8e8e96;text-decoration:none;
+  font-size:13px;font-weight:600;transition:color .2s}
+.hero .back:hover{color:var(--yolk)}
+.wrap{max-width:768px;margin:0 auto;padding:34px 20px 90px}
 a.item{display:flex;align-items:center;gap:14px;background:var(--card);
   border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin:12px 0;
   text-decoration:none;color:var(--ink);box-shadow:var(--shadow);
@@ -48,13 +61,14 @@ a.item .go{color:var(--muted);font-size:16px}
 .back{display:inline-block;margin-bottom:8px;color:var(--accent);text-decoration:none;
   font-size:13.5px;font-weight:600}
 </style></head><body>
-<div class="wrap">
+<header class="hero"><div class="hero-inner">
 <a class="back" href="index.html">← 返回今日日报</a>
-<div class="rule-double" style="margin-top:14px"></div>
-<div class="kicker">Archive</div>
-<h1>往期日报归档</h1>
+<div class="kicker">A R C H I V E</div>
+<h1>往期日报<span class="hl">归档</span></h1>
 <div class="sub">每天一期 · 沉淀你的信息复利</div>
-<a class="item" href="2026-10-04.html"><span class="no">#003</span><span class="d">2026 年 10 月 4 日</span><span class="w">星期周日</span><span class="c">22 条</span><span class="go">→</span></a>
-<a class="item" href="2026-10-03.html"><span class="no">#002</span><span class="d">2026 年 10 月 3 日</span><span class="w">星期周六</span><span class="c">20 条</span><span class="go">→</span></a>
-<a class="item" href="2026-10-02.html"><span class="no">#001</span><span class="d">2026 年 10 月 2 日</span><span class="w">星期周五</span><span class="c">7 条</span><span class="go">→</span></a>
+</div></header>
+<div class="wrap">
+<a class="item" href="2026-10-04.html"><span class="no">#003</span><span class="d">2026 年 10 月 4 日</span><span class="w">星期日</span><span class="c">22 条</span><span class="go">→</span></a>
+<a class="item" href="2026-10-03.html"><span class="no">#002</span><span class="d">2026 年 10 月 3 日</span><span class="w">星期六</span><span class="c">20 条</span><span class="go">→</span></a>
+<a class="item" href="2026-10-02.html"><span class="no">#001</span><span class="d">2026 年 10 月 2 日</span><span class="w">星期五</span><span class="c">7 条</span><span class="go">→</span></a>
 </div></body></html>
