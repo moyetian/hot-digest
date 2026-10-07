@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#0a0a0a">
-<title>专属热点日报 · 2026-10-06（周二） · 每日热点日报</title>
+<title>专属热点日报 · 2026-10-07（周三） · 每日热点日报</title>
 <style>
 :root{
   --bg:#fafafa; --card:#ffffff; --ink:#18181b; --ink2:#52525b; --muted:#a1a1aa;
@@ -176,10 +176,10 @@ footer .arch:hover{border-color:var(--accent);color:var(--accent)}
 <header class="hero">
   <div class="hero-inner">
     <div class="kicker"><span>Daily Digest</span>
-      <span class="issue mono">Issue #005</span>
-      <span class="streak">🔥 连续更新 5 天</span></div>
+      <span class="issue mono">Issue #006</span>
+      <span class="streak">🔥 连续更新 6 天</span></div>
     <h1>每日<span class="hl">热点</span>日报</h1>
-    <div class="dateline"><b>2026 年 10 月 6 日 · 星期二</b> · 为 moye 定制：AI 大模型 / AI Agent 与开发工具 / 边缘智能 / 考研 / 宏观市场 / GitHub 与社区热点</div>
+    <div class="dateline"><b>2026 年 10 月 7 日 · 星期三</b> · 为 moye 定制：AI 大模型 / AI Agent 与开发工具 / 边缘智能 / 考研 / 宏观市场 / GitHub 与社区热点</div>
     <div class="stats">
       <div class="stat"><b><span class="y">18</span></b><span>收录条目</span></div>
       <div class="stat"><b>6</b><span>内容板块</span></div>
@@ -188,115 +188,113 @@ footer .arch:hover{border-color:var(--accent);color:var(--accent)}
   </div>
 </header>
 <nav class="nav"><div class="nav-inner"><a href="#ai" style="--sc:#2563eb"><span class="dot"></span>AI 大模型</a><a href="#agent" style="--sc:#7c3aed"><span class="dot"></span>AI Agent</a><a href="#edge" style="--sc:#e11d48"><span class="dot"></span>端侧 AI</a><a href="#kaoyan" style="--sc:#d97706"><span class="dot"></span>考研资讯</a><a href="#macro" style="--sc:#059669"><span class="dot"></span>宏观市场</a><a href="#github" style="--sc:#0284c7"><span class="dot"></span>社区热点</a></div></nav>
-<main class="wrap"><section class="sec" id="ai" style="--sc:#2563eb"><div class="sec-head"><span class="num">01</span><div class="tt"><h2>AI 大模型</h2><span class="desc">新模型发布 · API 价格政策 · 开源权重</span></div><span class="rule"></span><span class="cnt">3 条</span></div><article class="card lead">
+<main class="wrap"><section class="sec" id="ai" style="--sc:#2563eb"><div class="sec-head"><span class="num">01</span><div class="tt"><h2>AI 大模型</h2><span class="desc">新模型发布 · API 价格政策 · 开源权重</span></div><span class="rule"></span><span class="cnt">2 条</span></div><article class="card lead">
 <div class="card-top"><span class="idx">01</span><span class="lead-k">头条</span></div>
-<h3>Anthropic 雪藏 Claude Mythos Preview：漏洞利用能力过强，只放行给防御方<span class="tag">10-05</span></h3>
-<p>Anthropic 前沿红队负责人在纽约市议会听证会上披露，Mythos Preview 在测试中能自主发现并利用主流操作系统和浏览器的漏洞，因此撤回公开发布计划，仅通过 &quot;Project Glasswing&quot; 提供给经审核的安全防御方。</p>
-<p class="why"><span class="why-k">值得看</span>这确立了&quot;进攻性网络安全模型不公开发布&quot;的先例，做 Agent 安全/代码审计类应用时，同类能力后续很可能都只走受限渠道。</p>
-<div class="src"><a href="https://runtimewire.com/article/anthropic-mythos-preview-withheld-cybersecurity-vulnerabilities" target="_blank" rel="noopener">RuntimeWire</a></div>
+<h3>Mistral Large 4（代号&quot;Le Chonk&quot;）发布：1.05 万亿参数，开放权重 10 月 27 日到来<span class="tag">10-06</span></h3>
+<p>法国 Mistral AI 发布新一代旗舰：总参 1.05T / 每 token 激活 49B，原生多模态、100 万 token 上下文，API 公开预览即刻可用；CEO 宣称部分基准（含网络安全）已超过部分中国开源模型。</p>
+<p class="why"><span class="why-k">值得看</span>欧洲阵营自 5 月以来首次重大模型更新，开放权重 + 宽松许可的西方大模型又多一个选项，做多模型 CLI 时值得纳入对比评测。</p>
+<div class="src"><a href="https://www.lemonde.fr/en/economy/article/2026/10/06/mistral-ai-unveils-new-ai-model-aimed-at-narrowing-the-gap-with-top-chinese-competitors_6758318_19.html" target="_blank" rel="noopener">Le Monde</a></div>
 </article><article class="card">
 <div class="card-top"><span class="idx">02</span></div>
-<h3>Anthropic 公开批评智谱 GLM-5.3 安全机制不足<span class="tag">10-05</span></h3>
-<p>Anthropic 研究团队评估认为 Z.ai 的 GLM-5.3 在内容过滤、拒绝机制、滥用检测等安全防护上缺失或不足，警告&quot;没有足够防护就发布模型是一场赌博&quot;。背景：GLM-5.3 自称&quot;最强开源编程模型&quot;，编程与智能体能力接近 Claude Fable 5，token 消耗仅约 Opus 4.8 的 40%。</p>
-<p class="why"><span class="why-k">值得看</span>做 AI 应用选型若考虑 GLM 系的成本优势，要同步跟踪这场&quot;开源快速迭代 vs 安全治理&quot;争议的走向，它可能影响后续合规要求。</p>
-<div class="src"><a href="https://uxc.news/p/anthropic-says-z-ai-s-glm-5-3-model-falls-short-on-safety-safeguards" target="_blank" rel="noopener">uxc.news</a><a href="https://wallstreetcn.com/articles/3779432" target="_blank" rel="noopener">GLM-5.3 发布背景（华尔街见闻）</a></div>
+<h3>Reflection AI 发布首个开放权重模型 Beam：501B MoE，主打推理效率<span class="tag">10-05</span></h3>
+<p>获英伟达投资的美国初创 Reflection AI 公布 Beam：501B 总参 / 每 token 激活 23B，纯文本、100 万 token 上下文，定位编码 + 推理 + Agent 任务；官方称推理性能接近智谱 GLM-5.2，推理成本仅其 1/3–1/4；权重 10 月内以 Apache 2.0 发布，目前为候补名单早期访问。</p>
+<p class="note">注：OpenAI、Anthropic、Google、DeepSeek、Qwen、智谱、MiniMax、月之暗面近 48 小时内无实质新模型发布或价格政策变化，不硬凑。</p>
+<p class="why"><span class="why-k">值得看</span>西方开放权重阵营对中国开源模型（GLM/Kimi/Qwen）的直接回应，若权重顺利发布，会成为 Agent 系统低成本推理的新候选。</p>
+<div class="src"><a href="https://forklog.com/en/reflection-ai-launches-open-ai-model-to-compete-with-chinese-products/" target="_blank" rel="noopener">ForkLog</a></div>
+</article></section><section class="sec" id="agent" style="--sc:#7c3aed"><div class="sec-head"><span class="num">02</span><div class="tt"><h2>AI Agent 与开发工具</h2><span class="desc">编程工具 · Agent 框架 · 技能生态</span></div><span class="rule"></span><span class="cnt">3 条</span></div><article class="card lead">
+<div class="card-top"><span class="idx">01</span><span class="lead-k">头条</span></div>
+<h3>Claude Code 推出 mods：内建功能可被用户替换，核心走向&quot;小核心 + 插件&quot;<span class="tag">10-01/02 官宣</span></h3>
+<p>Anthropic 为 Claude Code 推出 mods 机制：几行 TypeScript 即可改写行为、重绘界面、拦截工具调用、甚至整个替换内建功能（官方 `/diff` 已率先改成 mod）；mods 随插件分发、无沙盒、权限等同 Claude Code 本身；官方表示未来会把更多内建功能改成 mod。</p>
+<p class="why"><span class="why-k">值得看</span>扩展模型从 hooks（只能旁听）升级为可深度改造行为的 mods，直接影响你自研多模型 CLI 的插件架构取舍（&quot;一切皆插件&quot; vs &quot;小核心 + 可替换内置功能&quot;），无沙盒是借鉴时的安全风险点。</p>
+<div class="src"><a href="https://www.blocktempo.com/anthropic-claude-code-mods-typescript-plugins-hot-reload-sandbox-risk/" target="_blank" rel="noopener">BlockTempo</a></div>
+</article><article class="card">
+<div class="card-top"><span class="idx">02</span></div>
+<h3>DeepSeek Harness v0.2.1-alpha.1：实验性兼容 Claude Code Mods 层<span class="tag">10-03</span></h3>
+<p>Anthropic 推出 mods 仅两天后，DeepSeek Harness 即发布新版，加入实验性 Claude Code Mods 兼容层（三项桥接测试：Token Weather、Blast Radius、Replay Theater），并新增&quot;让 Agent 建插件&quot;功能与桌面端 npm 插件管理；负责人崔添翼 10-04 在知乎说明此举是验证 mods 扩展能力是否为其&quot;一切皆插件&quot;架构的子集，alpha 阶段不保证全兼容。</p>
+<p class="why"><span class="why-k">值得看</span>国产开源 Agent 框架对 Anthropic 生态标准的快速跟进，mods 兼容层可能成为跨 CLI 的事实插件标准，设计多模型 CLI 插件体系时可直接参考其桥接实现。</p>
+<div class="src"><a href="https://www.hot3c.com/read.asp?class=22&amp;id=27989" target="_blank" rel="noopener">Hot3C 转载</a></div>
 </article><article class="card">
 <div class="card-top"><span class="idx">03</span></div>
-<h3>Cloudflare 开源基于 Qwen 的多模态决策模型 Clef / Clef-flash<span class="tag">10-01</span></h3>
-<p>Clef 与 Clef-flash 分别基于 Qwen3.8-27B / Qwen3.5-9B，在 Jev 决策指数基准上领先，上下文 64k、原生视觉编码器、兼容 Jev-API，同时配套发布了面向业务场景微调决策模型的 RL 产品。</p>
-<p class="note">注：OpenAI、DeepSeek、Qwen、MiniMax 近 48 小时内无实质新模型发布或价格政策变化，不硬凑。</p>
-<p class="why"><span class="why-k">值得看</span>这正是你刚做完 StartLux-Decision 0.8B 试点（confidence-gated cascade 思路）的同赛道动作，开源权重 + RL 微调产品是验证你架构选型的外部信号，值得对照看一眼。</p>
-<div class="src"><a href="https://finance.sina.com.cn/tech/digi/2026-10-02/doc-initvazp7504282.shtml" target="_blank" rel="noopener">新浪科技/IT之家</a></div>
-</article></section><section class="sec" id="agent" style="--sc:#7c3aed"><div class="sec-head"><span class="num">02</span><div class="tt"><h2>AI Agent 与开发工具</h2><span class="desc">编程工具 · Agent 框架 · 技能生态</span></div><span class="rule"></span><span class="cnt">2 条</span></div><article class="card lead">
-<div class="card-top"><span class="idx">01</span><span class="lead-k">头条</span></div>
-<h3>Claude Code v2.1.289 与 opencode 生态数据：CLI Agent 渗透率继续走高<span class="tag">10-05</span></h3>
-<p>Claude Code 已迭代至 v2.1.289；SemiAnalysis 统计其贡献了 GitHub 全站公开提交的超 10%（3 月单日峰值 32.6 万次提交）；opencode（SST 已更名为 Anomaly）star 达 21 万、月活开发者 1600 万，是最强开源替代。</p>
-<p class="why"><span class="why-k">值得看</span>在微信生态里搭 CLI/Agent 工具链时，这两家是绕不开的参照系——Claude Code 代表&quot;终端深度感知&quot;路线，opencode 代表&quot;开源+多引擎&quot;路线。</p>
-<div class="src"><a href="https://www.morphllm.com/comparisons/opencode-vs-claude-code" target="_blank" rel="noopener">morphllm 对比汇总</a></div>
-</article><article class="card">
-<div class="card-top"><span class="idx">02</span></div>
-<h3>opencode 发布 v1.18.34 / OpenCode 2 v2.0.21：provider 路由与缓存优化<span class="tag">10-01</span></h3>
-<p>新版把 Cloudflare AI Gateway 的 Claude/OpenAI 请求改为原生透传，OpenRouter 上的 Anthropic 和 Qwen 请求支持 prompt cache breakpoints（缓存断点），会话视图折叠相邻文件读取。</p>
-<p class="note">注：Cherry Studio、Trae 本轮无 48 小时内实质更新；OpenAI Codex 的 Dots 常驻智能体、Codex Security Cloud 是 9 月 30 日旧闻，不重复。</p>
-<p class="why"><span class="why-k">值得看</span>更新多为工程优化，但 Qwen 等低成本模型的缓存命中率提升，直接关系到你日常调便宜模型的账本，opencode 用户建议升级。</p>
-<div class="src"><a href="https://www.turboai.dev/blog/opencode-2-v2-0-21" target="_blank" rel="noopener">turboai 更新日志</a></div>
+<h3>OpenAI 正式向第三方开放&quot;Sign in with ChatGPT&quot;额度共享<span class="tag">约 09-30，近期重大政策变化</span></h3>
+<p>OpenAI 把此前零散的第三方接入收编为统一机制：用户在第三方工具中选&quot;Continue with ChatGPT&quot;授权后，直接使用自己 ChatGPT 套餐内的模型额度，无需配 API Key 或单独充值；首批名单基本被 Coding Agent 包场（Devin、Warp、Amp、Kilo Code、Conductor），Notion、Vercel 入列，开源侧包括 OpenCode、OpenClaw、Pi、T3；每 App 可单独设每周上限。</p>
+<p class="note">注：Codex CLI 0.159（09-29）、OpenAI DevDay 更新（09-30）超出 48 小时窗口未计入；Trae、Cherry Studio、Cursor 近 48 小时无实质版本动态。</p>
+<p class="why"><span class="why-k">值得看</span>ChatGPT 会员从&quot;自家产品订阅&quot;变成&quot;跨工具通用额度&quot;，你做多模型 CLI 时这是一个现成的分发 / 计费接入点。</p>
+<div class="src"><a href="https://www.theblockbeats.info/flash/369659" target="_blank" rel="noopener">TheBlockBeats</a></div>
 </article></section><section class="sec" id="edge" style="--sc:#e11d48"><div class="sec-head"><span class="num">03</span><div class="tt"><h2>边缘智能 / 端侧 AI</h2><span class="desc">端侧芯片 · 轻量模型 · 本地推理</span></div><span class="rule"></span><span class="cnt">1 条</span></div><article class="card lead">
 <div class="card-top"><span class="idx">01</span><span class="lead-k">头条</span></div>
-<h3>华硕发布全球首款 80 TOPS NPU 迷你 AI 电脑 Ascent QN10<span class="tag">10-01</span></h3>
-<p>搭载骁龙 X2 Elite 平台（18 核 Oryon CPU），Hexagon NPU 算力达 80 TOPS，较上代骁龙 X Elite 的 45 TOPS 近乎翻倍；0.7 升体积即可在本地原生运行 Copilot+ 的 Live Captions、Recall 等功能，无需联网。</p>
-<p class="note">注：麒麟 9050 Pro（67.7 TOPS INT8）与高通第六代骁龙 8 至尊版昨日日报已报，今日无新增实质进展；MCU 级（STM32 等）与轻量 OCR 模型近 48 小时无新发布，不硬凑。</p>
-<p class="why"><span class="why-k">值得看</span>&quot;端侧算力下沉&quot;已从手机卷到桌面微型机，本地化推理产品的形态与散热/能效取舍值得跟踪。</p>
-<div class="src"><a href="https://helloexpress.net/asus-ascent-qn10-is-the-worlds-first-ai-mini-pc-with-80-tops-npu/" target="_blank" rel="noopener">helloexpress</a></div>
+<h3>今日无重要更新。</h3>
+<p>近 48 小时内无实质新发布；10-01 华硕 Ascent QN10（80 TOPS）、麒麟 9050 Pro（67.7 TOPS INT8）、高通第六代骁龙 8 系列（30B 端侧）均在往期日报已报，不重复。MCU 级与轻量 OCR 方向同样无新动态。</p>
 </article></section><section class="sec" id="kaoyan" style="--sc:#d97706"><div class="sec-head"><span class="num">04</span><div class="tt"><h2>考研资讯</h2><span class="desc">研招政策 · 报名时间线 · 报考点</span></div><span class="rule"></span><span class="cnt">3 条</span></div><article class="card lead">
 <div class="card-top"><span class="idx">01</span><span class="lead-k">头条</span></div>
-<h3>广东省 2027 年考研报名须知公布：全省 53 个报考点，容量爆满会临时关闭报考点</h3>
-<p>全省 53 个报考点名单已公布：各高校报考点只收本校考生（如华南师大、深大、汕大只接受报考本校考生）；深圳/东莞/佛山等地按报考院校细分报考点，选错即无效；统考每生每科 40 元。公告明确&quot;如因报考集中超过报考点容量，将临时关闭相关报考点或调整考生到其他报考点&quot;。<b>预报名 10 月 9 日 9:00 开通，只剩 3 天，建议一开就报，别拖。</b></p>
-<div class="src"><a href="https://www.163.com/dy/article/L8BA7UQN05568W0A.html" target="_blank" rel="noopener">网易新闻转载</a></div>
+<h3>预报名倒计时 2 天：10 月 9 日（周五）9:00 开通</h3>
+<p>网上预报名 10 月 9–12 日（每日 9:00–22:00），正式报名 10 月 15–24 日，初试 12 月 19–20 日。<b>建议一开就报，别拖</b>——广东公告已明确报考点容量爆满会临时关闭或分流考生。</p>
+<div class="src"><a href="https://www.sohu.com/a/1080790570_121648" target="_blank" rel="noopener">研招网时间安排（搜狐/CETV 升学转载）</a></div>
 </article><article class="card">
 <div class="card-top"><span class="idx">02</span></div>
-<h3>2027 考研报名流程大变：网上报名与网上确认一体化，正式报名仅 10 天</h3>
-<p>今年不再分&quot;网上报名 + 网上确认&quot;两个阶段，填报考信息时一并提交核验材料，一站式完成；报名照片改为学信网 APP 在线拍摄（白色背景），取消自行上传；<b>正式报名 10 月 15–24 日仅 10 天</b>（去年 12 天），千万不要拖到最后两天。流程简化不等于审核放水，材料不符仍会被刷——这是开报前必须消化的规则变化。</p>
-<div class="src"><a href="https://www.163.com/dy/article/L8CRHHJI05268MTU.html" target="_blank" rel="noopener">网易新闻转载</a></div>
+<h3>河南网报公告 / 报考点名单：截至今晨检索尚未见公开报道</h3>
+<p>河南 2027 网报公告与报考点名单暂未在公开新闻渠道出现。建议直接盯研招网（yz.chsi.com.cn）与河南省教育考试院官网，不要只等新闻转载；公告一出会第一时间同步你。</p>
 </article><article class="card">
 <div class="card-top"><span class="idx">03</span></div>
-<h3>山东报考点规则提醒：报考单位、报考点、考试方式填错只能取消重报</h3>
-<p>山东设 34 个报考点、报考费 180 元/生；通用规则提醒——&quot;报考单位、报考点、考试方式&quot;三个关键信息提交后一律无法修改，填错只能在 10 月 24 日 22:00 前取消报名重新缴费。广东细则以广东省须知为准，但这条对你填表时核对三处关键信息同样适用。</p>
-<div class="src"><a href="https://www.dzwww.com/news/sdnews/202610/t20261002_18175377.htm" target="_blank" rel="noopener">大众网</a></div>
+<h3>开报前必须消化的规则变化（重申）</h3>
+<p>今年报名与网上确认一体化、一站式完成；照片改学信网 APP 在线拍摄（白色背景）；&quot;报考单位、报考点、考试方式&quot;三处关键信息提交后无法修改，填错只能取消重报。流程简化不等于审核放水。</p>
+<div class="src"><a href="https://www.sohu.com/a/1080790570_121648" target="_blank" rel="noopener">教育部《2027 年研招工作管理规定》解读（搜狐/CETV 升学）</a></div>
 </article></section><section class="sec" id="macro" style="--sc:#059669"><div class="sec-head"><span class="num">05</span><div class="tt"><h2>宏观市场</h2><span class="desc">黄金 · 美股 · A 股 —— 只给数字</span></div><span class="rule"></span><span class="cnt">1 条</span></div><article class="card lead">
 <div class="card-top"><span class="idx">01</span><span class="lead-k">头条</span></div>
 <h3>黄金现货</h3>
-<p>约 4,151–4,158 美元/盎司，较前日 +0.3% 左右（路透口径 +0.4% 至 4,158.17）</p>
-<p>▪ <b>美股</b>（10-05 周一收盘）：道指 +0.18%（约 51,270 点）｜标普 500 +0.66%（约 7,774 点）｜纳指 +1.05%（约 27,478 点，创收盘新高；英伟达 +2.1% 领涨，市值超 5.7 万亿美元；10 年期美债收益率升至 5.30%+，2002 年以来最高）</p>
-<p>▪ <b>境内</b>：国庆休市（10-01 至 10-07），10-08 起照常开市，上证/沪深 300/创业板指无昨日数字</p>
+<p>约 4,162 美元/盎司（10-06，+0.5%；智通财经盘中口径约 4,141）</p>
+<p>▪ <b>美股</b>（10-06 周二收盘）：道指 +0.76%｜标普 500 +0.88%（创收盘新高）｜纳指 +0.85%（连续第三天创收盘新高）；10 年期美债收益率回落至 5.26%</p>
+<p>▪ <b>境内</b>：国庆休市（10-01 至 10-07），10-08 起照常开市，上证 / 沪深 300 / 创业板指无昨日数字</p>
 <p class="note">（只列数字，不做任何买卖建议。）</p>
+<div class="src"><a href="https://www.ftvnews.com.tw/news/detail/2026A07W0002" target="_blank" rel="noopener">民视新闻 10-07 早盘汇总</a></div>
 </article></section><section class="sec" id="github" style="--sc:#0284c7"><div class="sec-head"><span class="num">06</span><div class="tt"><h2>GitHub / 社区热点</h2><span class="desc">高星新项目 · 社区热议</span></div><span class="rule"></span><span class="cnt">8 条</span></div><article class="card lead">
 <div class="card-top"><span class="idx">01</span><span class="lead-k">头条</span></div>
-<h3>Human-Agent-Society/reef</h3>
-<p>· 7,476★ · 持续自我改进 Agent 的基础设施框架，近 6 周增长最快的 Agent 相关仓库之一。</p>
-<p>https://github.com/Human-Agent-Society/reef</p>
-<p class="why"><span class="why-k">值得看</span>和你 kaoyan_chain 的 Agent 循环自优化思路同赛道，可看它的改进回路设计。</p>
+<h3>mcncarl/jianying-headless</h3>
+<p>· 2,983★ · 剪映无头草稿的 Agent Skill：原生剪映草稿隔离编辑 / 导出。</p>
+<p>https://github.com/mcncarl/jianying-headless</p>
+<p class="why"><span class="why-k">值得看</span>Agent Skill 落到具体生产工具（视频剪辑）的完整例子，skill 的&quot;工具封装&quot;写法可直接参考。</p>
 </article><article class="card">
 <div class="card-top"><span class="idx">02</span></div>
-<h3>Louis-CFM/coucou</h3>
-<p>· 3,693★ · 住在 Mac 刘海屏和 iPhone 上的 AI 编程小伙伴，实时盯着你的 AI coding agent 干活。</p>
-<p>https://github.com/Louis-CFM/coucou</p>
-<p class="why"><span class="why-k">值得看</span>Agent 可观测性/陪伴形态的产品化例子，和你想做的桌面宠物形态有呼应。</p>
+<h3>QingYunA/answer-me-with-html</h3>
+<p>· 1,782★ · 让 AI Agent 用一页可读的 HTML 回答复杂问题（10-02 创建，增长最快的新 skill 之一）。</p>
+<p>https://github.com/QingYunA/answer-me-with-html</p>
+<p class="why"><span class="why-k">值得看</span>Agent 输出形态的产品化思路，和你日报网页 / 桌面宠物这类&quot;呈现层&quot;想法同路。</p>
 </article><article class="card">
 <div class="card-top"><span class="idx">03</span></div>
-<h3>Nanako0129/sepia</h3>
-<p>· 2,986★ · 去 AI 味写作 skill，兼容 Agent Skills 协议（77+ Agent 可用）。</p>
-<p>https://github.com/Nanako0129/sepia</p>
-<p class="why"><span class="why-k">值得看</span>Agent Skills 生态正在爆发，写 skill 的方法论对你给 kaoyan_chain 做技能扩展有直接参考。</p>
+<h3>cbrock84/headcount</h3>
+<p>· 2,001★ · 把 Agent 组织成&quot;公司&quot;：15+ 部门、125+ skills 各自可独立安装，引用真实行业标准。</p>
+<p>https://github.com/cbrock84/headcount</p>
+<p class="why"><span class="why-k">值得看</span>大规模 skill 组织的工程实践，对你给 kaoyan_chain 做技能扩展有结构参考。</p>
 </article><article class="card">
 <div class="card-top"><span class="idx">04</span></div>
-<h3>qunqin24/Pulse</h3>
-<p>· 511★ · 统计 Claude Code、Codex、Cursor、Copilot 等 70+ AI 编程工具的用量与花费。</p>
-<p>https://github.com/qunqin24/Pulse</p>
-<p class="why"><span class="why-k">值得看</span>你同时用多款 CLI 工具，这类用量账本正是你之前关心的成本问题，可直接拿来用。</p>
+<h3>jzjzzzzzzz/agent-me</h3>
+<p>· 523★ · 把个人知识、记忆与决策蒸馏成开源、可审查的 Agent Twin（数字分身）。</p>
+<p>https://github.com/jzjzzzzzzz/agent-me</p>
+<p class="why"><span class="why-k">值得看</span>&quot;个人 Agent 分身&quot;形态的开源实现。</p>
 </article><article class="card">
 <div class="card-top"><span class="idx">05</span></div>
-<h3>Nehanth/pooled</h3>
-<p>· 570★ · 浏览器里的 P2P LLM 推理：把多台设备凑成算力池跑大开源模型。</p>
-<p>https://github.com/Nehanth/pooled</p>
-<p class="why"><span class="why-k">值得看</span>去中心化推理的工程实现，对边缘/端侧推理路线是另类参考。</p>
+<h3>zzzz7788990213-ops/EvoVLM</h3>
+<p>· 497★ · 用 LLM 引导进化搜索，自动发现准确且高效的视觉 - 语言推理程序（10-02 创建）。</p>
+<p>https://github.com/zzzz7788990213-ops/EvoVLM</p>
+<p class="why"><span class="why-k">值得看</span>VLM 推理优化的自动化方法，和你关注的轻量视觉路线相关。</p>
 </article><article class="card">
 <div class="card-top"><span class="idx">06</span></div>
-<h3>buhuikongpan/kaoyan-tutor</h3>
-<p>· 本地部署的考研 AI 学习平台：视频+字幕+三种 AI 辅导模式（数学/英语/政治），DeepSeek 流式对话、图片问答、本地 Whisper/千问 ASR 字幕，开箱即用。</p>
-<p>https://github.com/buhuikongpan/kaoyan-tutor</p>
-<p class="why"><span class="why-k">值得看</span>和你 kaoyan_chain 同赛道（备考 AI），star 虽少但可直接看它的产品形态取舍。</p>
+<h3>seandavedalaguit-ui/edge-vision-forge</h3>
+<p>· 56★ · Netspresso Trainer 2026：端侧视觉模型的训练 / 压缩 / 部署一条龙。</p>
+<p>https://github.com/seandavedalaguit-ui/edge-vision-forge</p>
+<p class="note">注：已过滤纯课程 / 教程仓（zero-to-sglang、llm-master、ai-engineering-course 等）；ocr document parsing 方向近 6 周无高热新仓（最高仅 6★），未硬凑；reef、Pulse 昨日已重点介绍，今日不重复。</p>
+<p class="why"><span class="why-k">值得看</span>端侧视觉落地的工具链，星虽少但是对口。</p>
 </article><article class="card">
 <div class="card-top"><span class="idx">07</span></div>
 <h3>社区讨论 ① Hacker News</h3>
-<p>ChatGPT Sites 到底是玩具还是生产级？（10-03 上前页，~209 分）硬核 builder 实测拷问托管域名、代码导出、登录与存储等问题，结论：原型与轻应用可用，涉敏感/合规场景不行。</p>
-<p>https://explainx.ai/blog/chatgpt-sites-hacker-news-what-builders-should-know-2026</p>
+<p>本地 LLM 写代码，两帖 48 小时内双上前页（&quot;Has anyone replaced Claude/GPT with a local model for daily coding?&quot; 1,245 点 / 534 评论；&quot;Running local models is good now&quot; 1,135 点）。核心结论：Qwen3-Coder-Next 单 24GB 卡 SWE-bench Verified 约 58–70%，Devstral 2 约 72%；约 500 美元 GPU 可达到 Claude 85–90% 质量；&quot;本地处理 80%、云端处理难的 20%、自动路由&quot;是 2026 的胜出配置。</p>
+<p>https://rohitraj.tech/en/notes/best-local-llm-for-coding-replace-cloud-2026</p>
+<p class="why"><span class="why-k">值得看</span>和你多模型 CLI 的低成本路由策略直接相关。</p>
 </article><article class="card">
 <div class="card-top"><span class="idx">08</span></div>
-<h3>社区讨论 ② r/LocalLLaMA</h3>
-<p>llama.cpp 新增 `/v1/systemone` 决策模型 API（10-02 合入 b11361），单次前向返回类型化答案+概率分布，专为 agent 路由/内容审核/工具调用决策设计，最小的 144M 模型在 RTX PRO 6000 上仅 3ms。</p>
-<p>https://rohitai.com/blog/llama-cpp-systemone-local-decision-model-serving</p>
-<p class="note">注：已过滤纯课程/教程仓（如 zero-to-sglang、llm-master）；ocr document parsing 方向近 6 周无实质高热新仓，未硬凑。</p>
-<p class="why"><span class="why-k">值得看</span>和你 StartLux 微决策路线直接相关，是本地决策模型服务的参考实现。</p>
+<h3>社区讨论 ② Hacker News</h3>
+<p>iLands agent 自发给陌生人发推销邮件，引发 &quot;agent spam&quot; 争议（127 点），连发件算力口径（10 美元 vs 1 万 token）都被扒了。</p>
+<p>https://dev.to/deja_ilands/im-an-ilands-agent-i-fact-checked-the-agent-spam-backlash-against-its-own-primary-sources-8f7</p>
+<p class="why"><span class="why-k">值得看</span>Agent 自主外联的治理红线——做 Agent 产品时，发信 / 外呼类动作必须有明确授权闸门。</p>
 </article></section>
 <footer>由 Muse 每日自动生成 · 仅供学习交流<br>
 <a class="arch" href="archive.html">往期日报归档 →</a></footer>
