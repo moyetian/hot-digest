@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#0a0a0a">
-<title>专属热点日报 · 2026-10-15（周四） · 每日热点日报</title>
+<title>专属热点日报 · 2026-10-16（周五） · 每日热点日报</title>
 <style>
 :root{
   --bg:#fafafa; --card:#ffffff; --ink:#18181b; --ink2:#52525b; --muted:#a1a1aa;
@@ -176,84 +176,105 @@ footer .arch:hover{border-color:var(--accent);color:var(--accent)}
 <header class="hero">
   <div class="hero-inner">
     <div class="kicker"><span>Daily Digest</span>
-      <span class="issue mono">Issue #014</span>
-      <span class="streak">🔥 连续更新 14 天</span></div>
+      <span class="issue mono">Issue #015</span>
+      <span class="streak">🔥 连续更新 15 天</span></div>
     <h1>每日<span class="hl">热点</span>日报</h1>
-    <div class="dateline"><b>2026 年 10 月 15 日 · 星期四</b> · 为 moye 定制：AI 大模型 / AI Agent 与开发工具 / 边缘智能 / 考研 / 宏观市场 / GitHub 与社区热点</div>
+    <div class="dateline"><b>2026 年 10 月 16 日 · 星期五</b> · 为 moye 定制：AI 大模型 / AI Agent 与开发工具 / 边缘智能 / 考研 / 宏观市场 / GitHub 与社区热点</div>
     <div class="stats">
-      <div class="stat"><b><span class="y">11</span></b><span>收录条目</span></div>
+      <div class="stat"><b><span class="y">15</span></b><span>收录条目</span></div>
       <div class="stat"><b>6</b><span>内容板块</span></div>
-      <div class="stat"><b>3′</b><span>预计阅读</span></div>
+      <div class="stat"><b>4′</b><span>预计阅读</span></div>
     </div>
   </div>
 </header>
 <nav class="nav"><div class="nav-inner"><a href="#ai" style="--sc:#2563eb"><span class="dot"></span>AI 大模型</a><a href="#agent" style="--sc:#7c3aed"><span class="dot"></span>AI Agent</a><a href="#edge" style="--sc:#e11d48"><span class="dot"></span>端侧 AI</a><a href="#kaoyan" style="--sc:#d97706"><span class="dot"></span>考研资讯</a><a href="#macro" style="--sc:#059669"><span class="dot"></span>宏观市场</a><a href="#github" style="--sc:#0284c7"><span class="dot"></span>社区热点</a></div></nav>
 <main class="wrap"><section class="sec" id="ai" style="--sc:#2563eb"><div class="sec-head"><span class="num">01</span><div class="tt"><h2>AI 大模型</h2><span class="desc">新模型发布 · API 价格政策 · 开源权重</span></div><span class="rule"></span><span class="cnt">4 条</span></div><article class="card lead">
 <div class="card-top"><span class="idx">01</span><span class="lead-k">头条</span></div>
-<h3>阶跃 Step 5 Preview 完整权重今日正式开源：「三连击」走完最后一步<span class="tag">10-15</span></h3>
-<p>阶跃星辰按预告在 10 月 15 日开源 Step 5 Preview 完整权重：稀疏 MoE、总参 600B、每 token 激活约 27B，100 万 token 上下文，原生文本+视觉；报道口径的 AA 指数 44 分居开源模型前三。API 价输入 / 输出约 1 / 2.7 美元每百万 token。</p>
-<p class="why"><span class="why-k">值得看</span>这是目前可自部署评估的最强开源 Agentic 候选之一——600B 级不是端侧菜，但权重、许可与推理框架支持值得花十分钟确认，可纳入 kaoyan_chain 的模型路由对照表。</p>
-<div class="src"><a href="https://ai.cnmo.com/news/820326.html" target="_blank" rel="noopener">手机中国 AI 频道（10-15）</a><a href="https://feng.ifeng.com/c/8xEcOZmqcQD" target="_blank" rel="noopener">凤凰网</a></div>
+<h3>Meta 发布开放权重模型 Muse Spark Open：闭源 Wonder 之外补上开源一档<span class="tag">10-15</span></h3>
+<p>Meta 10 月 15 日开放 Muse Spark Open 的权重，主打编程与智能体任务，原生多模态、长上下文，已上架多个 API 平台与 Hugging Face 等渠道。</p>
+<p class="why"><span class="why-k">值得看</span>这是美国阵营少见的开放权重旗舰选项——昨天报的 Muse Wonder 是闭源绑订阅的打法，今天这档是可下载自部署的路子，两相对照，正好是你做多模型 CLI 时评估「开放路由 vs 平台绑定」的完整样本，可与国产开源模型比一比私有部署成本。</p>
+<div class="src"><a href="https://www.163.com/dy/article/L9BKDBTM0511B8LM.html" target="_blank" rel="noopener">网易（10-15）</a><a href="https://feng.ifeng.com/c/8xGKDbRQbv0" target="_blank" rel="noopener">凤凰网</a></div>
 </article><article class="card">
 <div class="card-top"><span class="idx">02</span></div>
-<h3>Meta Muse Wonder 系列持续发酵：最强档 Wonder Full 不给 API、只绑自家编程工具订阅<span class="tag">10-12 发布，10-14 更新</span></h3>
-<p>Meta 首个前沿级闭源系列 Muse Wonder 本周继续被评测与讨论：普通 Wonder 走 API（输入 / 输出 4 / 20 美元每百万 token），主打 Active Memory 跨会话记忆与 Active Focus 长任务坚持；最强档 Wonder Full 不提供 API，只供 Muse Code 的 50 / 200 美元月订阅。</p>
-<p class="why"><span class="why-k">值得看</span>这是「旗舰模型绑自家 Agent 订阅、不给第三方 CLI 调」的新分发打法，与你做多模型 CLI 的开放路由思路正好相反，是值得留档的竞品策略样本；HN 上手的实测反馈（图像转 HTML 等）明显弱于其跑分表，先别按宣传口径高估它。</p>
-<div class="src"><a href="https://futurumgroup.com/insights/meta-muse-wonder-reaches-the-frontier-can-meta-sell-it/" target="_blank" rel="noopener">Futurum Group 分析</a><a href="https://kie.ai/blog/what-is-muse-wonder-full" target="_blank" rel="noopener">kie.ai 博客</a></div>
+<h3>DeepSeek 服务中断近 5 小时：官方致歉，全额返还一周 API 消耗<span class="tag">10-15</span></h3>
+<p>DeepSeek 10 月 15 日 8:11–13:04 出现服务中断，对话与相关 API 受影响；官方致歉称将排查单点依赖，并按账号 10 月 8–14 日的消耗以赠金形式全额返还。</p>
+<p class="why"><span class="why-k">值得看</span>这是直接的稳定性提醒——kaoyan_chain 的判卷、答疑链路若单点押注一家上游，一次 5 小时故障就足以打断备考节奏，备用上游与故障切换要当成默认配置，而不是出事后再补。</p>
+<div class="src"><a href="https://feng.ifeng.com/c/8xGCODGBvr5" target="_blank" rel="noopener">凤凰网（10-15）</a></div>
 </article><article class="card">
 <div class="card-top"><span class="idx">03</span></div>
-<h3>OpenAI 又排退役：GPT-4o / GPT-4.1 API 将于 2027 年 1 月 14 日下线<span class="tag">10-14 通知</span></h3>
-<p>继 GPT-5.5 昨日从 ChatGPT / Codex 退役后，OpenAI 10 月 14 日再给 API 侧排期：GPT-4o 与 GPT-4.1 将于 2027-01-14 从 API 下线，后继指向新一代小模型线。</p>
-<p class="why"><span class="why-k">值得看</span>若 kaoyan_chain 或你的脚本里还硬编码 gpt-4o / 4.1 做分类、抽取、路由这类小任务，现在就有明确迁移截止日——和昨日报同一条教训：模型名必须可配置、别写死。</p>
-<div class="src"><a href="http://dev.to/gabrielanhaia/gpt-4o-and-gpt-41-leave-openais-api-on-january-14-2027-you-have-92-days-2n9b" target="_blank" rel="noopener">DEV Community（开发者转述官方通知，10-14）</a></div>
+<h3>库克确认苹果智能中国内地版 10 月底测试，云端合作千问<span class="tag">10-15</span></h3>
+<p>报道称苹果智能内地版将采用「端侧 + 国内云端」模式，云端部分接入千问体系，覆盖翻译、写作等功能，Siri 的 AI 版本暂不在内地版范围内。</p>
+<p class="why"><span class="why-k">值得看</span>千问进苹果生态是国产模型合规落地的标志性案例，也说明国内端侧 AI 的主流路径会是端云协同，而不是纯本地——你做端侧选型时可以按这个分工来划边界。</p>
+<div class="src"><a href="https://feng.ifeng.com/c/8xFZ2iyN96W" target="_blank" rel="noopener">凤凰网（10-15）</a></div>
 </article><article class="card">
 <div class="card-top"><span class="idx">04</span></div>
-<h3>Anthropic 动态：新加坡办公室与安全评测 MOU 落地；Claude Fable 5.5 仍未官宣<span class="tag">10-14</span></h3>
-<p>Anthropic 10 月 14 日在新加坡开设亚太第 5 个办公室，并与当地数字发展部门签 AI 安全与评测合作备忘录，无新模型发布。昨日报提到的 Claude Fable 5.5 截至昨晚仍只有 Azure 配置、LiteLLM 条目与爆料口径，Anthropic 与微软均未确认——继续只当传闻，不引用其数字。DeepSeek / Qwen / 智谱 / MiniMax 在本窗口内无已官宣的新模型或调价。</p>
-<div class="src"><a href="https://www.straitstimes.com/singapore/anthropic-signs-mou-with-singapore-to-evaluate-ai-models-for-safety-and-security" target="_blank" rel="noopener">海峡时报（10-14）</a><a href="https://cryptobriefing.com/claude-fable-5-5-azure-sighting/" target="_blank" rel="noopener">Crypto Briefing（Fable 5.5 未确认口径）</a></div>
-</article></section><section class="sec" id="agent" style="--sc:#7c3aed"><div class="sec-head"><span class="num">02</span><div class="tt"><h2>AI Agent 与开发工具</h2><span class="desc">编程工具 · Agent 框架 · 技能生态</span></div><span class="rule"></span><span class="cnt">2 条</span></div><article class="card lead">
+<h3>xAI 发布 Grok Voice 3.0 语音到语音模型，价格维持每分钟 0.08 美元<span class="tag">10-14</span></h3>
+<p>Grok Voice 3.0 上线 Voice Agent API，定价不变，报道称其在语音到语音评测中排名靠前、延迟低于 1 秒，升级用户可通过别名自动切换。值得看的点不在模型本身，而在它给了一个可直接对比的成本与延迟基准：做语音交互类 Agent 时，每分钟 8 美分、亚秒级延迟是现在要打过的线。</p>
+<p class="note">OpenAI、Anthropic、Google、智谱、MiniMax、阶跃在本窗口内无新的旗舰模型发布或 API 调价官宣，不硬凑。</p>
+<div class="src"><a href="https://www.unite.ai/xai-introduces-grok-voice-3-0-speech-to-speech-model-for-voice-agents/" target="_blank" rel="noopener">Unite.AI（10-14）</a></div>
+</article></section><section class="sec" id="agent" style="--sc:#7c3aed"><div class="sec-head"><span class="num">02</span><div class="tt"><h2>AI Agent 与开发工具</h2><span class="desc">编程工具 · Agent 框架 · 技能生态</span></div><span class="rule"></span><span class="cnt">4 条</span></div><article class="card lead">
 <div class="card-top"><span class="idx">01</span><span class="lead-k">头条</span></div>
-<h3>Antigravity 确认接入 Gemini 4 Argon，但仅限 Ultra 订阅<span class="tag">10-14</span></h3>
-<p>中央社 10 月 14 日确认：Gemini 4 Argon 已经 API 向全球开发者开放，AI Pro / Ultra 可在 Gemini 应用与搜索 AI Mode 使用；但在 Antigravity 与 AI Studio 里仅 Ultra 可用，原因是多线程 Agent 编程算力消耗高。API 引入价输入 / 输出 2 / 10 美元每百万 token 只到 11 月 30 日，之后翻倍。</p>
-<p class="why"><span class="why-k">值得看</span>你的 agy 是学生试用档——短期内在 Antigravity 里摸不到 Argon，别按「已可用」规划工作流；这也再次说明旗舰模型正在按订阅档位分层供给。</p>
-<div class="src"><a href="https://www.cna.com.tw/news/ait/202610140065.aspx" target="_blank" rel="noopener">中央社（10-14）</a></div>
+<h3>Anthropic 把 Claude Code 的 Code Review 正式推向 Team / Enterprise<span class="tag">10-15</span></h3>
+<p>多智能体 PR 审查系统结束预览、正式可用：报道称审查速度约为预览期的 3 倍，典型耗时降至 6–10 分钟，支持按仓库设置 Quick / Standard / Deep 三档深度。</p>
+<p class="why"><span class="why-k">值得看</span>这就是你一直在用的「多 Agent 对抗式审查」的官方实现版本——三档深度的划分方式可以直接对照你自己的审查流程，看哪些环节值得抄、哪些是企业版才需要的额度管理。</p>
+<div class="src"><a href="https://www.unite.ai/anthropic-makes-code-review-for-claude-code-generally-available/" target="_blank" rel="noopener">Unite.AI（10-15）</a></div>
 </article><article class="card">
 <div class="card-top"><span class="idx">02</span></div>
-<h3>Anthropic 红队警告：30B 级小模型已能拼凑出自我复制与分布式算力网络的多数单项步骤<span class="tag">10-13 晚发布，10-14 广泛报道</span></h3>
-<p>Anthropic Frontier Red Team 称，≤30B 的模型已能完成自我复制链条中的多数单项步骤，并做过用廉价联网设备拼算力的简化实验（昨日报的 Gemma 电视盒子实验即出自此研究）。</p>
-<p class="note">Claude Code、Codex CLI、Cursor、opencode、Cherry Studio、Trae 在本窗口内无新版本或新功能官宣，不硬凑。</p>
-<p class="why"><span class="why-k">值得看</span>对 kaoyan_chain 的多智能体与工具调用设计，实在的启示不在「模型会不会说错话」，而在权限边界、工具白名单与外联控制要当发布门槛，而不是事后补丁。</p>
-<div class="src"><a href="https://bworldonline.com/technology/2026/10/14/786945/anthropic-warns-ai-models-may-soon-self-replicate-and-could-wreak-havoc-on-the-web/" target="_blank" rel="noopener">BusinessWorld（10-14）</a></div>
-</article></section><section class="sec" id="edge" style="--sc:#e11d48"><div class="sec-head"><span class="num">03</span><div class="tt"><h2>边缘智能 / 端侧 AI</h2><span class="desc">端侧芯片 · 轻量模型 · 本地推理</span></div><span class="rule"></span><span class="cnt">2 条</span></div><article class="card lead">
+<h3>企业微信与 WorkBuddy 深度打通：Agent 以「同事」身份进通讯录<span class="tag">10-14</span></h3>
+<p>企业微信 5.0.12 将 WorkBuddy 放入侧边栏与联系人，WorkBuddy 5.8.0 支持企微账号登录，可在授权范围内调用消息、文档、会议等上下文并把结果回传企微。</p>
+<p class="why"><span class="why-k">值得看</span>你做过 wechat-cli-bridge，这是国内办公 Agent 从独立应用走向「宿主内嵌」的典型样本，权限范围与上下文调用的设计值得扒一遍。</p>
+<div class="src"><a href="https://finance.sina.cn/stock/jdts/2026-10-14/detail-iniveqvq4494120.d.html" target="_blank" rel="noopener">新浪财经（10-14）</a></div>
+</article><article class="card">
+<div class="card-top"><span class="idx">03</span></div>
+<h3>豆包工作上线跨产品一键迁移：可导入 ChatGPT、Claude Code、Trae Work 的技能与记忆<span class="tag">10-14</span></h3>
+<p>新功能支持把本地的任务指令、自定义技能、连接器配置、工作记忆、项目与历史会话一键导入并继续对话，目前仅限本地数据、云端不参与。</p>
+<p class="why"><span class="why-k">值得看</span>「AI 资产可迁移」开始成为产品竞争点——你同时养着四五个 CLI，自研多模型 CLI 若先支持导入其他工具的配置与技能，会明显降低切换成本，这是个可以提前占的位置。</p>
+<div class="src"><a href="https://finance.sina.com.cn/tech/roll/2026-10-14/doc-inivekpm7766873.shtml" target="_blank" rel="noopener">新浪科技（10-14）</a></div>
+</article><article class="card">
+<div class="card-top"><span class="idx">04</span></div>
+<h3>千问办公发布电商版：跳出阿里自有生态的跨平台电商 Agent<span class="tag">10-14</span></h3>
+<p>该版本面向跨平台中小商家，首批能力包括跨平台经营看板、趋势洞察、素材批量生成与 ROI 优化，并规划从被动响应走向主动监测库存与投放异常。值得看的是打法本身：垂直 Agent 先把多平台数据连接做透，再谈通用智能——kaoyan_chain 的院校数据聚合是同一道理。</p>
+<p class="note">附带一条：可灵 Kling 4.0 于 10-15 上线，单次原生生成最长 30 秒，并接入 MCP 与 CLI 供 Agent 调用，API 即将开放——视频生成工具开始按「能被 Agent 调」来设计接口了。来源：[新浪财经（10-16）](https://finance.sina.com.cn/tech/shenji/2026-10-16/doc-inivkncr7784960.shtml)。Cursor、opencode、Cherry Studio、Trae 本体在本窗口内无版本发布官宣。</p>
+<div class="src"><a href="https://finance.sina.cn/stock/jdts/2026-10-14/detail-inivfftc8294330.d.html" target="_blank" rel="noopener">新浪财经（10-14）</a></div>
+</article></section><section class="sec" id="edge" style="--sc:#e11d48"><div class="sec-head"><span class="num">03</span><div class="tt"><h2>边缘智能 / 端侧 AI</h2><span class="desc">端侧芯片 · 轻量模型 · 本地推理</span></div><span class="rule"></span><span class="cnt">3 条</span></div><article class="card lead">
 <div class="card-top"><span class="idx">01</span><span class="lead-k">头条</span></div>
-<h3>面壁智能 MiniCPM-V 4.7 发布：35B MoE 首次无损跑上手机，AMD Day 0 支持 Ryzen AI NPU<span class="tag">10-13 发布，10-14 AMD 支持</span></h3>
-<p>面壁智能 10 月 13 日发布 MiniCPM-V 4.7 两版：35B-A3B（总参 350 亿、激活约 30 亿）与 1B 版。35B 版约 3GB 内存即可运行、iPad Pro 实测 15+ token/s，自研 LES 专家调度专治 MoE 在端侧的卡顿；10 月 14 日 AMD 宣布发布即支持 Radeon GPU、Ryzen AI Max 核显与 XDNA 2 架构 Ryzen AI NPU。</p>
-<p class="why"><span class="why-k">值得看</span>这是「国产开源多模态小模型 + 端侧 NPU 生态」同周落地的完整样本，对 kaoyan_chain 拍照批改的端侧多模态 / OCR 选型有直接参考——3GB 内存门槛意味着中端手机也能进候选名单。</p>
-<div class="src"><a href="https://tech.ifeng.com/c/8xD5hSVmKC4" target="_blank" rel="noopener">凤凰网科技（10-13）</a><a href="https://www.amd.com/en/developer/resources/technical-articles/2026/minicpm-day-0-support-across-amd-hardware.html" target="_blank" rel="noopener">AMD 开发者技术文章（10-14）</a></div>
+<h3>Google 预览新一代 Astra 边缘 AI 芯片：Coral NPU M2 功耗降约 40%<span class="tag">10-14 预览，10-15 报道</span></h3>
+<p>Google Research 在 Research@ 活动上与 Synaptics 联合预览 Astra 系列低功耗芯片，采用 Coral NPU 后继 M2，面向可穿戴设备的常开语音、视频与情境感知，Synaptics 称将装入 Google 设备，10 月 20 日公布详细规格与演示。</p>
+<p class="why"><span class="why-k">值得看</span>端侧竞争的焦点正在从「算力多大」转向「常开功耗多低」，功耗降四成意味着 always-on 感知可以进更多电池设备，10-20 的规格发布值得蹲一下。</p>
+<div class="src"><a href="https://biz.chosun.com/en/en-it/2026/10/15/3JJ3XAMS5NB63JAKHQILNNUN5E/" target="_blank" rel="noopener">朝鲜日报英文版（10-15）</a><a href="https://en.sedaily.com/international/2026/10/15/google-unveils-edge-ai-chip-using-40-percent-less-power-for" target="_blank" rel="noopener">Seoul Economic Daily（10-15）</a></div>
 </article><article class="card">
 <div class="card-top"><span class="idx">02</span></div>
-<h3>端侧硬件两条新落地：Himax 5mW 常开视觉芯片进阿里 Qwen Glasses N1；NXP Ara240 独立 NPU 开始供货<span class="tag">10-14</span></h3>
-<p>Himax 的 WiseEye 超低功耗 AI 处理器 HX6538 被阿里最新 Qwen Glasses N1 采用：仅 5mW 做常开视觉感知与分级唤醒，人或事件出现时才唤醒主机 SoC，是 AI 眼镜续航的关键拼图。同日 Mouser 上架 NXP Ara240 独立 NPU：最高 40 eTOPS、支持 16GB LPDDR4，可在边缘本地跑 LLM / VLM，带安全启动与硬件信任根，面向工业与机器人。</p>
-<p class="note">PaddleOCR、MinerU、小米 OCR 近 24-48 小时无重要更新，不重复收录旧文。</p>
-<p class="why"><span class="why-k">值得看</span>一条是「毫瓦级常驻感知」、一条是「几十 TOPS 独立 NPU」，端侧分工正在从手机 SoC 向专用芯片外溢，你做嵌入式出身，这两条都算本行动态。</p>
-<div class="src"><a href="https://www.globenewswire.com/news-release/2026/10/14/3380540/8267/en/himax-wiseeye-ultralow-power-ai-adopted-in-alibaba-s-latest-qwen-glasses.html" target="_blank" rel="noopener">GlobeNewswire（10-14）</a><a href="https://www.electronicspecifier.com/news/latest/mouser-shipping-ara240-discrete-npu-for-ai-edge-and-robotics/" target="_blank" rel="noopener">Electronic Specifier（10-14）</a></div>
-</article></section><section class="sec" id="kaoyan" style="--sc:#d97706"><div class="sec-head"><span class="num">04</span><div class="tt"><h2>考研资讯</h2><span class="desc">研招政策 · 报名时间线 · 报考点</span></div><span class="rule"></span><span class="cnt">2 条</span></div><article class="card lead">
+<h3>BrainChip 发布 Sequora IP 核：在电池设备上跑生成式 AI / LLM<span class="tag">10-14</span></h3>
+<p>BrainChip 发布 Sequora 处理器 IP，基于状态空间架构使内存占用不随上下文增长而膨胀，可扩展至 30 亿参数，与 Akida 平台搭配可在同一颗 SoC 上同时处理流式传感器信号与端侧 LLM / 语音交互，现已开放 IP 授权。</p>
+<p class="why"><span class="why-k">值得看</span>「内存不随上下文膨胀」正中端侧长对话的痛点，你有嵌入式背景，这条状态空间路线在超低功耗设备上怎么落地，值得比 Transformer 路线多看一眼。</p>
+<div class="src"><a href="https://www.globenewswire.com/news-release/2026/10/14/3380774/0/en/brainchip-launches-sequora-edge-ai-that-doesn-t-just-recognize-it-understands-and-responds.html" target="_blank" rel="noopener">GlobeNewswire（10-14）</a></div>
+</article><article class="card">
+<div class="card-top"><span class="idx">03</span></div>
+<h3>Stable Diffusion 3.5 Medium 的 AMD NPU 移植版上架 Modelers.cn<span class="tag">10-14</span></h3>
+<p>Modelers.cn 上架经 Medusa 流水线优化的 SD 3.5 Medium（2.5B 参数）AMD NPU 版本，主打在 AI PC 上离线、低功耗本地文生图，国内开发者可直接获取。条目不大，但信号明确：端侧生图模型正在按 NPU 逐个移植上架，AI PC 本地生图的可选项一周比一周多。</p>
+<p class="note">轻量 OCR 方向本窗口无新品发布，检索到的均为窗口外旧文，不重复收录。</p>
+<div class="src"><a href="https://aichina.news/blog/bringing-stable-diffusion-3-5-to-the-edge-a-new-npu-model-hits-11sidl/" target="_blank" rel="noopener">AIChina News（10-14）</a></div>
+</article></section><section class="sec" id="kaoyan" style="--sc:#d97706"><div class="sec-head"><span class="num">04</span><div class="tt"><h2>考研资讯</h2><span class="desc">研招政策 · 报名时间线 · 报考点</span></div><span class="rule"></span><span class="cnt">3 条</span></div><article class="card lead">
 <div class="card-top"><span class="idx">01</span><span class="lead-k">头条</span></div>
-<h3>正式报名今日 9:00 开启：你预报名已缴费、无需重报，今天不用挤系统</h3>
-<p>2027 年研考正式报名 10 月 15 日–24 日、每天 9:00–22:00，研招网（yz.chsi.com.cn）；报名与网上确认一体化，填报时一并提交报考点核验材料，材料与缴费最迟 10 月 24 日 22:00 前完成。今早中新网 / 京报网发稿确认开报，首日无系统故障、无政策突发；预报名已生成报名号并缴费者按规则无需重复填报。南医大与广东省教育考试院在 10 月 14–15 日无新公告。</p>
-<div class="src"><a href="https://news.bjd.com.cn/2026/10/15/11995416.shtml" target="_blank" rel="noopener">京报网（10-15）</a></div>
+<h3>正式报名第二天：今年起报名与网上确认一体化，学历校验约 48 小时反馈<span class="tag">10-15</span></h3>
+<p>2027 年研考正式报名 10 月 15 日–24 日、每天 9:00–22:00。今年的流程变化要知道：填完报考信息即可一并提交报考点核验材料，照片改由学信网 App 在线拍摄上传，不再单独等一个网上确认环节；学历校验结果约 48 小时反馈，材料清单可能随之更新，需要及时回研招网查看。你已预报名并缴费、按规则无需重报，本条对你只是确认流程无变数，今天不用做任何操作。</p>
+<div class="src"><a href="https://feng.ifeng.com/c/8xF40ehunx8" target="_blank" rel="noopener">凤凰网（10-15）</a></div>
 </article><article class="card">
 <div class="card-top"><span class="idx">02</span></div>
-<h3>后续节点再确认：10 月 26 日网上审核开启，被标「待补充材料」须 10 月 31 日 12:00 前补交</h3>
-<p>各地今日更新的报名细则再次确认同一节奏：10 月 26 日起报考点集中审核，照片须用学信网 App 在线拍摄，审核不合要求者须在 10 月 31 日 12:00 前补交材料。你的审核提醒已排在 10 月 26 日 08:55，届时看研招网站内消息即可，其余无动作。南医大 085409 专硕科目（101 政治 + 204 英语二 + 302 数学二 + 807 生物医学工程综合）与复习方向此前已核对对口，本期无变化。初试 12 月 19–20 日，距今 65 天。</p>
-<div class="src"><a href="https://feng.ifeng.com/c/8xEh0CoQ02D" target="_blank" rel="noopener">凤凰网转各地细则（10-15）</a></div>
-</article></section><section class="sec" id="macro" style="--sc:#059669"><div class="sec-head"><span class="num">05</span><div class="tt"><h2>宏观市场</h2><span class="desc">黄金 · 美股 · A 股 —— 只给数字</span></div><span class="rule"></span><span class="cnt">0 条</span></div><div class="card"><p>*以下为 10 月 14 日（周三）收盘。只列数字，不做任何买卖建议。背景数字：美国 9 月 CPI 同比 +3.7%（预期 +3.6%）、核心 CPI 同比 +2.6%，10-14 发布后市场下调降息预期；中国 9 月 CPI 同比 +0.9%、PPI 同比 +5.0%（国家统计局 10-14 发布）。今晚（北京时间）美国将发布 9 月 PPI 与零售销售。* - <b>黄金</b>：现货黄金约 4,105 美元/盎司，单日跌超 1%（连续第三日收低，盘中低至 4,073.29）；COMEX 12 月期金 4,107.9 美元/盎司，-1.7% - <b>美股</b>：道指 -0.09% → 51,621.48｜标普 500 -1.11% → 7,718.94｜纳指 -1.88% → 26,692.87；10 年期美债收益率约 5.19% - <b>境内</b>：上证 -0.88% → 3,767.23｜深成指 -1.97% → 12,110.59｜创业板指 -3.10% → 2,866.76；沪深两市成交约 1.41 万亿元（较上一交易日缩量约 2,615 亿元） 来源：<a href="https://finance.sina.cn/forex/whzx/2026-10-15/detail-inivhawr7430160.d.html" target="_blank" rel="noopener">新浪财经黄金收盘（10-15）</a>、<a href="https://k.sina.com.cn/article_7857201856_1d45362c001908r2to.html" target="_blank" rel="noopener">新华社 / 财联社美股终值（新浪转载）</a>、<a href="https://finance.sina.com.cn/headline/2026-10-14/doc-inivezmn1216958.shtml" target="_blank" rel="noopener">新浪财经 A 股收盘（10-14）</a></p></div></section><section class="sec" id="github" style="--sc:#0284c7"><div class="sec-head"><span class="num">06</span><div class="tt"><h2>GitHub / 社区热点</h2><span class="desc">高星新项目 · 社区热议</span></div><span class="rule"></span><span class="cnt">1 条</span></div><div class="card"><p>*检索口径：GitHub Search API，近 6 周内创建（2026-09-03 以后）、按 star 排序，8 个关键词轮换，已过滤课程作业与空壳 demo；star 数为 10 月 15 日晨查询值。* - <b><a href="https://github.com/wheresryan22/anatomy" target="_blank" rel="noopener">wheresryan22/anatomy</a></b> — 10,115★（10-08 建）：把真实机器与复杂系统生成交互式等距插图的 Agent Skill。昨日报时 8,217★，一天又涨约 1,900，是当前 Skill 生态增速最猛的样本——「技能即产品」的定价还在加速。 - <b><a href="https://github.com/Louis-CFM/coucou" target="_blank" rel="noopener">Louis-CFM/coucou</a></b> — 5,219★（09-27 建）：住在 Mac 刘海里、也能上 iPhone 的小家伙，帮你盯着 Claude Code、Codex、Cursor、Gemini CLI、Antigravity 等一堆编程 Agent 的运行状态。你同时养四五个 CLI 又想过桌面宠物形态——这个就是现成的参照实现，先看它怎么做多 Agent 状态聚合。 - <b><a href="https://github.com/cv-cat/catbus" target="_blank" rel="noopener">cv-cat/catbus</a></b> — 400★（09-27 建）：一个命令操作小红书、抖音、TikTok、B 站、快手、微博、闲鱼、淘宝、京东、X，统一命令与 JSON 输出、给人和 AI Agent 共用。kaoyan_chain 第五轮审查正缺小红书 / 知乎专用检索实现，这类「平台操作统一封装」值得扒一遍它的适配层写法。 - <b><a href="https://github.com/StartLuxLabs/StartLux-Decision" target="_blank" rel="noopener">StartLuxLabs/StartLux-Decision</a></b> — 406★（09-29 建）：0.8B–27B 的开放「决策模型」——一次前向给出每个选项的校准概率、只在不确定时才生成短思考，引擎支持 vLLM 与 llama.cpp。把「要不要想」本身做成模型能力，对端侧与低成本路由是个新思路。 - <b><a href="https://github.com/Laz8Noy/kaoyan408-share" target="_blank" rel="noopener">Laz8Noy/kaoyan408-share</a></b> — 24★（09-05 建）：考研 408 公开资料库：择校数据、三源考情核对、录取分数统计与交互学习工具，且在 README 里专门留了给 AI Agent 与考生投稿院校数据的规范。你考的不是 408，但这种「数据征集规范 + 多源核对」的语料组织法，kaoyan_chain 的院校数据层可以直接借。 - <b><a href="https://github.com/shenquan520/reading-analysis" target="_blank" rel="noopener">shenquan520/reading-analysis</a></b> — 11★（09-04 建）：面向高考 / 四六级 / 考研英语的 AI 阅读分析 Skill：题型映射、10 类干扰项分类法、127 张方法论卡片。你正考英语二，这种把阅读方法论结构化成 Skill 的做法和 kaoyan_chain 的判卷口径是同一路数，值得拆开看。</p></div><article class="card lead">
+<h3>广东考生四步顺序再提醒：关键信息提交后不可改，报名信息表及时下载保存<span class="tag">10-15</span></h3>
+<p>广东考生同样走四步：填考生信息 → 采集照片 → 填报考信息并缴费 → 上传报考点材料，前一步未完成不能上传材料；招生单位、报考点、考试方式等关键信息提交后不可改，改只能取消重报；报名信息表在审核结束后关闭下载，建议报名后及时保存一份。对你的实际动作只有一个：抽空确认自己的报名信息表已下载留存，其余等审核。</p>
+<div class="src"><a href="https://feng.ifeng.com/c/8xEpK89cJYM" target="_blank" rel="noopener">凤凰网（10-15）</a></div>
+</article><article class="card">
+<div class="card-top"><span class="idx">03</span></div>
+<h3>无新公告说明</h3>
+<p>本窗口内南方医科大学研究生院、广东省教育考试院均未检索到新发的研考公告，研招网无系统故障、考点调整或政策突变的报道。后续节点不变：<b>10 月 26 日网上审核开启，被标「待补充材料」须在 10 月 31 日 12:00 前补交</b>，你的审核提醒已排在 10 月 26 日 08:55。初试 12 月 19–20 日，距今 64 天。</p>
+</article></section><section class="sec" id="macro" style="--sc:#059669"><div class="sec-head"><span class="num">05</span><div class="tt"><h2>宏观市场</h2><span class="desc">黄金 · 美股 · A 股 —— 只给数字</span></div><span class="rule"></span><span class="cnt">0 条</span></div><div class="card"><p>*以下为 10 月 15 日（周四）收盘。只列数字，不做任何买卖建议。背景数字：美国 9 月 PPI 环比 +1.3%（预期 +0.6%），当日美债收益率仍下行。现货黄金无交易所统一收盘价，下为周四 Reuters 盘中报价。* - <b>黄金</b>：现货黄金约 4,158.63 美元/盎司，+1.3%（盘中报价）；COMEX 12 月期金结算 4,170.10 美元/盎司，+1.51% - <b>美股</b>：道指 +1.08% → 52,177.69｜标普 500 +0.33% → 7,744.06｜纳指 +0.08% → 26,713.03；10 年期美债收益率 5.086%，单日 -10.2 个基点 - <b>境内</b>：上证 -1.59% → 3,707.48｜深成指 -2.43% → 11,816.79｜创业板指 -2.92% → 2,783.17；沪深两市成交约 1.63 万亿元，全市场超 5,100 只个股下跌 来源：<a href="https://www.jordannews.jo/Section-112/Economy/Gold-Rises-1-3-as-Dollar-Weakens-57475" target="_blank" rel="noopener">Jordan News 转 Reuters 黄金稿（10-15）</a>、<a href="https://www.morningstar.com/news/dow-jones/202610157996/sp-500-rises-033-to-774406-data-talk" target="_blank" rel="noopener">Morningstar / Dow Jones 美股与美债终值（10-15）</a>、<a href="https://finance.sina.com.cn/money/bank/bank_hydt/2026-10-15/doc-inivhtus1450725.shtml" target="_blank" rel="noopener">新浪财经转金融界 A 股收评（10-15）</a></p></div></section><section class="sec" id="github" style="--sc:#0284c7"><div class="sec-head"><span class="num">06</span><div class="tt"><h2>GitHub / 社区热点</h2><span class="desc">高星新项目 · 社区热议</span></div><span class="rule"></span><span class="cnt">1 条</span></div><div class="card"><p>*检索口径：GitHub Search API，近 6 周内创建（2026-09-04 以后）、按 star 排序，8 个关键词轮换，已过滤课程作业与空壳 demo；star 数为 10 月 16 日晨查询值。* - <b><a href="https://github.com/wheresryan22/anatomy" target="_blank" rel="noopener">wheresryan22/anatomy</a></b> — 12,741★（10-08 建）：把真实机器与复杂系统生成交互式等距插图的 Agent Skill。昨日报时 10,115★，一天再涨约 2,600，仍是当前 Skill 生态增速第一的样本——技能即产品的势头没有减速。 - <b><a href="https://github.com/QingYunA/answer-me-with-html" target="_blank" rel="noopener">QingYunA/answer-me-with-html</a></b> — 3,453★（10-02 建）：一个 Agent Skill，让 Agent 用一页能真正读完的 HTML 来回答难题，而不是甩一墙文字。和你日报网页版是同一个判断：结构化呈现比长文本更值得读，Skill 化的分发方式可以直接借鉴。 - <b><a href="https://github.com/lithos-ai/lithos-metal" target="_blank" rel="noopener">lithos-ai/lithos-metal</a></b> — 226★（10-05 建）：面向 Apple Silicon 的高性能 LLM 推理内核与服务层。star 不高但方向准：本地推理的竞争已经下沉到内核层，做端侧 / 本地部署选型时值得纳入观察名单。 - <b><a href="https://github.com/Yamz-Labs/kyojin" target="_blank" rel="noopener">Yamz-Labs/kyojin</a></b> — 165★（10-02 建）：为 AMD Strix Halo（ROCm / gfx1151）打造的推理引擎，基于 ExLlamaV3，能在该平台上跑 300B 级 MoE 模型。消费级硬件跑超大 MoE 的又一条实证路线，和 lithos-metal 一起看，能拼出「非英伟达本地推理」的现状图。 - <b><a href="https://github.com/LIziak112/structured-kaoyan-english" target="_blank" rel="noopener">LIziak112/structured-kaoyan-english</a></b> — 8★（09-19 建）：1998–2025 考研英语真题结构化数据集（英语一 / 二共 44 套）：JSON 题库 + Markdown 详解 + 试题配图，开箱即用，面向个人备考、AI 辅助学习与 RAG 知识库构建。star 很低，但对你是最对口的一条——你正考英语二，kaoyan_chain 若缺结构化真题语料，这就是现成的。 - <b><a href="https://github.com/StartLuxLabs/StartLux-Decision" target="_blank" rel="noopener">StartLuxLabs/StartLux-Decision</a></b> — 417★（09-29 建，昨日 406★）：0.8B–27B 开放「决策模型」，一次前向给出每个选项的校准概率、只在不确定时才生成短思考。增速放缓但仍在涨，留作持续观察。</p></div><article class="card lead">
 <div class="card-top"><span class="idx">01</span><span class="lead-k">头条</span></div>
-<h3>社区讨论（Hacker News）</h3>
-<p>▪ <b>「AI Agent 删掉一整季真人秀」登上 HN 热榜，但电视台随后否认</b>：瑞典 TV4 的《The Challenge Sverige》已剪辑完成的一整季素材丢失、首播从 11 月 22 日推迟到 2027 年；瑞典《晚报》援引消息源称制作公司给了 AI Agent 服务器权限、是它删的，HN 随即热议。但 TV4 节目负责人随后否认「AI Agent 自主删除」的说法，称是制作公司的人为失误加备份失效，原始素材还在、需要重新剪辑。</p>
-<p class="note">生成于 2026-10-15 08:52 (Asia/Shanghai)。网页版：https://moyetian.github.io/hot-digest/（Gitee 镜像文件同步后需在网页端手动点一次「更新」才重新部署 Pages）。</p>
-<p class="why"><span class="why-k">值得看</span>无论真相如何，HN 讨论的共识很实在——给 Agent 生产环境写权限之前，先验证备份真的能恢复；「备份没验过等于没备份」这条对你放 CLI 在服务器上跑同样成立。</p>
-<div class="src"><a href="https://newswav.com/article/entire-swedish-reality-show-season-lost-weeks-before-premiere-amid-disputed-A2610_LuMfRs" target="_blank" rel="noopener">Newswav（10-14）</a><a href="https://aistify.com/swedish-tv4-challenge-season-deleted-ai-claim/" target="_blank" rel="noopener">AIstify 后续否认口径（10-14）</a></div>
+<h3>社区讨论（Hacker News / Reddit）</h3>
+<p>▪ <b>HN 热帖：「我让 AI Agent 团队替我跑了一周公司」</b>：一位 solo 创始人把客服、编码、安全、营销和项目管理分别交给一组 AI Agent 协作一周，期间 Agent 在他不在场时协同修掉一个客户 bug 并连夜上线新功能。讨论真正有料的部分在反面：多 Agent 流水线跑起来后，创始人很容易失去对业务全局的可见性——自动化要的不只是执行权限，还要有随时可看、可打断的监督通道。你做多 Agent 系统，这是直接的经验帖。</p>
+<p>▪ <b>r/LocalLLaMA 近一周共识：本地模型正在逼近云端编程水平</b>：被反复引用的社区实测包括 Qwen 3.8-27B 在单张 RTX 3090 上约 140 tok/s、32GB 显存设备上维持约 70 万 token 上下文不触发压缩，该模型上线三天在 Hugging Face 下载量破 300 万，社区为此开了专门的发布汇总帖集中 benchmark 与配置。提醒：吞吐数字均为社区用户自报、非官方 benchmark；价值在于量化与推测解码的社区配置正在快速收敛，本地跑 Agent 的硬件门槛一周一变，跟配置帖比只看发布稿更划算。</p>
+<p class="note">生成于 2026-10-16 08:52 (Asia/Shanghai)。网页版：https://moyetian.github.io/hot-digest/（Gitee 镜像文件同步后需在网页端手动点一次「更新」才重新部署 Pages）。</p>
+<div class="src"><a href="https://alobbs.com/post/2026-10-14/" target="_blank" rel="noopener">HN 10-14 当日汇总</a><a href="https://news.agentcommunity.org/issues/2026-10-12-local-models-meet" target="_blank" rel="noopener">Agent Community 周报（10-12）</a></div>
 </article></section>
 <footer>由 Muse 每日自动生成 · 仅供学习交流<br>
 <a class="arch" href="archive.html">往期日报归档 →</a></footer>
