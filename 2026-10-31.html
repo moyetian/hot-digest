@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#0a0a0a">
+<title>专属热点日报 · 2026-10-31（周六） · 每日热点日报</title>
+<style>
+:root{
+  --bg:#fafafa; --card:#ffffff; --ink:#18181b; --ink2:#52525b; --muted:#a1a1aa;
+  --line:#e4e4e7; --soft:#f4f4f5; --accent:#2563eb;
+  --nav-bg:rgba(250,250,250,.86);
+  --shadow:0 1px 2px rgba(24,24,27,.05);
+  --shadow-lg:0 18px 44px -18px rgba(24,24,27,.22);
+  --pill-fg:#ffffff; --pill-bg:#18181b;
+  --streak-fg:#b45309; --streak-bg:#fef3c7;
+  --yolk:#FFC400;
+  --hero-bg:#0a0a0a; --hero-ink:#fafafa; --hero-muted:#8e8e96; --hero-line:#232329;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#09090b; --card:#121215; --ink:#f4f4f5; --ink2:#c9c9cf; --muted:#71717a;
+    --line:#26262b; --soft:#1b1b1f; --accent:#5b9dff;
+    --nav-bg:rgba(9,9,11,.84);
+    --shadow:0 1px 2px rgba(0,0,0,.5);
+    --shadow-lg:0 20px 48px -16px rgba(0,0,0,.7);
+    --pill-fg:#18181b; --pill-bg:#f4f4f5;
+    --streak-fg:#fbbf24; --streak-bg:rgba(251,191,36,.12);
+  }
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB",
+  "Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.75;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+::selection{background:color-mix(in srgb,var(--yolk) 30%,transparent)}
+#progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:99;
+  background:linear-gradient(90deg,var(--yolk),#ffdf5e)}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+/* ============ 暗黑刊头 ============ */
+.hero{background:var(--hero-bg);color:var(--hero-ink);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(640px 320px at 50% -8%, rgba(255,196,0,.13), transparent 70%),
+    radial-gradient(900px 500px at 85% 110%, rgba(255,196,0,.05), transparent 60%)}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(255,196,0,.5),transparent)}
+.hero-inner{max-width:768px;margin:0 auto;padding:70px 20px 60px;text-align:center;
+  position:relative}
+.hero .kicker{display:flex;align-items:center;justify-content:center;gap:12px;
+  flex-wrap:wrap;font-size:11px;letter-spacing:.26em;text-transform:uppercase;
+  color:var(--hero-muted);font-weight:600}
+.hero .kicker .issue{color:var(--yolk);letter-spacing:.1em}
+.hero .streak{display:inline-flex;align-items:center;gap:5px;letter-spacing:.02em;
+  text-transform:none;font-size:12.5px;font-weight:700;
+  color:var(--yolk);background:rgba(255,196,0,.1);
+  border:1px solid rgba(255,196,0,.28);
+  border-radius:999px;padding:4px 13px}
+.hero h1{font-size:clamp(46px,10vw,76px);font-weight:800;letter-spacing:-.02em;
+  margin:22px 0 12px;line-height:1.2}
+.hero h1 .hl{color:var(--yolk)}
+.hero .dateline{color:var(--hero-muted);font-size:14.5px;max-width:560px;
+  margin:0 auto}
+.hero .dateline b{color:var(--hero-ink);font-weight:700}
+.hero .stats{display:flex;justify-content:center;gap:12px;margin:32px 0 4px;
+  flex-wrap:wrap}
+.hero .stat{min-width:108px;background:rgba(255,255,255,.035);
+  border:1px solid var(--hero-line);border-radius:14px;padding:13px 20px;
+  transition:border-color .25s,background .25s}
+.hero .stat:hover{border-color:rgba(255,196,0,.45);background:rgba(255,196,0,.05)}
+.hero .stat b{display:block;font-size:26px;font-weight:800;letter-spacing:-.01em;
+  font-variant-numeric:tabular-nums;line-height:1.3;color:#fff}
+.hero .stat b .y{color:var(--yolk)}
+.hero .stat span{font-size:12px;color:var(--hero-muted)}
+.hero-inner>*{animation:fadeDown .65s cubic-bezier(.2,.7,.3,1) both}
+.hero-inner>*:nth-child(2){animation-delay:.07s}
+.hero-inner>*:nth-child(3){animation-delay:.14s}
+.hero-inner>*:nth-child(4){animation-delay:.21s}
+.hero-inner>*:nth-child(5){animation-delay:.28s}
+@keyframes fadeDown{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+/* ============ 吸顶导航（浅色） ============ */
+.nav{position:sticky;top:0;z-index:50;background:var(--nav-bg);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line)}
+.nav-inner{max-width:768px;margin:0 auto;display:flex;gap:8px;overflow-x:auto;
+  padding:12px 20px;scrollbar-width:none}
+.nav-inner::-webkit-scrollbar{display:none}
+.nav a{flex:0 0 auto;display:inline-flex;align-items:center;gap:7px;
+  font-size:13px;font-weight:600;color:var(--ink2);text-decoration:none;
+  padding:7px 15px;border-radius:999px;background:var(--soft);
+  transition:background .2s,color .2s;white-space:nowrap}
+.nav a:hover{color:var(--ink)}
+.nav a.active{background:var(--pill-bg);color:var(--pill-fg)}
+.nav a .dot{width:7px;height:7px;border-radius:50%;background:var(--sc,#999)}
+.wrap{max-width:768px;margin:0 auto;padding:8px 20px 90px}
+/* ============ 章节 ============ */
+.sec{margin:46px 0 8px}
+.sec-head{display:flex;align-items:flex-end;gap:14px;margin-bottom:8px}
+.sec-head .num{font-size:46px;font-weight:800;line-height:1;color:var(--line);
+  font-variant-numeric:tabular-nums;letter-spacing:-.02em;user-select:none}
+.sec-head h2{font-size:21px;font-weight:750;letter-spacing:-.01em;line-height:1.4}
+.sec-head .tt .desc{display:block;font-size:12px;color:var(--muted);font-weight:400;
+  margin-top:3px;letter-spacing:.02em}
+/* ---- 卡片层次：编号 / 头条 / 洞察行 ---- */
+.card{position:relative}
+.card-top{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.card-top .idx{font-size:11.5px;font-weight:700;color:var(--muted);
+  font-variant-numeric:tabular-nums;letter-spacing:.1em}
+.lead-k{font-size:10.5px;font-weight:800;letter-spacing:.16em;color:var(--sc)}
+.lead-k::before{content:"";display:inline-block;width:16px;height:2px;
+  background:var(--sc);border-radius:2px;margin-right:7px;vertical-align:3px}
+.card.lead{border-color:color-mix(in srgb,var(--sc) 38%,var(--line))}
+.card.lead::before{content:"";position:absolute;top:-1px;left:20px;width:76px;
+  height:3px;border-radius:3px;background:linear-gradient(90deg,var(--sc),transparent)}
+.card.lead h3{font-size:17.5px}
+.why{margin-top:11px;font-size:13.5px;color:var(--ink2);line-height:1.7;
+  background:color-mix(in srgb,var(--sc) 6%,transparent);
+  border-radius:10px;padding:10px 14px}
+.why-k{display:inline-block;font-size:11px;font-weight:800;color:var(--sc);
+  letter-spacing:.08em;border:1px solid color-mix(in srgb,var(--sc) 45%,transparent);
+  border-radius:6px;padding:1px 9px;margin-right:9px;vertical-align:1px;
+  background:color-mix(in srgb,var(--sc) 8%,transparent)}
+.sec-head .rule{flex:1;height:1px;background:var(--line);margin-bottom:13px}
+.sec-head .cnt{font-size:12px;color:var(--muted);margin-bottom:11px;
+  white-space:nowrap;font-variant-numeric:tabular-nums}
+/* ============ 卡片（隐形动效） ============ */
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:20px 22px;margin:14px 0;box-shadow:var(--shadow);
+  transition:opacity .45s ease,transform .45s ease,box-shadow .2s ease,
+    border-color .2s ease}
+.js .card{opacity:0;transform:translateY(12px)}
+.js .card.show{opacity:1;transform:none}
+.card:hover{box-shadow:var(--shadow-lg);border-color:color-mix(in srgb,var(--sc,#999) 45%,var(--line))}
+.card h3{font-size:16px;font-weight:700;margin-bottom:8px;line-height:1.65}
+.card h3 .tag{display:inline-block;font-size:11.5px;font-weight:600;
+  color:var(--sc);background:color-mix(in srgb,var(--sc) 10%,transparent);
+  border-radius:6px;padding:2px 9px;margin-left:9px;vertical-align:2px;white-space:nowrap}
+.card p{font-size:14.5px;color:var(--ink2);margin:7px 0}
+.card p a{color:var(--accent);text-decoration:none;border-bottom:1px solid
+  color-mix(in srgb,var(--accent) 35%,transparent)}
+.card p a:hover{border-bottom-color:var(--accent)}
+.card p.note{font-size:13.5px;background:color-mix(in srgb,var(--sc) 7%,transparent);
+  border-left:3px solid var(--sc);padding:10px 14px;border-radius:0 10px 10px 0}
+.src{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px}
+.src a{font-size:12.5px;font-weight:600;color:var(--ink2);text-decoration:none;
+  border:1px solid var(--line);padding:4px 13px;border-radius:999px;
+  background:var(--card);transition:all .18s}
+.src a:hover{color:#fff;background:var(--accent);border-color:var(--accent)}
+.stars{font-size:12px;font-weight:700;color:var(--streak-fg);background:var(--streak-bg);
+  border-radius:999px;padding:3px 11px;white-space:nowrap}
+.empty{color:var(--muted);font-size:14px;padding:14px 4px}
+footer{margin-top:70px;border-top:1px solid var(--line);padding-top:26px;
+  text-align:center;color:var(--muted);font-size:12.5px}
+footer .arch{display:inline-block;margin-top:14px;padding:9px 24px;
+  border:1px solid var(--line);border-radius:999px;color:var(--ink2);
+  text-decoration:none;font-size:13px;font-weight:600;background:var(--card);
+  transition:all .2s}
+footer .arch:hover{border-color:var(--accent);color:var(--accent)}
+.top{position:fixed;right:18px;bottom:22px;width:44px;height:44px;border-radius:50%;
+  border:1px solid var(--line);cursor:pointer;background:var(--pill-bg);
+  color:var(--pill-fg);font-size:17px;box-shadow:var(--shadow-lg);
+  opacity:0;pointer-events:none;transition:opacity .25s}
+.top.show{opacity:1;pointer-events:auto}
+@media(max-width:640px){.card{padding:17px 18px}.hero-inner{padding:54px 20px 46px}
+  .sec-head .num{font-size:38px}}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .card{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<header class="hero">
+  <div class="hero-inner">
+    <div class="kicker"><span>Daily Digest</span>
+      <span class="issue mono">Issue #030</span>
+      <span class="streak">🔥 连续更新 30 天</span></div>
+    <h1>每日<span class="hl">热点</span>日报</h1>
+    <div class="dateline"><b>2026 年 10 月 31 日 · 星期六</b> · 为 moye 定制：AI 大模型 / AI Agent 与开发工具 / 边缘智能 / 考研 / 宏观市场 / GitHub 与社区热点</div>
+    <div class="stats">
+      <div class="stat"><b><span class="y">11</span></b><span>收录条目</span></div>
+      <div class="stat"><b>6</b><span>内容板块</span></div>
+      <div class="stat"><b>3′</b><span>预计阅读</span></div>
+    </div>
+  </div>
+</header>
+<nav class="nav"><div class="nav-inner"><a href="#ai" style="--sc:#2563eb"><span class="dot"></span>AI 大模型</a><a href="#agent" style="--sc:#7c3aed"><span class="dot"></span>AI Agent</a><a href="#edge" style="--sc:#e11d48"><span class="dot"></span>端侧 AI</a><a href="#kaoyan" style="--sc:#d97706"><span class="dot"></span>考研资讯</a><a href="#macro" style="--sc:#059669"><span class="dot"></span>宏观市场</a><a href="#github" style="--sc:#0284c7"><span class="dot"></span>社区热点</a></div></nav>
+<main class="wrap"><section class="sec" id="ai" style="--sc:#2563eb"><div class="sec-head"><span class="num">01</span><div class="tt"><h2>AI 大模型</h2><span class="desc">新模型发布 · API 价格政策 · 开源权重</span></div><span class="rule"></span><span class="cnt">3 条</span></div><article class="card lead">
+<div class="card-top"><span class="idx">01</span><span class="lead-k">头条</span></div>
+<h3>Mistral 发布 Large 4 开源权重：“Le Chonk”可下载自托管了（10-29/30）</h3>
+<p>Mistral 10 月 29 日放出旗舰模型 Large 4（Le Chonk）的开源权重：约 1 万亿参数（每 token 激活 52B）、100 万 token 上下文、原生多模态（文本＋图像输入），权重已上 Hugging Face。Mistral 称其在 Artificial Analysis 的 Coding Agent Index 上得 48%、为开源模型最佳，Terminal-Bench 4.0 得分 41%；API 价 0.70/2.10 美元每百万 token。许可为改良 MIT：自用、商用免费，但拿它对外提供模型服务需另签协议；自托管门槛不低，标准版需 8 块 B300。HN 讨论达 1472 分。对你：开源阵营又一款可本地部署的旗舰编码模型，OXR 对比路线之外多了一个参照系；Kimi K3.1 Pro 的完整权重则在 11 月 4 日前发布，两者可对照看。</p>
+<p>▪ 来源：https://www.thedeepview.com/newsletter/mistral-tests-china-s-open-model-advantage</p>
+<p>▪ 来源：https://hotfixdaily.com/issues/008/</p>
+<p>▪ 来源：https://pivotnews.ai/five/mistral-ships-large-4-weights-strong-at-coding-but-behind</p>
+</article><article class="card">
+<div class="card-top"><span class="idx">02</span></div>
+<h3>四大厂联手推共享 AI 训练退出信号：一行 robots.txt 挡四家爬虫（10-30）</h3>
+<p>OpenAI、Google、Microsoft、Anthropic 10 月 30 日共同宣布支持同一个 robots.txt 共享策略 token `__usage_ai-training`：网站主写一行就能向四家表明“内容不许用于 AI 训练”，不用再逐家写爬虫规则。进度不一：Anthropic 已开始实施，OpenAI 称未来数月内，微软定在 2027 年 2 月 1 日，Google 称 2027 年内；技术底稿是 Anthropic 工程师 Kevin Kelley 向 IETF 提交的草案。Meta 表态支持但未承诺执行。对你：以后给自己的内容站、产品站加训练退出只要一行配置；但注意这是自愿信号、不追溯已收录的数据，也管不了抓取本身（只管训练用途）。</p>
+<p>▪ 来源：https://aiweekly.co/alerts/openai-google-microsoft-anthropic-back-one-ai-opt-out-token</p>
+<p>▪ 来源：https://www.thurrott.com/a-i/343407/anthropic-google-microsoft-and-openai-agree-to-let-sites-opt-out-of-ai-training</p>
+</article><article class="card">
+<div class="card-top"><span class="idx">03</span></div>
+<h3>Gemini 4 Carbon 登顶 Artificial Analysis 智能指数 v5（10-30）</h3>
+<p>Google 最强模型 Gemini 4 Carbon 在新版 Artificial Analysis Intelligence Index v5 上拿下第一，但官方仍未给公开 API 模型 ID 与全面开放时间。对你：先当作能力榜单信号看，等有可调用的 API 再评估是否值得接入。</p>
+<p>▪ 来源：https://newsletter.up1512001.com/</p>
+</article></section><section class="sec" id="agent" style="--sc:#7c3aed"><div class="sec-head"><span class="num">02</span><div class="tt"><h2>AI Agent 与开发工具</h2><span class="desc">编程工具 · Agent 框架 · 技能生态</span></div><span class="rule"></span><span class="cnt">3 条</span></div><article class="card lead">
+<div class="card-top"><span class="idx">01</span><span class="lead-k">头条</span></div>
+<h3>Cursor 市场上的 Claude Code 扩展被植入 SSH 后门：最多 5000 名开发者受影响（10-29/30）</h3>
+<p>10 月 29 日，Cursor 的 VS Code 扩展市场上出现被篡改的 Claude Code 扩展 2.1.313（另涉 2.1.312），在约 11 小时窗口（2:27–13:35 PT）内分发，Cursor 初估最多 5000 名用户受影响。安全厂商 Phorion 发现：被改的扩展在加载时即执行恶意代码，向用户 authorized_keys 写入攻击者 SSH 密钥（标记为 `svc-telemetry`）、建立反向 SSH 隧道并做跨平台持久化（macOS LaunchAgent、Linux cron、Windows 计划任务），还收集主机名、Git 邮箱与约 40 个含密钥的环境变量名。因恶意代码自身 bug，多数机器上开启 SSH 的步骤会失败，但密钥与持久化仍会留下。Anthropic 声明非自身系统被入侵、官方渠道版本不受影响；Cursor 已下架问题包并临时关闭整个扩展市场做审计与密钥轮换。对你：如果你在 Cursor 里用过 Claude Code 扩展，立即查 authorized_keys 有无 `svc-telemetry`、清掉残留脚本并轮换相关凭证——只更新扩展不够，卸载也清不掉持久化。</p>
+<p>▪ 来源：https://www.bleepingcomputer.com/news/security/malicious-claude-code-extension-on-cursor-planted-ssh-backdoors/</p>
+<p>▪ 来源：https://phorion.io/blog/offical-claude-code-vsx-compromise/</p>
+<p>▪ 来源：https://www.theregister.com/cyber-crime/2026/10/30/anthropic-that-claude-code-extension-compromise-couldnt-be-us/5306682</p>
+</article><article class="card">
+<div class="card-top"><span class="idx">02</span></div>
+<h3>Google 逐步关停 Jules、并入 Antigravity；OpenCode 新增 /goal 目标模式（10-30）</h3>
+<p>据 Hotfix Daily 汇总：Google 的异步编码 Agent Jules 开始收尾，能力并入 Antigravity；开源终端 Agent OpenCode 新增 `/goal` 目标模式。对你：还在用 Jules 的话要准备迁移；OpenCode 的目标模式与 Claude Code 的 /goal 同构，都是“先定目标、Agent 自行拆解”的路线，值得对照着看。</p>
+<p>▪ 来源：https://hotfixdaily.com/issues/008/</p>
+</article><article class="card">
+<div class="card-top"><span class="idx">03</span></div>
+<h3>HN 热议：Claude Code 会把每个后台 Agent 的完整对话记录发回模型（10-30，560 分）</h3>
+<p>HN 讨论指出 Claude Code 会定期把后台 Agent 的 transcript 发给模型处理，引发隐私与 token 成本两方面的讨论。对你：后台并行跑多个 Agent 时，这笔“看不见的上下文税”要算进成本里；敏感仓库用后台 Agent 前先确认你能接受这条数据流。</p>
+<p>▪ 来源：https://news.ycombinator.com/front</p>
+</article></section><section class="sec" id="edge" style="--sc:#e11d48"><div class="sec-head"><span class="num">03</span><div class="tt"><h2>边缘智能 / 端侧 AI</h2><span class="desc">端侧芯片 · 轻量模型 · 本地推理</span></div><span class="rule"></span><span class="cnt">3 条</span></div><article class="card lead">
+<div class="card-top"><span class="idx">01</span><span class="lead-k">头条</span></div>
+<h3>NVIDIA 发布 Nemotron 3.5 Transcribe：开源语音模型，一个 checkpoint 干四件事（10-28）</h3>
+<p>NVIDIA 10 月 28 日发布开源权重语音模型 Nemotron 3.5 Transcribe（30B MoE，每 token 激活约 4B）：40 种语言转录、31 种语言互译、最多 8 人说话人归属、1 小时录音处理、还能直接回答关于音频的问题；NVIDIA 称其在 Hugging Face Open ASR 榜单英文 track 上 5.33% 词错率、为开源模型第一。单卡可跑（Jetson AGX Thor、DGX Spark 到 Blackwell），量化版将适配 RTX Spark 等端侧设备；限制是只处理录音文件、不支持实时流。同日还开源了 46 万小时的 Granary v2 语音数据集。对你：端侧语音转写、会议记录类功能又多了一个可本地部署的开源选择，尤其适合录音后批量处理的场景。</p>
+<p>▪ 来源：https://techcrunch.com/2026/10/28/voice-ai-in-vogue-nvidia-releases-new-open-transcription-model/?ref=explainx</p>
+<p>▪ 来源：https://www.siliconreport.com/nvidia-releases-nemotron-3-5-transcribe-for-speech-in-40-languages</p>
+</article><article class="card">
+<div class="card-top"><span class="idx">02</span></div>
+<h3>Hugging Face 发布 AnySpeechRecognizer 与 AnyDecisionModel：苹果设备上的开源端侧语音与决策模型（10-29）</h3>
+<p>Hugging Face 发布两个 Swift 包，把开源模型带到苹果平台端侧：AnySpeechRecognizer 对齐苹果 SpeechAnalyzer API，但可一键换引擎——NVIDIA Parakeet（25 种欧洲语言）或阿里 Qwen3-ASR（30 种语言、22 种中文方言），跑 Core ML / MLX / llama.cpp，音频不出设备，还补了苹果原生没有的说话人分离；AnyDecisionModel 则把是非题、选择题、评分题变成带概率的类型化输出，不再让模型生成一段文本再解析。对你：做 iOS/macOS 端侧语音与小决策功能时，这套是“不用自己搭推理栈”的现成路线；Qwen3-ASR 对中文方言的覆盖尤其值得留意。</p>
+<p>▪ 来源：https://www.ainformed.dev/articles/2026-10-29-apple-platforms-get-open-source-speech-and-decision-models-with-anyspeechrecogni</p>
+<p>▪ 来源：https://kenashe.ai/blog/2026-10-29-hugging-face-points-open-ai-back-at-the-iphone/</p>
+</article><article class="card">
+<div class="card-top"><span class="idx">03</span></div>
+<h3>Show HN 趣闻：约 1GB 的 Qwen 权重跑起一台任天堂模拟器（10-30，180 分）</h3>
+<p>开发者把任天堂模拟器做进约 1GB 的 Qwen 权重里，HN 上 180 分。对你：当作端侧小模型“能塞进多少能力”的趣味标尺看，不必深究实用性。</p>
+<p>▪ 来源：https://news.ycombinator.com/front</p>
+</article></section><section class="sec" id="kaoyan" style="--sc:#d97706"><div class="sec-head"><span class="num">04</span><div class="tt"><h2>考研资讯</h2><span class="desc">研招政策 · 报名时间线 · 报考点</span></div><span class="rule"></span><span class="cnt">1 条</span></div><article class="card lead">
+<div class="card-top"><span class="idx">01</span><span class="lead-k">头条</span></div>
+<h3>今天是网上确认最后窗口：12:00 前补传材料，17:00 前出全部审核结论</h3>
+<p>绝大多数省份口径一致：补充材料提交截止今天（10 月 31 日）12:00，逾期未补充的审核不通过、报名无效；报考点审核截止今天 17:00。你的河南报考点与此一致，085409 科目组合（101 政治＋204 英语二＋302 数学二＋807 生物医学工程综合）无新变化。今天只做两件事：上午确认补传材料已按要求提交（若你已被标待补充材料），下午 17:00 后登录研招网查最终结论；通过即完成报名确认，之后全力冲刺初试。</p>
+<p>▪ 来源：https://www.hqwx.com/mba-kaoshi/news/17916271264179.html</p>
+<p>▪ 来源：https://feng.ifeng.com/c/8xD0UihPkA1</p>
+</article></section><section class="sec" id="macro" style="--sc:#059669"><div class="sec-head"><span class="num">05</span><div class="tt"><h2>宏观市场</h2><span class="desc">黄金 · 美股 · A 股 —— 只给数字</span></div><span class="rule"></span><span class="cnt">0 条</span></div><div class="card"><p>*以下均为 10 月 30 日（周五）收盘数字，只列数字，不做买卖建议。美股各源在小数点后略有出入，此处采用多源一致的口径（道指 -1.09%、标普 -1.82%、纳指 -2.86%）。* - <b>A 股</b>：上证指数 3599.02（-1.44%），深证成指 10833.78（-2.73%），创业板指 2413.63（-4.13%），科创 50 指数 1160.84（-5.48%），沪深京三市成交额约 1.67 万亿元；白酒、医疗服务逆势走强 - <b>美股</b>：道指 51,770.31（-1.09%），标普 500 7,580.07（-1.82%），纳指 25,437（-2.86%）；科技股领跌，英特尔财报后大跌拖累芯片股 - <b>黄金/原油</b>：黄金现货约 3,885 美元/盎司（-约3.4%），金价跌破 3900 美元；WTI 原油约 102.95 美元/桶 - 来源：https://finance.sina.com.cn/stock/marketresearch/2026-10-30/doc-iniwzazv4586227.shtml - 来源：https://www.tokenpost.com/news/investing/45248 - 来源：https://investrade.com/market-review-october-30-2026/</p></div></section><section class="sec" id="github" style="--sc:#0284c7"><div class="sec-head"><span class="num">06</span><div class="tt"><h2>GitHub / 社区热点</h2><span class="desc">高星新项目 · 社区热议</span></div><span class="rule"></span><span class="cnt">1 条</span></div><div class="card"><p>*检索口径：GitHub Search API（带鉴权），近 6 周创建、按 star 排序；star 为 10-31 晨取数，括号为相对昨日晨变化。* - <b><a href="https://github.com/wheresryan22/anatomy" target="_blank" rel="noopener">wheresryan22/anatomy</a></b> — 23,030★（+414）等距剖视图 SVG 的 Agent skill，继续领跑。 - <b><a href="https://github.com/Louis-CFM/coucou" target="_blank" rel="noopener">Louis-CFM/coucou</a></b> — 6,800★（+53）Mac 刘海与 iPhone 上的小助手，实时盯着你的 AI 编程 Agent 在干什么。 - <b><a href="https://github.com/Jakeschincariol/replica-skill" target="_blank" rel="noopener">Jakeschincariol/replica-skill</a></b> — 6,672★（+186）11 个免费 Claude skill，可逆向、重建并测试任意 App 的克隆版。 - <b><a href="https://github.com/kaankiziltug/logo-design-skill" target="_blank" rel="noopener">kaankiziltug/logo-design-skill</a></b> — 5,418★（+135）面向 Claude、Gemini CLI、Codex 等 Agent 的 logo 设计 skill。 - <b><a href="https://github.com/QingYunA/answer-me-with-html" target="_blank" rel="noopener">QingYunA/answer-me-with-html</a></b> — 4,904★（+159）用一页 HTML 回答难题的 Agent skill。 - <b><a href="https://github.com/nanaism/yomiyasu" target="_blank" rel="noopener">nanaism/yomiyasu</a></b> — 2,750★（+47）把 AI 生成的日语推敲成自然日语的 Agent skill。 - <b><a href="https://github.com/SoMarkAI/OXR" target="_blank" rel="noopener">SoMarkAI/OXR</a></b> — 2,669★（+193）开源文档解析，精度速度自称 SOTA；对你 OCR 兜底路线直接相关，涨势仍最亮。 - <b><a href="https://github.com/StartLuxLabs/StartLux-Decision" target="_blank" rel="noopener">StartLuxLabs/StartLux-Decision</a></b> — 1,622★（+9）0.8B-27B 开源决策模型，一次前向给校准概率。 - <b><a href="https://github.com/hanzohanzhe/Grandet" target="_blank" rel="noopener">hanzohanzhe/Grandet</a></b> — 1,012★（+3）聚合 1800+ 模型 API 的最便宜路由 skill，含匿名 MCP。 - <b><a href="https://github.com/franzenzenhofer/big-arrow-on-the-screen" target="_blank" rel="noopener">franzenzenhofer/big-arrow-on-the-screen</a></b> — 826★（新上榜）让 AI Agent 在 Mac 屏幕上画大箭头、方框和文字的 CLI，给 Claude Code 与 Codex 用。 - <b><a href="https://github.com/cv-cat/catbus" target="_blank" rel="noopener">cv-cat/catbus</a></b> — 543★（新上榜）一个命令操作小红书、抖音、TikTok、B 站、快手、微博、闲鱼、淘宝、京东、X：统一命令与 JSON 输出，给人和 AI Agent 用。 - <b><a href="https://github.com/lithos-ai/lithos-metal" target="_blank" rel="noopener">lithos-ai/lithos-metal</a></b> — 328★（新上榜）面向 Apple 芯片的高性能 LLM 推理内核与服务。</p></div><article class="card lead">
+<div class="card-top"><span class="idx">01</span><span class="lead-k">头条</span></div>
+<h3>社区热议：</h3>
+<p>▪ <b>HN 热议：AI 不是在取代 SRE，而是在让 SRE 退化（10-30，491 分）</b> 讨论焦点是 Agent 接管运维操作后，人的排障手感与系统直觉会不会慢慢丢掉——对你做 Agent 工具的人来说，这是“自动化边界”的一面镜子：哪些环节该让 Agent 全权接管，哪些必须留人在回路里。</p>
+<p>▪ <b>HN 热议：Mistral Large 4 开源权重（10-30，1472 分）</b> 当天 HN 最高分 AI 帖，见第一节。</p>
+<p>▪ 来源：https://news.ycombinator.com/front</p>
+<p class="note">生成于 2026-10-31 08:52 (Asia/Shanghai)。网页版：https://moyetian.github.io/hot-digest/（Gitee 镜像文件同步后需在网页端手动点一次「更新」才重新部署 Pages）。</p>
+</article></section>
+<footer>由 Muse 每日自动生成 · 仅供学习交流<br>
+<a class="arch" href="archive.html">往期日报归档 →</a></footer>
+</main>
+<button class="top" aria-label="回到顶部">↑</button>
+<script>
+document.documentElement.classList.add('js');
+const cards=document.querySelectorAll('.card');
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){
+    const c=e.target;c.classList.add('show');io.unobserve(c);
+    setTimeout(()=>{c.style.transitionDelay='0ms';},500);
+  }
+}),{threshold:.05});
+cards.forEach((c,i)=>{c.style.transitionDelay=Math.min((i%4)*40,120)+'ms';io.observe(c);});
+const bar=document.getElementById('progress'),top=document.querySelector('.top');
+addEventListener('scroll',()=>{
+  const h=document.documentElement;
+  const max=h.scrollHeight-h.clientHeight;
+  bar.style.width=(max>0?h.scrollTop/max*100:0)+'%';
+  top.classList.toggle('show',h.scrollTop>600);
+},{passive:true});
+top.onclick=()=>scrollTo({top:0,behavior:'smooth'});
+const secs=[...document.querySelectorAll('.sec')];
+const links=[...document.querySelectorAll('.nav a')];
+const so=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){links.forEach(a=>a.classList.toggle('active',a.hash==='#'+e.target.id));}
+}),{rootMargin:'-38% 0px -55% 0px'});
+secs.forEach(s=>so.observe(s));
+</script>
+</body>
+</html>
