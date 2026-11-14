@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#0a0a0a">
-<title>专属热点日报 · 2026-11-13（周五） · 每日热点日报</title>
+<title>专属热点日报 · 2026-11-14（周六） · 每日热点日报</title>
 <style>
 :root{
   --bg:#fafafa; --card:#ffffff; --ink:#18181b; --ink2:#52525b; --muted:#a1a1aa;
@@ -176,10 +176,10 @@ footer .arch:hover{border-color:var(--accent);color:var(--accent)}
 <header class="hero">
   <div class="hero-inner">
     <div class="kicker"><span>Daily Digest</span>
-      <span class="issue mono">Issue #043</span>
-      <span class="streak">🔥 连续更新 43 天</span></div>
+      <span class="issue mono">Issue #044</span>
+      <span class="streak">🔥 连续更新 44 天</span></div>
     <h1>每日<span class="hl">热点</span>日报</h1>
-    <div class="dateline"><b>2026 年 11 月 13 日 · 星期五</b> · 为 moye 定制：AI 大模型 / AI Agent 与开发工具 / 边缘智能 / 考研 / 宏观市场 / GitHub 与社区热点</div>
+    <div class="dateline"><b>2026 年 11 月 14 日 · 星期六</b> · 为 moye 定制：AI 大模型 / AI Agent 与开发工具 / 边缘智能 / 考研 / 宏观市场 / GitHub 与社区热点</div>
     <div class="stats">
       <div class="stat"><b><span class="y">13</span></b><span>收录条目</span></div>
       <div class="stat"><b>6</b><span>内容板块</span></div>
@@ -190,79 +190,80 @@ footer .arch:hover{border-color:var(--accent);color:var(--accent)}
 <nav class="nav"><div class="nav-inner"><a href="#ai" style="--sc:#2563eb"><span class="dot"></span>AI 大模型</a><a href="#agent" style="--sc:#7c3aed"><span class="dot"></span>AI Agent</a><a href="#edge" style="--sc:#e11d48"><span class="dot"></span>端侧 AI</a><a href="#kaoyan" style="--sc:#d97706"><span class="dot"></span>考研资讯</a><a href="#macro" style="--sc:#059669"><span class="dot"></span>宏观市场</a><a href="#github" style="--sc:#0284c7"><span class="dot"></span>社区热点</a></div></nav>
 <main class="wrap"><section class="sec" id="ai" style="--sc:#2563eb"><div class="sec-head"><span class="num">01</span><div class="tt"><h2>AI 大模型</h2><span class="desc">新模型发布 · API 价格政策 · 开源权重</span></div><span class="rule"></span><span class="cnt">4 条</span></div><article class="card lead">
 <div class="card-top"><span class="idx">01</span><span class="lead-k">头条</span></div>
-<h3>Claude Opus 4.6 与 GPT-5.3-Codex 同日发布：旗舰编码模型正面撞车（11-12）</h3>
-<p>Anthropic 与 OpenAI 在同一天各推旗舰：Claude Opus 4.6 主打长程规划与 100 万 token 上下文（beta）、输出上限 12.8 万 token，GDPval-AA 知识工作评估领先 GPT-5.2 约 144 Elo，发布前内部红队用它在开源库中找出 500 多个此前未知的零日漏洞；定价维持 $5/$25 每百万 token，超 20 万 token 的提示走溢价档（$10/$37.5）。GPT-5.3-Codex 定位“agentic 编码模型”、支持中途改向，Terminal-Bench 2.0 得 77.3%（Opus 4.6 为 65.4%）、SWE-Bench Pro 56.8%，推理提速约 25%；但 OpenAI 首次把它定为内部安全框架下的网络安全“高”风险等级，随更严管控上线。对你：这是你主力两条编码路线（Claude Code / Codex CLI）同时换底座的一天——Opus 4.6 的 1M 上下文最适合 kaoyan_chain 这种大代码库的长程重构，GPT-5.3-Codex 的终端任务能力更适合跑测试、跑流水线；两边都值得升级后各跑一次真实任务对比。</p>
-<p>▪ 来源：https://www.anthropic.com/news/claude-opus-4-6</p>
-<p>▪ 来源：https://www.crowdlinker.com/blog/gpt-5-3-codex-vs-claude-opus-4-6</p>
+<h3>谷歌发布 Gemini 4 Hydrogen：比 3.8 Flash 快 2.5 倍，编程测试成绩涨 3 倍以上（11-13）</h3>
+<p>谷歌 11 月 13 日推出 Gemini 4 Hydrogen，定位 Gemini 4 系列里的快速执行层（与做长时推理的 Carbon、Argon 并列）：默认 high 思考档下任务完成速度是 Gemini 3.8 Flash 的 2.5 倍，Terminal-Bench 4.1 从 18.2% 提到 57%，Artificial Analysis 智能指数默认档 51、高于 Argon 的 50，最高 xhigh 档达 54；100 万 token 上下文、四档思考（low/medium/high/xhigh），定价全程不分档——输入 $1.50/输出 $7.50 每百万 token。已在 Gemini 应用、AI Studio、Gemini API、Google 搜索上线，免费用户也有机会体验。同期 Antigravity 上线 Orchestrator，可在同一会话里自动切换 Carbon 与 Hydrogen，官方称接近 Carbon 的成功率、平均少用 24% 配额、快 19%。对你：你 agy 的默认模型正是 gemini-3.8-flash-high，Hydrogen 是它的直接继任者——速度翻倍、终端任务能力大涨，kaoyan_chain 这类长会话开发值得第一时间试；Antigravity 的 Orchestrator 则能自动把重活交给 Carbon、轻活交给 Hydrogen，省配额。</p>
+<p>▪ 来源：https://www.sohu.com/a/1100876578_258768</p>
+<p>▪ 来源：https://aitimeline.news/Daily/2026-11-13-X%E6%97%A5%E6%8A%A5/</p>
 </article><article class="card">
 <div class="card-top"><span class="idx">02</span></div>
-<h3>OpenAI 三季度营收首破 100 亿美元，但亏损同步扩大到 109 亿美元（11-10/11）</h3>
-<p>据《华尔街日报》引用的投资者文件，OpenAI 三季度营收约 100 亿美元、环比增近 50%、接近去年同期的 3 倍，年化收入约 500 亿美元；但同期调整后运营亏损扩大到 109 亿美元（上季度 101 亿美元），调整后利润率 -109%（上季度 -150%）。企业业务翻倍增长，已与消费业务大致各占一半。同期 Anthropic 招股文件披露其三季度营收约 170 亿美元。对你：两家头部实验室一边烧钱一边高速变现——模型价格短期内有补贴空间，但长期看 API 涨价压力真实存在；你接 kaoyan_chain 的模型调用，优先选有免费/低价档的国产模型做兜底是稳妥的。</p>
-<p>▪ 来源：https://www.thehindu.com/sci-tech/technology/openai-posts-steep-losses-even-as-quarterly-revenue-rises-to-10-billion-report/article71688191.ece</p>
-<p>▪ 来源：https://brandequity.economictimes.indiatimes.com/news/digital/10-b-openais-q3-revenue-up-nearly-50/135754640</p>
+<h3>Anthropic 启动 IPO：纳斯达克代码 ANT，预计 11 月 19 日上市；三季度营收 170 亿美元、同比涨 12 倍以上（11-12/13）</h3>
+<p>Anthropic 已开启 IPO 流程，纳斯达克交易代码 ANT，预计 11 月 19 日开始交易；招股文件披露三季度营收约 170 亿美元，同比增长 12 倍以上。HN 相关讨论 728 points。对你：你主力编码路线（Claude Code / Opus）的厂商正在从“烧钱实验室”变成上市公司——上市后定价与 API 政策会更受财报约束，订阅与 API 价格的稳定性值得留意；同时这也是对 Claude 路线的一次市场背书。</p>
+<p>▪ 来源：https://thecontext.dev/en/topics/agents/</p>
 </article><article class="card">
 <div class="card-top"><span class="idx">03</span></div>
-<h3>诉讼潮：Flinn AI 起诉 OpenAI 与 Anthropic 专利侵权；四家非营利组织起诉五巨头要求冻结前沿模型（11-12）</h3>
-<p>美国公司 Flinn AI 11 月 12 日在特拉华州起诉 Anthropic 与 OpenAI，指控其侵犯五项迭代注意力神经网络训练专利（涉 Claude 系列等），此前该公司 4 月起诉过 Spotify、8 月起诉过 OpenAI 另一组专利。同日，Irreplaceable Education Fund、Public Citizen 等四家非营利组织在加州起诉 Anthropic、Google、Meta、OpenAI 与 SpaceX Super Intelligence，要求法院禁令冻结最先进 AI 系统的开发与部署，称企业承认无法控制自己造的技术。对你：两起诉讼短期内都不会影响你调用 API，但“模型供应与合规”正在变成真实风险变量——和 Cursor 断供风波是同一条线：别把关键链路押在单一厂商身上。</p>
-<p>▪ 来源：https://finance.sina.com.cn/tech/digi/2026-11-13/doc-iniypvhf1076205.shtml</p>
-<p>▪ 来源：https://www.idirak.com/news/2026-11-13-nonprofits-sue-ai-giants-to-freeze-models</p>
+<h3>国产模型三连：Qwen4-Max 预览、ERNIE 5.5 Flash Preview、DeepSeek 全量功能开放 API（11-11/13）</h3>
+<p>阿里 11 月 11 日开放下一代旗舰 Qwen4-Max 预览：支持图像与视频输入、100 万 token 上下文。百度 11 月 11 日发布 ERNIE 5.5 Flash Preview（千帆平台已开放 API）：总参数 2800 亿、每 token 激活 140 亿的 MoE，百万级上下文；权重将于 11 月 25 日前以 Apache 2.0 许可证开源。DeepSeek 11 月 13 日把 App 的全部功能开放为 API：联网搜索、深度思考搜索、文件摄入、链接阅读可由一个参数调用。同日百度世界 2026（11-12）还推出了大模型交易平台“词元所”与两个文心应用模型。对你：ERNIE 5.5 Flash 权重月底开源后可以本地评测，和 deepseek-v4-flash 比一比判卷场景的速度与成本；DeepSeek 的 API 功能全开则让 kaoyan_chain 的联网查大纲、读文件不用再绕路。</p>
+<p>▪ 来源：https://www.xiaotiewinner.com/2026/tech-daily-2026-11-13.html</p>
+<p>▪ 来源：https://kimkj.com/en/ai-board-en/?mod=document&amp;uid=21553</p>
 </article><article class="card">
 <div class="card-top"><span class="idx">04</span></div>
-<h3>百度 ERNIE 5.5 Flash 与 MiniMax H3-Image 相继发布（11-10/11）</h3>
-<p>百度 ERNIE 5.5 Flash：号称每秒 200 token、100 万 token 上下文；MiniMax 11 月 10 日发布图像生成模型 H3-Image 并同步开放权重，华为昇腾、平头哥、昆仑芯等 12 家芯片厂商 Day 0 接入，昆仑芯 11 月 11 日已完成首发日适配。对你：ERNIE 5.5 Flash 的速度+长上下文组合适合 kaoyan_chain 判卷这种“长输入、要快”的场景，可以等价格出来后和 deepseek-v4-flash 比一比；H3-Image 开源权重则可留意能否本地跑配图生成。</p>
-<p>▪ 来源：https://ai-leaders.evolv.kr/report/daily</p>
-<p>▪ 来源：https://www.ainewsdaily.asia/articles/article-169</p>
+<h3>腾讯混元 Hy Realtime 实时语音模型发布；科大讯飞 SparkAudio 1.0 上线 API（11-12/13）</h3>
+<p>腾讯混元 11 月 13 日发布实时语音模型 Hy Realtime，号称可做到类人语音与歌唱。科大讯飞 11 月 12 日宣布星火语音基座大模型 SparkAudio 1.0 在讯飞开放平台上线 API 服务，支持 99 种语言、202 种方言。对你：实时语音+多方言是 SmartVocab 发音与口语评测方向的现成组件，SparkAudio 的方言覆盖尤其适合国内用户；眼下先记下来，考后做发音功能时再比选。</p>
+<p>▪ 来源：https://kimkj.com/en/ai-board-en/?mod=document&amp;uid=21553</p>
+<p>▪ 来源：https://www.xiaotiewinner.com/2026/tech-daily-2026-11-13.html</p>
 </article></section><section class="sec" id="agent" style="--sc:#7c3aed"><div class="sec-head"><span class="num">02</span><div class="tt"><h2>AI Agent 与开发工具</h2><span class="desc">编程工具 · Agent 框架 · 技能生态</span></div><span class="rule"></span><span class="cnt">4 条</span></div><article class="card lead">
 <div class="card-top"><span class="idx">01</span><span class="lead-k">头条</span></div>
-<h3>Claude Code 随 Opus 4.6 上线 Agent Teams：多 Agent 组队干活（11-12）</h3>
-<p>Opus 4.6 发布同时，Claude Code 推出 Agent Teams（研究预览）：可在 Claude Code 里组建多 Agent 小队协同完成任务；另有 Claude in Excel 的大幅升级与 Claude in PowerPoint 研究预览。对你：你写 kaoyan_chain 判卷流水线时，Agent Teams 值得一试——让一个 Agent 改判卷逻辑、另一个同步跑回归测试，并行分工；不过这是研究预览，先在小任务上试，别直接上主线。</p>
-<p>▪ 来源：https://www.anthropic.com/news/claude-opus-4-6</p>
+<h3>OpenAI–Cursor 断供落地：11 月 12 日起直供终止，下一代 Astra 永不提供（11-12/13）</h3>
+<p>36 氪 11 月 13 日报道：按 OpenAI 的方案，Cursor 对其模型的直接访问已于 11 月 12 日彻底终止，尚未发布的下一代最强模型 Astra 官方渠道永远不给。开发者仍有三条路在 Cursor 里继续用 GPT：自带 OpenAI API key、安装 OpenAI 自己的 Cursor 扩展、或走 AI gateway；但 Cursor Tab、Auto 选模型、Cloud Agents 等用 Cursor 供应模型的功能改接不了自己的 key。Anthropic 方面则加码支持 Cursor 里的 Claude 用量。对你：结论与昨日跟进一致，只是从“提议日”变成了已执行——你不用 Cursor 主力开发，影响很小；这件事的真正信号是模型厂商正在把“谁能用我的模型”当成竞争武器，你的 kaoyan_chain 更要保持多模型可切换，别押单一厂商。</p>
+<p>▪ 来源：https://www.36kr.com/p/3960079349054855</p>
+<p>▪ 来源：https://klab.tw/2026/11/openai-cursor-model-access-cutoff/</p>
 </article><article class="card">
 <div class="card-top"><span class="idx">02</span></div>
-<h3>OpenAI–Cursor 提议断供日已过，但仍未确认真的断供（跟进，截至 11-12 上午）</h3>
-<p>11 月 12 日是 OpenAI 8 月 28 日宣布的“提议终止日”，但截至当天上午 9 点（美国中部时间），双方均未确认断供已执行：Cursor 模型列表里仍有 GPT-5.6 Sol/Terra/Luna，OpenAI 帮助页仍称“提议过渡期”，正式终止日“待双方确认后另行通知”。自带 API key 在 Cursor 里继续用 OpenAI 模型不受影响；GPT-6 系列本来就不在 Cursor。对你：结论不变——你不用 Cursor 主力开发，这条仍是风向标；如果你偶尔用 Cursor，默认模型切到 Claude/Gemini 即可。</p>
-<p>▪ 来源：https://enjoy.dev/blog/cursor-openai-november-12/</p>
-<p>▪ 来源：https://evermx.com/case/openai-cursor-model-cutoff</p>
+<h3>Claude 11 月 13 日约两小时故障：认证报错波及 claude.ai、Claude Code 与平台（11-13）</h3>
+<p>11 月 13 日上午，Claude 状态页报告认证环节错误率升高，claude.ai、Claude Code、platform.claude.com 均受影响，HN 相关帖 475 points；同日微软 365 出现全球性故障、ChatGPT 也部分受影响，两者恢复时间接近，约 15:00 左右陆续恢复正常。对你：这是你主力开发工具一周内第二次“掉线级”事件（上一次是 11 月 12 日 Opus 4.6 发布日的流量冲击）——长会话开发时养成勤存检查点、关键改动先落盘的习惯，Claude 挂了就切 Codex/Gemini 顶上，别干等。</p>
+<p>▪ 来源：https://www.adslzone.net/noticias/ia/claude-no-funciona-1126/</p>
+<p>▪ 来源：https://thecontext.dev/en/topics/agents/</p>
 </article><article class="card">
 <div class="card-top"><span class="idx">03</span></div>
-<h3>微软 Lazarus 研究：改不到 10 个神经元就能给开源模型植入后门，Agent 会照单执行（11-11/12）</h3>
-<p>微软本周发表的研究显示，只需改动开源权重模型中不到 10 个极少使用的神经元、无需重训，就能植入后门：触发词一旦出现在用户请求或工具输出里，模型就会输出攻击者预设的命令，而使用该模型的 Agent 会以自身权限执行它；三款开源模型测试中触发率最高 99.5%。前提是攻击者能改写权重文件，微软称尚未发现真实滥用，正在做权重扫描与模型签名。对你：你跑本地/开源模型（OXR 对比、端侧小模型）时只从官方渠道拿权重、核对哈希——权重来源不明就等于给 Agent 留了后门，这条直接关系到你 kaoyan_chain 的模型选型安全。</p>
-<p>▪ 来源：https://pivotnews.ai/security/editing-under-10-neurons-can-backdoor-an-ai-agent</p>
+<h3>工具版本日更：Claude Code 2.1.325、OpenCode 2.3.0、Codex CLI v0.169.0（11-13）</h3>
+<p>Claude Code v2.1.325：修复 zstd 解码安全问题，subagent 模型处理更聪明，compaction 终于可在第三方网关上正常工作。OpenCode v2.3.0：subagent 改为后台静默运行、transcript 折叠为整齐的活动行、可跳回任意历史 prompt。Codex CLI rust-v0.169.0：多 side-chat 标签页、可搜索历史任务、终端内配 provider。另见第一节：Antigravity Orchestrator 同步上线。对你：三家都在补“多任务并行+历史可回溯”这两块——你跑 kaoyan_chain 判卷回归时，Claude Code 的后台 subagent + 可搜索历史正好能一边改逻辑一边跑测试；升级前先看一眼 changelog，2.1.325 含安全修复值得优先升。</p>
+<p>▪ 来源：https://www.havoptic.com/</p>
 </article><article class="card">
 <div class="card-top"><span class="idx">04</span></div>
-<h3>Google 发布 A2UI 1.0：给 Agent 的输出层定开放标准（11-11）</h3>
-<p>Google 随 Gemini 4 Carbon 开放同期发布 A2UI 1.0——Agent 生成界面的开放标准，让 Agent 的输出能以结构化 UI 形式跨平台渲染。对你：kaoyan_chain 判卷结果、SmartVocab 学习报告如果以后想从“一段文字”变成“可交互的卡片/页面”，A2UI 这类标准值得跟进；眼下先记下来，等生态起来再接。</p>
-<p>▪ 来源：https://www.ainewsdaily.asia/articles/article-169</p>
+<h3>OpenAI 发布两款网络安全产品 Daybreak：安全 Agent 编排评估与持续防御（11-13）</h3>
+<p>OpenAI 在“Cyber at the Frontier”直播上公布两款面向防御方的产品：Daybreak Red Team——一组安全 agent 分工编排评估、读源码、复核漏洞是否真的可利用，再给修复排优先级；Daybreak Defense Factory 接在 Codex Security 之上，agent 随代码变化持续扫描、审 PR、排查告警，发现问题后在 Codex 里直接给补丁。另有一个未发布的网络安全模型在 ExploitGym 上据称拿下 77%（对照：11 月 5 日发布的 GPT-6 Cyber 52.6%、Gemini 4 Carbon 54.8%）。对你：安全 Agent 正在从“扫一遍给报告”变成“持续盯着仓库、直接给补丁”——kaoyan_chain 以后接 CI 时可以留意这类能力；另外提醒一句，微软本周的研究刚证明改不到 10 个神经元就能给开源模型植入后门（见昨日日报），本地权重只从官方渠道拿。</p>
+<p>▪ 来源：https://aitimeline.news/Daily/2026-11-13-X%E6%97%A5%E6%8A%A5/</p>
 </article></section><section class="sec" id="edge" style="--sc:#e11d48"><div class="sec-head"><span class="num">03</span><div class="tt"><h2>边缘智能 / 端侧 AI</h2><span class="desc">端侧芯片 · 轻量模型 · 本地推理</span></div><span class="rule"></span><span class="cnt">3 条</span></div><article class="card lead">
 <div class="card-top"><span class="idx">01</span><span class="lead-k">头条</span></div>
-<h3>北京具身智能行动方案：5 万 PFLOPS 专用算力押注机器人（11-11）</h3>
-<p>北京市经信局印发《北京市具身智能机器人产业高质量发展行动方案（2026—2028年）》：建 5 万 PFLOPS 具身智能专用算力、100 万小时高质量数据集，支持视觉-语言-动作模型（VLA）、世界模型、强化学习等多路线。对你：具身智能是端侧 AI 的下一个大场景——你有 STM32 与嵌入式背景，VLA 这类模型从云端往端侧走的过程中，轻量部署、离线推理正是你的长项；可以先从关注 VLA 开源模型开始。</p>
-<p>▪ 来源：https://www.ainewsdaily.asia/articles/article-169</p>
+<h3>苏州龙擎空天发布端侧 AI 芯片 LQ7000：出厂预置 DeepSeek、通义千问（11-13）</h3>
+<p>LQ7000 是一款无需依赖云端、在设备本地直接跑 AI 的“智能体处理器”：基于国产 RISC-V 架构、搭载自研 EE-DNA GPNPU 架构，算力覆盖 20 至 400 TOPS，支持 INT4、INT8 与 FP16；出厂即预置通义千问、DeepSeek、LLaMA 等主流大模型，可直接部署于家庭、教育、办公与政务终端，同时瞄准卫星在轨 AI 计算（遥感数据在轨实时处理）；已与国芯科技达成生态合作、与六联智能确认采购意向。对你：端侧芯片正在从“跑个 demo”走向“出厂就带模型、直接进整机”——你有 STM32 与嵌入式背景，SmartVocab 的离线词典、离线 OCR 如果以后要进这类国产端侧芯片，LQ7000 这种“预置模型+整机出货”的路线值得跟踪。</p>
+<p>▪ 来源：https://kimkj.com/zh/ai-board-zh/?mod=document&amp;uid=21554</p>
 </article><article class="card">
 <div class="card-top"><span class="idx">02</span></div>
-<h3>杰理科技三款端侧 AI 芯片进入客户批量立项（11-10）</h3>
-<p>杰理科技披露 JL280N、JL380N、JL681N 三款端侧 AI 芯片已实现客户批量立项导入：集成自研 NPU、双核 CPU+DSP 异构架构，支持 AI 降噪、人声分离、本地语音识别，端云协同可适配主流云端大模型；后续覆盖 AI 耳机、AI 玩具、智能眼镜、智能穿戴等场景。对你：国产端侧芯片正在从“能跑 demo”走向“客户批量导入”，耳机/眼镜这类低功耗设备的本地语音+识别能力，和你 SmartVocab 的离线词典、离线 OCR 方向是同一条线。</p>
-<p>▪ 来源：https://m.jrj.com.cn/madapter/finance/2026/11/11083159095463.shtml</p>
+<h3>联发科天玑 9600 Pro：双 NPU 让手机智能体全时在线，端侧支持 30B MoE（11-12）</h3>
+<p>天玑 9600 Pro 搭载双 NPU 架构与天玑 AI 智能体化引擎 3.0：第二代超能效 NPU 融合低功耗传感器中枢，跑 Always-On 端侧轻载模型时功耗较上代降低 40%，智能体可持续感知交互、声音与环境变化；超性能 NPU 1090 接手复杂任务，大语言模型预填充性能提升 51%、每瓦生成词元数最高提升 55%；端侧支持最高 30B 参数 MoE 模型运行，INT4 算力为上代两倍。对你：手机端 Agent 的瓶颈正在从“能不能跑”变成“能不能一直开着还不耗电”——双 NPU 分工（轻载常驻+重载唤醒）正是 SmartVocab 以后做端侧常驻助手可以借鉴的架构思路。</p>
+<p>▪ 来源：https://finance.sina.cn/stock/jdts/2026-11-12/detail-iniyniff3804261.d.html</p>
 </article><article class="card">
 <div class="card-top"><span class="idx">03</span></div>
-<h3>麒麟 9050 端侧 30B 模型跟进：模型包约 15GB，仅 9050 机型支持（11-11）</h3>
-<p>昨日日报的麒麟 9050 端侧 30B MoE 有补充细节：端侧多模态模型需自行下载、包体约 15GB，仅麒麟 9050 系列机型支持；官方未公布每秒生成 token 数，第三方实测尚未出炉。对你：15GB 包体+机型限定意味着这套能力短期内是“旗舰专属演示”，不是普惠方案——你做端侧 OCR/小模型仍应以 7B 以下、几 GB 以内的轻量路线为主，别被 30B 的数字带偏选型。</p>
-<p>▪ 来源：https://post.smzdm.com/p/awwdko82/</p>
+<h3>HN 热议：Edge0-145B——145B 参数模型塞进 29GB 内存的笔记本本地跑（11-13，334 points）</h3>
+<p>Edge0-145B 声称用 29GB 本地内存跑出前沿级能力的 145B 参数模型，冲上 HN 前列；同日 HN 还有 llama.cpp 在 Arm 上用 NEON 内核、提示处理速度提升 6.5 倍的讨论。对你：本地跑大模型的内存墙正在被量化与推理引擎优化一点点啃掉——你做端侧 OCR/小模型仍以 7B 以下轻量路线为主，但 Edge0 这类“大模型本地化”的进展值得记一笔，考后评估本地判卷方案时再看它是否经得起复现。</p>
+<p>▪ 来源：https://thecontext.dev/en/topics/agents/</p>
+<p>▪ 来源：http://hnfront.buzzing.cc/en/</p>
 </article></section><section class="sec" id="kaoyan" style="--sc:#d97706"><div class="sec-head"><span class="num">04</span><div class="tt"><h2>考研资讯</h2><span class="desc">研招政策 · 报名时间线 · 报考点</span></div><span class="rule"></span><span class="cnt">1 条</span></div><article class="card lead">
 <div class="card-top"><span class="idx">01</span><span class="lead-k">头条</span></div>
 <h3>今日无新政策、考试大纲或招生简章变化</h3>
-<p>11 月 12–13 日窗口内无新研招政策、考试大纲或南方医科大学 085409 招生简章/专业目录变化。各报考点 11 月集中审核期已近尾声——你的审核已于 10 月 31 日通过，与你无关。接下来唯一待办仍是 <b>12 月 9 日前后登录研招网下载准考证</b>（考前 10 天左右开放），考点、考场、座位号都在上面；提前确认研招网账号密码可用，下载后多打几份、电子版分开存。11 月下旬起可逐步准备考试用品：身份证、黑色签字笔、2B 铅笔、橡皮、直尺、小刀、胶棒。</p>
+<p>11 月 13–14 日窗口内无新研招政策、考试大纲或南方医科大学 085409 招生简章/专业目录变化。各报考点 11 月集中审核期已近尾声——你的审核已于 10 月 31 日通过，与你无关。接下来唯一待办仍是 <b>12 月 9 日前后登录研招网下载准考证</b>（考前 10 天左右开放），考点、考场、座位号都在上面；提前确认研招网账号密码可用，下载后多打几份、电子版分开存。11 月下旬起可逐步准备考试用品：身份证、黑色签字笔、2B 铅笔、橡皮、直尺、小刀、胶棒。</p>
 <p>▪ 来源：https://www.zyxw.cn/article/77035</p>
-<p>▪ 来源：https://www.hqwx.com/kaoyan-kaoshi/news/17936785553377.html</p>
-</article></section><section class="sec" id="macro" style="--sc:#059669"><div class="sec-head"><span class="num">05</span><div class="tt"><h2>宏观市场</h2><span class="desc">黄金 · 美股 · A 股 —— 只给数字</span></div><span class="rule"></span><span class="cnt">0 条</span></div><div class="card"><p>*以下均为 11 月 12 日（周四）收盘数字。只列数字，不做买卖建议。* - <b>A 股</b>：上证指数 3655.83（-0.67%），深证成指 11197.98（-1.68%），创业板指 2509.43（-2.44%），沪深 300 跌 0.78%；两市成交额约 1.93 万亿元 - <b>美股</b>：道指 52297.09（-0.36%），标普 500 7592.40（-0.35%），纳指 25366.09（-0.39%）；10 年期美债收益率 5.10%（+12.3bp，重回 5% 上方）；VIX 18.70（+6.92%） - <b>黄金</b>：12 月期金 3881.90 美元/盎司（-2.96%），跌破 4000 美元；美元指数 103.17（+0.23%） - <b>其他</b>：WTI 原油 88.74 美元/桶（+2.55%），布伦特 95.82 美元（+3.30%）；英伟达 -4.34%（盘前一度跌超 14%） *当日驱动：英伟达宣布黄仁勋辞任 CEO（任职 33 年），首席财务官 Colette Kress 任临时 CEO；消息未证实前盘前一度大跌，收盘跌幅收窄至 4.34%，AMD 与博通则涨超 5%。10 年期美债与金价的 5.0%/4000 美元阈值此前均已触发过（见金融日报 W1–W9 盯盘），本次不属新触发。* - 来源：https://rpsstock.substack.com/p/rps-stock-1113-cerebras - 来源：https://wiseview.ai/news/stock-market-close-2026-11-12 - 来源：https://news.einfomax.co.kr/news/articleView.html?idxno=4444576</p></div></section><section class="sec" id="github" style="--sc:#0284c7"><div class="sec-head"><span class="num">06</span><div class="tt"><h2>GitHub / 社区热点</h2><span class="desc">高星新项目 · 社区热议</span></div><span class="rule"></span><span class="cnt">1 条</span></div><div class="card"><p>*检索口径：带鉴权的 gh_api.py 查 GitHub Search API，近 6 周创建、按 star 排序；star 为 11-13 晨取数，括号为相对昨日晨变化。* - <b><a href="https://github.com/wheresryan22/anatomy" target="_blank" rel="noopener">wheresryan22/anatomy</a></b> — 26,943★（+192）等距剖视图 SVG 的 Agent skill，继续领跑。 - <b><a href="https://github.com/Jakeschincariol/replica-skill" target="_blank" rel="noopener">Jakeschincariol/replica-skill</a></b> — 9,121★（+159）11 个免费 Claude skill，克隆任意应用：逆向、重建、测 bug、再修掉用户讨厌的地方，MIT 开源。 - <b><a href="https://github.com/QingYunA/answer-me-with-html" target="_blank" rel="noopener">QingYunA/answer-me-with-html</a></b> — 6,271★（+32）让 AI Agent 用一页可读的 HTML 回答复杂问题的 skill。 - <b><a href="https://github.com/janestreet/agent_skills" target="_blank" rel="noopener">janestreet/agent_skills</a></b> — 7,782★（+1,925）Jane Street 官方的 Agent skills，连续第二天单日涨近 2000 星——顶级量化交易公司下场发 skill，值得翻一翻它怎么写任务规范。 - <b><a href="https://github.com/SoMarkAI/OXR" target="_blank" rel="noopener">SoMarkAI/OXR</a></b> — 3,800★（+25）开源文档解析模型，自称 SOTA 精度与速度，post-training 用了 RSI 循环；注：与 OCR＋纯文本兜底对比的待定提议仍在等你点名。 - <b><a href="https://github.com/RunanywhereAI/trnrt" target="_blank" rel="noopener">RunanywhereAI/trnrt</a></b> — 1,565★（新上榜）AWS Trainium 专用的开源 LLM 推理引擎：NKI megakernels、100 万 token 上下文、OpenAI 兼容 API。 - <b><a href="https://github.com/hanzohanzhe/Grandet" target="_blank" rel="noopener">hanzohanzhe/Grandet</a></b> — 1,321★（新上榜）帮 AI Agent 找最便宜模型 API：覆盖 1800+ 官方/推理/中转供应商的报价，有 skill 与匿名 MCP 服务。 - <b><a href="https://github.com/Zleap-AI/SAG-Wiki" target="_blank" rel="noopener">Zleap-AI/SAG-Wiki</a></b> — 1,108★（新上榜）给人与 Agent 用的轻量知识库：极速索引、号称最精准的检索。 - <b><a href="https://github.com/sahenjp/RustXNG" target="_blank" rel="noopener">sahenjp/RustXNG</a></b> — 963★（新上榜）基于 SearXNG 的自托管元搜索与 grounding 引擎，给 AI Agent 用：Rust、JSON API、可选页面正文。 - <b><a href="https://github.com/franzenzenhofer/big-arrow-on-the-screen" target="_blank" rel="noopener">franzenzenhofer/big-arrow-on-the-screen</a></b> — 870★（+4）让 AI Agent 在 Mac 屏幕上画大箭头、框与文字的 CLI。 - <b><a href="https://github.com/wici-ai/inferssd" target="_blank" rel="noopener">wici-ai/inferssd</a></b> — 654★（新上榜）把 MoE 专家从 SSD 流式加载，跑比内存/显存更大的模型，基于 llama.cpp。 - <b><a href="https://github.com/wanghao-SunSky/cs329z-chinese" target="_blank" rel="noopener">wanghao-SunSky/cs329z-chinese</a></b> — 590★（新上榜）斯坦福 CS329Z《Engineering AI Agents》中文教程：19 讲+4 项实践，LLM、RAG、工具调用、记忆、多智能体、评测与安全全覆盖。 - <b><a href="https://github.com/KnifeLemon/Droidline" target="_blank" rel="noopener">KnifeLemon/Droidline</a></b> — 526★（+14）Android 自动化：用代码测 App、给真机下任务。 - <b><a href="https://github.com/jaikydota/BullFlow" target="_blank" rel="noopener">jaikydota/BullFlow</a></b> — 494★（新上榜）开源企业级 RAG：知识库全链路本地开源模型，一键发布抖音、小红书、公众号等 17 个平台，MIT。 - <b><a href="https://github.com/chutingyean/Agent-Cockpit" target="_blank" rel="noopener">chutingyean/Agent-Cockpit</a></b> — 487★（+9）AI 研究 Agent 的证据链白板 + MCP 服务：每个结论都能追溯到产生它的运行与代码。 - <b><a href="https://github.com/zaxiu88888/issue-rag" target="_blank" rel="noopener">zaxiu88888/issue-rag</a></b> — 338★（新上榜）对 GitHub issues 做 RAG：自带人工复核的评测集，还审计了评判器本身。 - <b><a href="https://github.com/YOLOW92/pagesift" target="_blank" rel="noopener">YOLOW92/pagesift</a></b> — 267★（+3）自托管的网页抓取、爬取与文档解析器，给 AI Agent 用：URL、PDF 都能进。 - <b><a href="https://github.com/tuotuoLyu/ForesightSafety-VLA" target="_blank" rel="noopener">tuotuoLyu/ForesightSafety-VLA</a></b> — 85★（±0）视觉-语言-动作模型的安全诊断基准（IROS 2026），基于 RoboTwin。 - <b><a href="https://github.com/StarTrail-org/DRPixel" target="_blank" rel="noopener">StarTrail-org/DRPixel</a></b> — 43★（±0）用视觉语言模型做页面原生深度研究：benchmark、评测 harness 与训练代码。</p></div><article class="card lead">
+<p>▪ 来源：https://www.zyxw.cn/article/77019</p>
+</article></section><section class="sec" id="macro" style="--sc:#059669"><div class="sec-head"><span class="num">05</span><div class="tt"><h2>宏观市场</h2><span class="desc">黄金 · 美股 · A 股 —— 只给数字</span></div><span class="rule"></span><span class="cnt">0 条</span></div><div class="card"><p>*以下均为 11 月 13 日（周五）收盘数字。只列数字，不做买卖建议。* - <b>A 股</b>：上证指数 3634.35（-0.59%），深证成指 10968.79（-2.05%），创业板指 2426.08（-3.32%），沪深 300 4016.29（-0.68%） - <b>美股</b>：道指 52347.55（+0.10%），标普 500 7561.67（-0.40%），纳指 25136.27（-0.91%）；VIX 19.30（+3.21%）；10 年期美债收益率约 5.15% - <b>黄金</b>：现货 3887.60 美元/盎司（+0.06%），COMEX 12 月期金 3879.20 美元/盎司（-0.16%） - <b>其他</b>：WTI 原油 88.92 美元/桶（+0.20%），布伦特 95.84 美元/桶（基本持平）；英伟达再跌约 2%，连续第六周下跌 *当日驱动：美国 10 月 PPI 环比上涨 0.3%、高于预期，芯片股继续承压、资金转向防御；标普 500 全周仍涨 2.5%。10 年期美债（5.15%）与金价（3887 美元）分别处于 W7（5.0%）与 W3（4000 美元）阈值附近/下方，此前均已触发过，本次不属新触发；标普已回升至 W9 阈值（7400 点）上方。* - 来源：https://gsandel.com/2026/11/13/global-market-close-gsd-noviembre-13-2026/ - 来源：https://www.lanacion.com.ar/usa/how-major-us-stock-indexes-fared-friday-11132026-nid13112026/ - 来源：https://aabi.cn/</p></div></section><section class="sec" id="github" style="--sc:#0284c7"><div class="sec-head"><span class="num">06</span><div class="tt"><h2>GitHub / 社区热点</h2><span class="desc">高星新项目 · 社区热议</span></div><span class="rule"></span><span class="cnt">1 条</span></div><div class="card"><p>*检索口径：带鉴权的 gh_api.py 查 GitHub Search API，近 6 周创建、按 star 排序；star 为 11-14 晨取数，括号为相对昨日晨变化。answer-me-with-html 与 replica-skill 今日起超出 6 周检索窗口，不再上榜（非 star 下跌）。* - <b><a href="https://github.com/wheresryan22/anatomy" target="_blank" rel="noopener">wheresryan22/anatomy</a></b> — 27,130★（+187）等距剖视图 SVG 的 Agent skill，继续领跑。 - <b><a href="https://github.com/janestreet/agent_skills" target="_blank" rel="noopener">janestreet/agent_skills</a></b> — 8,278★（+496）Jane Street 官方的 Agent skills，连续第三天单日涨约 500 星——顶级量化交易公司下场发 skill，HN 上其 Socratic Tutor skill 单帖 625 points，值得翻一翻它怎么写任务规范。 - <b><a href="https://github.com/qybaihe/bla" target="_blank" rel="noopener">qybaihe/bla</a></b> — 5,562★（新上榜）BLA（Blind LLM Agents）：保护 JS/TS、Electron 应用的开源蓝队防御 MCP 服务器与 CLI，给 Agent 的操作加护栏。 - <b><a href="https://github.com/SoMarkAI/OXR" target="_blank" rel="noopener">SoMarkAI/OXR</a></b> — 3,817★（+17）开源文档解析模型，自称 SOTA 精度与速度，post-training 用了 RSI 循环；注：与 OCR＋纯文本兜底对比的待定提议仍在等你点名。 - <b><a href="https://github.com/t3dotgg/tstack" target="_blank" rel="noopener">t3dotgg/tstack</a></b> — 3,643★（新上榜）作者每天在用的 agent skills，兼容 Claude Code 与 Codex。 - <b><a href="https://github.com/Jakeschincariol/founder-skill" target="_blank" rel="noopener">Jakeschincariol/founder-skill</a></b> — 3,550★（新上榜）11 个免费 Claude skill，帮你在启动前验证一个商业想法：搬出 Hormozi、Thiel、Jobs 组成的董事会来拷问。 - <b><a href="https://github.com/benjitaylor/skills" target="_blank" rel="noopener">benjitaylor/skills</a></b> — 3,271★（新上榜）给 AI 编程 Agent 用的 skills 合集。 - <b><a href="https://github.com/RunanywhereAI/trnrt" target="_blank" rel="noopener">RunanywhereAI/trnrt</a></b> — 1,584★（+19）AWS Trainium 专用的开源 LLM 推理引擎：NKI megakernels、100 万 token 上下文、OpenAI 兼容 API。 - <b><a href="https://github.com/hanzohanzhe/Grandet" target="_blank" rel="noopener">hanzohanzhe/Grandet</a></b> — 1,345★（+24）帮 AI Agent 找最便宜模型 API：覆盖 1800+ 官方/推理/中转供应商的报价，有 skill 与匿名 MCP 服务。 - <b><a href="https://github.com/Zleap-AI/SAG-Wiki" target="_blank" rel="noopener">Zleap-AI/SAG-Wiki</a></b> — 1,174★（+66）给人与 Agent 用的轻量知识库：极速索引、号称最精准的检索。 - <b><a href="https://github.com/wici-ai/inferssd" target="_blank" rel="noopener">wici-ai/inferssd</a></b> — 1,073★（+419）把 MoE 专家从 SSD 流式加载，跑比内存/显存更大的模型，基于 llama.cpp——单日涨幅全榜最高，本地跑大模型的内存墙又被啃掉一块。 - <b><a href="https://github.com/sahenjp/RustXNG" target="_blank" rel="noopener">sahenjp/RustXNG</a></b> — 968★（+5）基于 SearXNG 的自托管元搜索与 grounding 引擎，给 AI Agent 用：Rust、JSON API、可选页面正文。 - <b><a href="https://github.com/franzenzenhofer/big-arrow-on-the-screen" target="_blank" rel="noopener">franzenzenhofer/big-arrow-on-the-screen</a></b> — 875★（+5）让 AI Agent 在 Mac 屏幕上画大箭头、框与文字的 CLI。 - <b><a href="https://github.com/wanghao-SunSky/cs329z-chinese" target="_blank" rel="noopener">wanghao-SunSky/cs329z-chinese</a></b> — 593★（+3）斯坦福 CS329Z《Engineering AI Agents》中文教程：19 讲+4 项实践，LLM、RAG、工具调用、记忆、多智能体、评测与安全全覆盖。 - <b><a href="https://github.com/vladimirrott/mojo-dllm" target="_blank" rel="noopener">vladimirrott/mojo-dllm</a></b> — 535★（新上榜）用 Mojo 写的扩散语言模型（LLaDA、Dream）本地推理。 - <b><a href="https://github.com/KnifeLemon/Droidline" target="_blank" rel="noopener">KnifeLemon/Droidline</a></b> — 533★（+7）Android 自动化：用代码测 App、给真机下任务。 - <b><a href="https://github.com/jaikydota/BullFlow" target="_blank" rel="noopener">jaikydota/BullFlow</a></b> — 516★（+22）开源企业级 RAG：知识库全链路本地开源模型，一键发布抖音、小红书、公众号等 17 个平台，MIT。 - <b><a href="https://github.com/chutingyean/Agent-Cockpit" target="_blank" rel="noopener">chutingyean/Agent-Cockpit</a></b> — 500★（+13）AI 研究 Agent 的证据链白板 + MCP 服务：每个结论都能追溯到产生它的运行与代码。 - <b><a href="https://github.com/OmniJev/Flide" target="_blank" rel="noopener">OmniJev/Flide</a></b> — 491★（新上榜）面向决策模型的极速推理引擎。 - <b><a href="https://github.com/zaxiu88888/issue-rag" target="_blank" rel="noopener">zaxiu88888/issue-rag</a></b> — 388★（+50）对 GitHub issues 做 RAG：自带人工复核的评测集，还审计了评判器本身。 - <b><a href="https://github.com/YOLOW92/pagesift" target="_blank" rel="noopener">YOLOW92/pagesift</a></b> — 271★（+4）自托管的网页抓取、爬取与文档解析器，给 AI Agent 用：URL、PDF 都能进。 - <b><a href="https://github.com/tuotuoLyu/FPO" target="_blank" rel="noopener">tuotuoLyu/FPO</a></b> — 131★（新上榜）视觉-语言-动作模型的流匹配策略强化微调官方代码（ICRA 投稿）。 - <b><a href="https://github.com/sumuru789/DK-VLM" target="_blank" rel="noopener">sumuru789/DK-VLM</a></b> — 125★（新上榜）DK-VLM：用几何作位置信息的视觉语言模型空间推理，官方实现。 - <b><a href="https://github.com/tuotuoLyu/ForesightSafety-VLA" target="_blank" rel="noopener">tuotuoLyu/ForesightSafety-VLA</a></b> — 85★（±0）视觉-语言-动作模型的安全诊断基准（IROS 2026），基于 RoboTwin。 - <b><a href="https://github.com/NVlabs/alpamayo2-edge" target="_blank" rel="noopener">NVlabs/alpamayo2-edge</a></b> — 46★（新上榜）英伟达 Alpamayo 2 Edge：车载 2B 参数推理型视觉-语言-动作模型，自适应推理。 - <b><a href="https://github.com/StarTrail-org/DRPixel" target="_blank" rel="noopener">StarTrail-org/DRPixel</a></b> — 43★（±0）用视觉语言模型做页面原生深度研究：benchmark、评测 harness 与训练代码。 *考研相关小项目（star 很低，仅作线索）：<a href="https://github.com/DzmingLi/kaoyan-math-official-resources" target="_blank" rel="noopener">DzmingLi/kaoyan-math-official-resources</a>（7★）考研数学官方材料汇总：考试大纲、历年真题；<a href="https://github.com/y4580482/0854-kaoyan-selector" target="_blank" rel="noopener">y4580482/0854-kaoyan-selector</a>（3★）27 考研 0854 电子信息择校速查：147 所院校/1053 个方向，含初试线与录取最低分。*</p></div><article class="card lead">
 <div class="card-top"><span class="idx">01</span><span class="lead-k">头条</span></div>
 <h3>社区热议：</h3>
-<p>▪ <b>HN：本地 LLM 生态不需要 Ollama？（646 points，208 评论）</b>——文章称 llama.cpp 已悄悄进化成生产级推理引擎，大多数人用法不对；评论区争论 Ollama 的封装值不值。附带：llama.cpp 刚过 10 万 star。对你：你走云端 API + 轻量端侧的组合，llama.cpp 的 KV 缓存量化、提示缓存这几个技巧以后本地跑模型时用得上。</p>
-<p>▪ 来源：https://news.ycombinator.com/item?id=50438318</p>
-<p>▪ <b>HN：48 个 AI Agent 声称发现未登记的玛雅遗址，887 points 后被质疑是炒作（11-11/12）</b>——开发者用 NASA lidar 数据、48 个 Agent 扫 1200 平方公里后称发现新遗址并上报墨西哥文物部门；官方回应称该位置无已登记遗址，尚无进一步验证。对你：Agent 批量跑数据的能力是真的，但“发现”本身没被证实——看 Agent 战报先问证据链，别只看标题。</p>
-<p>▪ 来源：https://www.haiai123.com/en/hot/7794</p>
-<p>▪ <b>r/LocalLLaMA 与 HN：黄仁勋辞任英伟达 CEO（HN 372 points，248 评论）</b>——路透直播帖冲上 HN，r/LocalLLaMA 也有 193 条评论；平时只聊本地跑模型的论坛罕见地讨论起人事。对你：英伟达仍是端侧/本地推理的硬件底座，这次人事变动短期内不影响 CUDA 生态，但值得留意继任者对 AI 芯片路线的表态。</p>
-<p>▪ 来源：https://ailately.com/rn</p>
+<p>▪ <b>HN：英伟达员工请愿请黄仁勋回来（779 points，636 评论）</b>——继 11 月 12 日黄仁勋辞任 CEO 后，员工发起请愿要求董事会请他回来；路透称 Arm CEO Rene Haas 已在继任者搜寻中被接触。对你：英伟达仍是端侧/本地推理的硬件底座，人事动荡短期内不影响 CUDA 生态，但继任者对 AI 芯片路线的表态值得留意。</p>
+<p>▪ 来源：https://thecontext.dev/en/topics/agents/</p>
+<p>▪ <b>HN：AI 解读哥德尔手写笔记，称含数百个已证明定理（285 points）</b>——赫尔辛基大学团队用 AI 加速破译哥德尔 1940 年代初写下的 16 本手写笔记本（1009 页），称其中有数百个 80 多年无人读过的已证明定理；争议随即而来：AI 是复原了哥德尔已证出的成果、而非证明新定理，诺奖得主 Penrose 等公开质疑标题夸大。对你：看 Agent 战报先问证据链的又一个例子——“发现”与“复原”是两回事。</p>
+<p>▪ 来源：https://www.kunalganglani.com/blog/ai-godel-notebooks-proof</p>
+<p>▪ <b>HN：Jane Street 开源 Socratic Tutor agent skill（625 points）</b>——与 GitHub 榜上 janestreet/agent_skills 连续三天单日涨约 500 星呼应。对你：顶级量化公司怎么写任务规范，翻一翻比只看 star 数有用。</p>
+<p>▪ 来源：https://thecontext.dev/en/topics/agents/</p>
 </article></section>
 <footer>由 Muse 每日自动生成 · 仅供学习交流<br>
 <a class="arch" href="archive.html">往期日报归档 →</a></footer>
