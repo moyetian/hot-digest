@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#0a0a0a">
+<title>专属热点日报 · 2026-11-16（周一） · 每日热点日报</title>
+<style>
+:root{
+  --bg:#fafafa; --card:#ffffff; --ink:#18181b; --ink2:#52525b; --muted:#a1a1aa;
+  --line:#e4e4e7; --soft:#f4f4f5; --accent:#2563eb;
+  --nav-bg:rgba(250,250,250,.86);
+  --shadow:0 1px 2px rgba(24,24,27,.05);
+  --shadow-lg:0 18px 44px -18px rgba(24,24,27,.22);
+  --pill-fg:#ffffff; --pill-bg:#18181b;
+  --streak-fg:#b45309; --streak-bg:#fef3c7;
+  --yolk:#FFC400;
+  --hero-bg:#0a0a0a; --hero-ink:#fafafa; --hero-muted:#8e8e96; --hero-line:#232329;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#09090b; --card:#121215; --ink:#f4f4f5; --ink2:#c9c9cf; --muted:#71717a;
+    --line:#26262b; --soft:#1b1b1f; --accent:#5b9dff;
+    --nav-bg:rgba(9,9,11,.84);
+    --shadow:0 1px 2px rgba(0,0,0,.5);
+    --shadow-lg:0 20px 48px -16px rgba(0,0,0,.7);
+    --pill-fg:#18181b; --pill-bg:#f4f4f5;
+    --streak-fg:#fbbf24; --streak-bg:rgba(251,191,36,.12);
+  }
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB",
+  "Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.75;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+::selection{background:color-mix(in srgb,var(--yolk) 30%,transparent)}
+#progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:99;
+  background:linear-gradient(90deg,var(--yolk),#ffdf5e)}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+/* ============ 暗黑刊头 ============ */
+.hero{background:var(--hero-bg);color:var(--hero-ink);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(640px 320px at 50% -8%, rgba(255,196,0,.13), transparent 70%),
+    radial-gradient(900px 500px at 85% 110%, rgba(255,196,0,.05), transparent 60%)}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(255,196,0,.5),transparent)}
+.hero-inner{max-width:768px;margin:0 auto;padding:70px 20px 60px;text-align:center;
+  position:relative}
+.hero .kicker{display:flex;align-items:center;justify-content:center;gap:12px;
+  flex-wrap:wrap;font-size:11px;letter-spacing:.26em;text-transform:uppercase;
+  color:var(--hero-muted);font-weight:600}
+.hero .kicker .issue{color:var(--yolk);letter-spacing:.1em}
+.hero .streak{display:inline-flex;align-items:center;gap:5px;letter-spacing:.02em;
+  text-transform:none;font-size:12.5px;font-weight:700;
+  color:var(--yolk);background:rgba(255,196,0,.1);
+  border:1px solid rgba(255,196,0,.28);
+  border-radius:999px;padding:4px 13px}
+.hero h1{font-size:clamp(46px,10vw,76px);font-weight:800;letter-spacing:-.02em;
+  margin:22px 0 12px;line-height:1.2}
+.hero h1 .hl{color:var(--yolk)}
+.hero .dateline{color:var(--hero-muted);font-size:14.5px;max-width:560px;
+  margin:0 auto}
+.hero .dateline b{color:var(--hero-ink);font-weight:700}
+.hero .stats{display:flex;justify-content:center;gap:12px;margin:32px 0 4px;
+  flex-wrap:wrap}
+.hero .stat{min-width:108px;background:rgba(255,255,255,.035);
+  border:1px solid var(--hero-line);border-radius:14px;padding:13px 20px;
+  transition:border-color .25s,background .25s}
+.hero .stat:hover{border-color:rgba(255,196,0,.45);background:rgba(255,196,0,.05)}
+.hero .stat b{display:block;font-size:26px;font-weight:800;letter-spacing:-.01em;
+  font-variant-numeric:tabular-nums;line-height:1.3;color:#fff}
+.hero .stat b .y{color:var(--yolk)}
+.hero .stat span{font-size:12px;color:var(--hero-muted)}
+.hero-inner>*{animation:fadeDown .65s cubic-bezier(.2,.7,.3,1) both}
+.hero-inner>*:nth-child(2){animation-delay:.07s}
+.hero-inner>*:nth-child(3){animation-delay:.14s}
+.hero-inner>*:nth-child(4){animation-delay:.21s}
+.hero-inner>*:nth-child(5){animation-delay:.28s}
+@keyframes fadeDown{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+/* ============ 吸顶导航（浅色） ============ */
+.nav{position:sticky;top:0;z-index:50;background:var(--nav-bg);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line)}
+.nav-inner{max-width:768px;margin:0 auto;display:flex;gap:8px;overflow-x:auto;
+  padding:12px 20px;scrollbar-width:none}
+.nav-inner::-webkit-scrollbar{display:none}
+.nav a{flex:0 0 auto;display:inline-flex;align-items:center;gap:7px;
+  font-size:13px;font-weight:600;color:var(--ink2);text-decoration:none;
+  padding:7px 15px;border-radius:999px;background:var(--soft);
+  transition:background .2s,color .2s;white-space:nowrap}
+.nav a:hover{color:var(--ink)}
+.nav a.active{background:var(--pill-bg);color:var(--pill-fg)}
+.nav a .dot{width:7px;height:7px;border-radius:50%;background:var(--sc,#999)}
+.wrap{max-width:768px;margin:0 auto;padding:8px 20px 90px}
+/* ============ 章节 ============ */
+.sec{margin:46px 0 8px}
+.sec-head{display:flex;align-items:flex-end;gap:14px;margin-bottom:8px}
+.sec-head .num{font-size:46px;font-weight:800;line-height:1;color:var(--line);
+  font-variant-numeric:tabular-nums;letter-spacing:-.02em;user-select:none}
+.sec-head h2{font-size:21px;font-weight:750;letter-spacing:-.01em;line-height:1.4}
+.sec-head .tt .desc{display:block;font-size:12px;color:var(--muted);font-weight:400;
+  margin-top:3px;letter-spacing:.02em}
+/* ---- 卡片层次：编号 / 头条 / 洞察行 ---- */
+.card{position:relative}
+.card-top{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.card-top .idx{font-size:11.5px;font-weight:700;color:var(--muted);
+  font-variant-numeric:tabular-nums;letter-spacing:.1em}
+.lead-k{font-size:10.5px;font-weight:800;letter-spacing:.16em;color:var(--sc)}
+.lead-k::before{content:"";display:inline-block;width:16px;height:2px;
+  background:var(--sc);border-radius:2px;margin-right:7px;vertical-align:3px}
+.card.lead{border-color:color-mix(in srgb,var(--sc) 38%,var(--line))}
+.card.lead::before{content:"";position:absolute;top:-1px;left:20px;width:76px;
+  height:3px;border-radius:3px;background:linear-gradient(90deg,var(--sc),transparent)}
+.card.lead h3{font-size:17.5px}
+.why{margin-top:11px;font-size:13.5px;color:var(--ink2);line-height:1.7;
+  background:color-mix(in srgb,var(--sc) 6%,transparent);
+  border-radius:10px;padding:10px 14px}
+.why-k{display:inline-block;font-size:11px;font-weight:800;color:var(--sc);
+  letter-spacing:.08em;border:1px solid color-mix(in srgb,var(--sc) 45%,transparent);
+  border-radius:6px;padding:1px 9px;margin-right:9px;vertical-align:1px;
+  background:color-mix(in srgb,var(--sc) 8%,transparent)}
+.sec-head .rule{flex:1;height:1px;background:var(--line);margin-bottom:13px}
+.sec-head .cnt{font-size:12px;color:var(--muted);margin-bottom:11px;
+  white-space:nowrap;font-variant-numeric:tabular-nums}
+/* ============ 卡片（隐形动效） ============ */
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:20px 22px;margin:14px 0;box-shadow:var(--shadow);
+  transition:opacity .45s ease,transform .45s ease,box-shadow .2s ease,
+    border-color .2s ease}
+.js .card{opacity:0;transform:translateY(12px)}
+.js .card.show{opacity:1;transform:none}
+.card:hover{box-shadow:var(--shadow-lg);border-color:color-mix(in srgb,var(--sc,#999) 45%,var(--line))}
+.card h3{font-size:16px;font-weight:700;margin-bottom:8px;line-height:1.65}
+.card h3 .tag{display:inline-block;font-size:11.5px;font-weight:600;
+  color:var(--sc);background:color-mix(in srgb,var(--sc) 10%,transparent);
+  border-radius:6px;padding:2px 9px;margin-left:9px;vertical-align:2px;white-space:nowrap}
+.card p{font-size:14.5px;color:var(--ink2);margin:7px 0}
+.card p a{color:var(--accent);text-decoration:none;border-bottom:1px solid
+  color-mix(in srgb,var(--accent) 35%,transparent)}
+.card p a:hover{border-bottom-color:var(--accent)}
+.card p.note{font-size:13.5px;background:color-mix(in srgb,var(--sc) 7%,transparent);
+  border-left:3px solid var(--sc);padding:10px 14px;border-radius:0 10px 10px 0}
+.src{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px}
+.src a{font-size:12.5px;font-weight:600;color:var(--ink2);text-decoration:none;
+  border:1px solid var(--line);padding:4px 13px;border-radius:999px;
+  background:var(--card);transition:all .18s}
+.src a:hover{color:#fff;background:var(--accent);border-color:var(--accent)}
+.stars{font-size:12px;font-weight:700;color:var(--streak-fg);background:var(--streak-bg);
+  border-radius:999px;padding:3px 11px;white-space:nowrap}
+.empty{color:var(--muted);font-size:14px;padding:14px 4px}
+footer{margin-top:70px;border-top:1px solid var(--line);padding-top:26px;
+  text-align:center;color:var(--muted);font-size:12.5px}
+footer .arch{display:inline-block;margin-top:14px;padding:9px 24px;
+  border:1px solid var(--line);border-radius:999px;color:var(--ink2);
+  text-decoration:none;font-size:13px;font-weight:600;background:var(--card);
+  transition:all .2s}
+footer .arch:hover{border-color:var(--accent);color:var(--accent)}
+.top{position:fixed;right:18px;bottom:22px;width:44px;height:44px;border-radius:50%;
+  border:1px solid var(--line);cursor:pointer;background:var(--pill-bg);
+  color:var(--pill-fg);font-size:17px;box-shadow:var(--shadow-lg);
+  opacity:0;pointer-events:none;transition:opacity .25s}
+.top.show{opacity:1;pointer-events:auto}
+@media(max-width:640px){.card{padding:17px 18px}.hero-inner{padding:54px 20px 46px}
+  .sec-head .num{font-size:38px}}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .card{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<header class="hero">
+  <div class="hero-inner">
+    <div class="kicker"><span>Daily Digest</span>
+      <span class="issue mono">Issue #046</span>
+      <span class="streak">🔥 连续更新 46 天</span></div>
+    <h1>每日<span class="hl">热点</span>日报</h1>
+    <div class="dateline"><b>2026 年 11 月 16 日 · 星期一</b> · 为 moye 定制：AI 大模型 / AI Agent 与开发工具 / 边缘智能 / 考研 / 宏观市场 / GitHub 与社区热点</div>
+    <div class="stats">
+      <div class="stat"><b><span class="y">12</span></b><span>收录条目</span></div>
+      <div class="stat"><b>6</b><span>内容板块</span></div>
+      <div class="stat"><b>3′</b><span>预计阅读</span></div>
+    </div>
+  </div>
+</header>
+<nav class="nav"><div class="nav-inner"><a href="#ai" style="--sc:#2563eb"><span class="dot"></span>AI 大模型</a><a href="#agent" style="--sc:#7c3aed"><span class="dot"></span>AI Agent</a><a href="#edge" style="--sc:#e11d48"><span class="dot"></span>端侧 AI</a><a href="#kaoyan" style="--sc:#d97706"><span class="dot"></span>考研资讯</a><a href="#macro" style="--sc:#059669"><span class="dot"></span>宏观市场</a><a href="#github" style="--sc:#0284c7"><span class="dot"></span>社区热点</a></div></nav>
+<main class="wrap"><section class="sec" id="ai" style="--sc:#2563eb"><div class="sec-head"><span class="num">01</span><div class="tt"><h2>AI 大模型</h2><span class="desc">新模型发布 · API 价格政策 · 开源权重</span></div><span class="rule"></span><span class="cnt">4 条</span></div><article class="card lead">
+<div class="card-top"><span class="idx">01</span><span class="lead-k">头条</span></div>
+<h3>阿里发布 Qwen4-Max 预览版，首发千问 Token Plan（11-13）</h3>
+<p>阿里宣布新一代大模型 Qwen4-Max 预览版（qwen4-max-preview）发布，首发上线千问 AI 平台 Token Plan；活动期间限时 2 折、新用户再享折上 5 折，最低 1 折体验。官方称 Qwen4 在知识理解、世界感知及 Coding 与 Agentic 能力上进阶，千问办公、Qoder、千问 App、QwenStudio 等已接入。对你：你 Qoder 的默认模型就是 Qwen3.8-Flash，Qwen4-Max 上线后值得在 kaoyan_chain 判卷场景里和 deepseek-v4-flash 对比一次——尤其现在 Token Plan 有折扣，试错成本低。</p>
+<p>▪ 来源：https://whatshot.top/ai-timeline</p>
+</article><article class="card">
+<div class="card-top"><span class="idx">02</span></div>
+<h3>Google 发布 Gemini 4 Hydrogen：主打速度与效率，面向日常编程与智能体工作流（11-13）</h3>
+<p>谷歌发布 Gemini 4 Hydrogen，定位是速度与效率取向的模型，面向日常编程和智能体工作流，并接入 Google 搜索；通过 Google AI Studio、Gemini API 和 Gemini for business 各层级提供。对你：这是 Gemini 4 家族里“跑得快的那档”，和你 agy 默认的 gemini-3.8-flash-high 是同一条速度线——日常改代码、跑 Agent 工作流可以优先试它，重活再上 Carbon。</p>
+<p>▪ 来源：https://whatshot.top/ai-timeline</p>
+</article><article class="card">
+<div class="card-top"><span class="idx">03</span></div>
+<h3>DeepMind 双发：AlphaGenome 2 与 Gemini Robotics 2.5（11-13）</h3>
+<p>谷歌 DeepMind 推出下一代 DNA 序列模型 AlphaGenome 2，基于 1.07 亿单细胞图谱训练，致病变异识别率达 30%，已开放非商业研究使用；同期发布视觉-语言-动作模型 Gemini Robotics 2.5，称其为迄今能力最强的 VLA 模型，已面向机器人合作伙伴开放——在 200 多项真实任务中评估，部分任务成功率提升高达 100%、执行速度最高提升 30%，在奔驰产线实现 96% 任务成功率。对你：一个偏生物医学（和你 807 方向沾边）、一个偏具身智能（和你 STM32/嵌入式出身沾边），两条线都值得考后翻一翻官方博客。</p>
+<p>▪ 来源：https://whatshot.top/ai-timeline</p>
+</article><article class="card">
+<div class="card-top"><span class="idx">04</span></div>
+<h3>传闻：GPT-6.2 Sol 已悄悄灰度上线，Artificial Analysis 空降榜首？（11-14 传言，未证实）</h3>
+<p>据新智元报道，GPT-6.2 Sol 已悄悄灰度上线，在 Artificial Analysis 榜单空降榜首，核心智能跑分 60 分；该报道称其追平 Gemini 4 Carbon 并略胜 Claude Opus 5.5，但消息尚未获官方证实。对你：先当传闻记一笔——上周 SuperCLUE 榜上 GPT-6.1-Sol 已是第二（71.76），如果 6.2 真的灰度了，OpenAI 这波迭代速度值得留意，等官方或榜单确认再说。</p>
+<p>▪ 来源：https://whatshot.top/ai-timeline</p>
+</article></section><section class="sec" id="agent" style="--sc:#7c3aed"><div class="sec-head"><span class="num">02</span><div class="tt"><h2>AI Agent 与开发工具</h2><span class="desc">编程工具 · Agent 框架 · 技能生态</span></div><span class="rule"></span><span class="cnt">3 条</span></div><article class="card lead">
+<div class="card-top"><span class="idx">01</span><span class="lead-k">头条</span></div>
+<h3>三家 CLI 同日发版：Claude Code、OpenCode、Codex CLI（11-13）</h3>
+<p>Claude Code v2.1.325：zstd 解码安全修复、subagent 模型调度更聪明、compaction 终于能在第三方网关上正常工作；OpenCode v2.3.0：subagent 改为后台静默运行、transcript 折叠成整齐的 activity 行、可一键跳回任意历史 prompt；Codex CLI rust-v0.169.0：多 side-chat 标签页、可搜索历史任务、终端内直接配 provider；同日还有 rust-v0.168.0（默认模型 provider 选择、对话分屏、附件音频、生成 GIF）。对你：你主力是 Claude Code + Antigravity，compaction 修好对长会话判卷回归是实打实的利好；OpenCode 的“回跳任意历史 prompt”也值得学一下交互思路。</p>
+<p>▪ 来源：https://www.havoptic.com/</p>
+</article><article class="card">
+<div class="card-top"><span class="idx">02</span></div>
+<h3>LangChain 完成 3 亿美元 C 轮融资，估值 30 亿美元（11-13）</h3>
+<p>LangChain 宣布 C 轮融资 3 亿美元，由 CapitalG 领投，估值 30 亿美元；同期 LangSmith 持续扩张。对你：Agent 框架赛道还在拿真金白银——LangChain/LangGraph 是你做 kaoyan_chain 多 Agent 编排时绕不开的参照系，融资消息本身不直接影响选型，但说明这条赛道的工具链会继续有人维护、值得长期押注。</p>
+<p>▪ 来源：https://latent.space/p/ainews-the-no-ai-slop-manifesto/</p>
+</article><article class="card">
+<div class="card-top"><span class="idx">03</span></div>
+<h3>美联航率先封杀 AI Agent 代订机票（11-11，次日登 HN 首页）</h3>
+<p>美联航 11 月 11 日修订运输合同，禁止未授权的第三方 AI Agent 代订、改签或办理机票，成为首家对 Agent 下手的大型美国航司；消息次日登上 HN 首页，引发数百条开发者评论。对你：Agent 从“帮你查”走到“帮你花钱”之后，平台方的反制也来了——kaoyan_chain 以后如果接任何代操作、代下单功能，授权边界与平台规则要先想清楚，不能只看技术上能不能做到。</p>
+<p>▪ 来源：http://newscarpenter.blogspot.com/</p>
+</article></section><section class="sec" id="edge" style="--sc:#e11d48"><div class="sec-head"><span class="num">03</span><div class="tt"><h2>边缘智能 / 端侧 AI</h2><span class="desc">端侧芯片 · 轻量模型 · 本地推理</span></div><span class="rule"></span><span class="cnt">3 条</span></div><article class="card lead">
+<div class="card-top"><span class="idx">01</span><span class="lead-k">头条</span></div>
+<h3>华硕发布 Ascent Qn10 AI 迷你 PC：骁龙 X2 Elite + 80 TOPS NPU（11-15）</h3>
+<p>华硕发布 Ascent Qn10，不到 0.7 升的迷你 PC，搭载高通骁龙 X2 Elite 平台、Hexagon NPU 达 80 TOPS，售价约 2,299 欧元（32GB 内存/512GB 存储配置），预装 Windows 11；文本与图像生成、视频增强、工作流自动化等 AI 任务本地跑，不用上云。对你：端侧算力正在从手机蔓延到桌面小主机——80 TOPS 的 NPU 配 32GB 内存，SmartVocab 的端侧离线词典、离线 OCR 以后在 Windows 小主机上有现成算力可用；先记下来，考后再看实测。</p>
+<p>▪ 来源：https://wisevoter.com/world/2026/11/15/asus-ascent-qn10-ai-mini-pc</p>
+</article><article class="card">
+<div class="card-top"><span class="idx">02</span></div>
+<h3>33B 图像模型全程跑在手机 NPU 上：HexAnima 1.6.0（11-14）</h3>
+<p>HexAnima 1.6.0 把 MiniMax-H3-Image（33B 参数 DiT + Qwen3-VL 文本编码器，INT8-ConvRot 量化）搬进骁龙 8 Gen 1 的 Hexagon NPU：文本编码器、50 个 DiT block、VAE 全流程直接在手机 NPU 上跑，无需云端、PC 或 GPU offload；目前仅在骁龙 8 Gen 1/8+ Gen 1（Hexagon V69）上验证通过。对你：手机端 Agent 的算力天花板又被抬高一截——33B 图像模型都能离线跑，SmartVocab 的端侧离线 OCR 与小模型推理在国产旗舰上的空间比想象中大；注意权重是 MiniMax H3 社区许可，美/欧/英/韩等地区受限。</p>
+<p>▪ 来源：https://vibingtalk.com/index.php?threads/a-33b-image-model-minimax-h3-image-now-runs-fully-on-a-phone-npu-snapdragon-8-gen-1.1954824/</p>
+</article><article class="card">
+<div class="card-top"><span class="idx">03</span></div>
+<h3>移远推出 SP900BF-AP AI 智能模组：100 TOPS 端侧算力（11-11）</h3>
+<p>移远通信发布 SP900BF-AP AI 智能模组，基于高通 Dragonwing IQ-9075 处理器，端侧算力达 100 TOPS，面向工业与自主移动机器人（AMR）应用；支持四路摄像头输入、3D 感知与端侧导航，工程样品已提供给部分客户，承诺产品生命周期最长 10 年。对你：端侧 AI 正在从消费电子伸进工业与机器人——100 TOPS 的模组化方案，意味着以后做 STM32 之外的嵌入式 AI 原型不用自己画算力板，直接拿模组就能起步。</p>
+<p>▪ 来源：https://wisevoter.com/world/2026/11/11/quectel-sp900bf-ap-ai-smart-module</p>
+</article></section><section class="sec" id="kaoyan" style="--sc:#d97706"><div class="sec-head"><span class="num">04</span><div class="tt"><h2>考研资讯</h2><span class="desc">研招政策 · 报名时间线 · 报考点</span></div><span class="rule"></span><span class="cnt">1 条</span></div><article class="card lead">
+<div class="card-top"><span class="idx">01</span><span class="lead-k">头条</span></div>
+<h3>今日无新政策、考试大纲或招生简章变化</h3>
+<p>11 月 14–16 日窗口内无新研招政策、考试大纲或南方医科大学 085409 招生简章/专业目录变化。接下来唯一待办仍是 <b>12 月 9 日至 20 日登录研招网下载准考证</b>（考前 10 天左右开放，多所报考点口径为 12 月 9 日至 20 日，入口开放当日凌晨即可下载；凭网报用户名和密码登录研招网用户中心，A4 纸横向打印，正反面不得涂改，黑白彩色均可，建议多印两份、电子版分开存）。考点、考场、座位号都在准考证上，提前确认研招网账号密码可用。考试用品可逐步备齐：身份证、黑色签字笔、2B 铅笔、橡皮、直尺、小刀、胶棒。</p>
+<p>▪ 来源：https://www.eol.cn/kaoshi/ky/zx/202611/t20261110_2792420.shtml</p>
+<p>▪ 来源：https://www.hqwx.com/kaoyan-kaoshi/news/17939439192994.html</p>
+</article></section><section class="sec" id="macro" style="--sc:#059669"><div class="sec-head"><span class="num">05</span><div class="tt"><h2>宏观市场</h2><span class="desc">黄金 · 美股 · A 股 —— 只给数字</span></div><span class="rule"></span><span class="cnt">0 条</span></div><div class="card"><p>&gt; 只给数字，不给买卖建议。11 月 14–15 日为周末休市，数据日仍为 11 月 13 日（周五）收盘，与昨日日报数字相同。 - <b>现货金</b>约 3,878.70 美元/盎司（-0.17%）；10 年期美债收益率约 5.15%，重回 5% 上方（W7 已于 10 月 23 日提醒过，不重复）；美元指数约 103.41。 - <b>美股</b>：标普 500 收 7,561.67（-0.40%），纳指 25,136.27（-0.91%），道指 52,347.55（+0.10%）。 - <b>A 股</b>：沪指 3,634.35（-0.59%），深成指 10,968.79（-2.05%），创业板指 2,426.08（-3.32%），沪深 300 4,016.29（-0.68%）；两市成交 1.66 万亿元，超 4,700 只个股下跌。 - <b>盯盘联动</b>：现货金距 W1 阈值 4,300 美元约 9.8%；标普距 W9 阈值 7,400 点约 2.2%（在阈值上方，W9 已于 11 月 6 日触发提醒过，不重复）。 - 来源：https://stockmarketwatch.com/digest/2026-11-13 - 来源：https://m.thepaper.cn/newsDetail_forward_34467151</p></div></section><section class="sec" id="github" style="--sc:#0284c7"><div class="sec-head"><span class="num">06</span><div class="tt"><h2>GitHub / 社区热点</h2><span class="desc">高星新项目 · 社区热议</span></div><span class="rule"></span><span class="cnt">1 条</span></div><div class="card"><p>*检索口径：GitHub Search API（无鉴权接口），近 6 周创建、按 star 排序；star 为 11-16 晨取数，括号为相对昨日晨变化。* - <b><a href="https://github.com/wheresryan22/anatomy" target="_blank" rel="noopener">wheresryan22/anatomy</a></b> — 27,491★（+169）等距剖视图 SVG 的 Agent skill，继续领跑。 - <b><a href="https://github.com/janestreet/agent_skills" target="_blank" rel="noopener">janestreet/agent_skills</a></b> — 8,983★（+346）Jane Street 官方的 Agent skills，连续第五天单日涨约 350 星——顶级量化交易公司下场发 skill，值得翻一翻它怎么写任务规范。 - <b><a href="https://github.com/qybaihe/bla" target="_blank" rel="noopener">qybaihe/bla</a></b> — 5,801★（+116）BLA（Blind LLM Agents）：保护 JS/TS、Electron 应用的开源蓝队防御 MCP 服务器与 CLI，给 Agent 的操作加护栏。 - <b><a href="https://github.com/t3dotgg/tstack" target="_blank" rel="noopener">t3dotgg/tstack</a></b> — 3,870★（+114）作者每天在用的 agent skills，兼容 Claude Code 与 Codex。 - <b><a href="https://github.com/SoMarkAI/OXR" target="_blank" rel="noopener">SoMarkAI/OXR</a></b> — 3,837★（+6）开源文档解析模型，自称 SOTA 精度与速度；注：与 OCR＋纯文本兜底对比的待定提议仍在等你点名。另有社区衍生 <a href="https://github.com/fusor-rs/oxr-wasm" target="_blank" rel="noopener">fusor-rs/oxr-wasm</a>（4★，新上榜）：把 OXR-1.0 整个搬进浏览器、CPU 上跑，Rust 编译为 WebAssembly，页面、表格、公式、代码转 Markdown。 - <b><a href="https://github.com/Jakeschincariol/founder-skill" target="_blank" rel="noopener">Jakeschincariol/founder-skill</a></b> — 3,783★（+121）11 个免费 Claude skill，帮你在启动前验证一个商业想法：搬出 Hormozi、Thiel、Jobs 组成的董事会来拷问。 - <b><a href="https://github.com/benjitaylor/skills" target="_blank" rel="noopener">benjitaylor/skills</a></b> — 3,369★（新上榜）给 AI 编程 Agent 用的 skills 合集。 - <b><a href="https://github.com/RunanywhereAI/trnrt" target="_blank" rel="noopener">RunanywhereAI/trnrt</a></b> — 1,583★（-3）AWS Trainium 专用的开源 LLM 推理引擎：NKI megakernels、100 万 token 上下文、OpenAI 兼容 API。 - <b><a href="https://github.com/Zleap-AI/SAG-Wiki" target="_blank" rel="noopener">Zleap-AI/SAG-Wiki</a></b> — 1,222★（+28）给人与 Agent 用的轻量知识库：极速索引、号称最精准的检索。 - <b><a href="https://github.com/wici-ai/inferssd" target="_blank" rel="noopener">wici-ai/inferssd</a></b> — 1,183★（+55）把 MoE 专家从 SSD 流式加载，跑比内存/显存更大的模型，基于 llama.cpp——本地跑大模型的内存墙又被啃掉一块。 - <b><a href="https://github.com/sahenjp/RustXNG" target="_blank" rel="noopener">sahenjp/RustXNG</a></b> — 976★（+3）基于 SearXNG 的自托管元搜索与 grounding 引擎，给 AI Agent 用：Rust、JSON API、可选页面正文。 - <b><a href="https://github.com/franzenzenhofer/big-arrow-on-the-screen" target="_blank" rel="noopener">franzenzenhofer/big-arrow-on-the-screen</a></b> — 879★（+1）让 AI Agent 在 Mac 屏幕上画大箭头、框与文字的 CLI。 - <b><a href="https://github.com/jaikydota/BullFlow" target="_blank" rel="noopener">jaikydota/BullFlow</a></b> — 549★（+14）开源企业级 RAG：知识库全链路本地开源模型，一键发布抖音、小红书、公众号等 17 个平台，MIT。 - <b><a href="https://github.com/KnifeLemon/Droidline" target="_blank" rel="noopener">KnifeLemon/Droidline</a></b> — 541★（+3）Android 自动化：用代码测 App、给真机下任务。 - <b><a href="https://github.com/OmniJev/Flide" target="_blank" rel="noopener">OmniJev/Flide</a></b> — 510★（+8）面向决策模型的极速推理引擎。 - <b><a href="https://github.com/chutingyean/Agent-Cockpit" target="_blank" rel="noopener">chutingyean/Agent-Cockpit</a></b> — 501★（±0）AI 研究 Agent 的证据链白板 + MCP 服务：每个结论都能追溯到产生它的运行与代码。 - <b><a href="https://github.com/zaxiu88888/issue-rag" target="_blank" rel="noopener">zaxiu88888/issue-rag</a></b> — 452★（+21）对 GitHub issues 做 RAG：自带人工复核的评测集，还审计了评判器本身。 - <b><a href="https://github.com/Cattmonkey/ChaosIntelligence" target="_blank" rel="noopener">Cattmonkey/ChaosIntelligence</a></b> — 446★（+18）把智能体当函数、把想法写成程序：Agent-native 函数式语言，带 CLI 与 Web IDE、目标驱动。 - <b><a href="https://github.com/hikaku-io/hikaku-extension" target="_blank" rel="noopener">hikaku-io/hikaku-extension</a></b> — 396★（新上榜）开源浏览器插件：浏览时标记 AI 生成的图片与视频，全程在设备本地跑，支持 Chrome、Edge、Firefox。 - <b><a href="https://github.com/huawei-csl/MACaQ" target="_blank" rel="noopener">huawei-csl/MACaQ</a></b> — 312★（新上榜）华为计算系统实验室的 SOTA 模型无关量化方案：GGUF 量化，文本、图像、视频、音频模型都能量，支持 llama.cpp、vLLM、Diffusers。 - <b><a href="https://github.com/YOLOW92/pagesift" target="_blank" rel="noopener">YOLOW92/pagesift</a></b> — 274★（+1）自托管的网页抓取、爬取与文档解析器，给 AI Agent 用：URL、PDF 都能进。 - <b><a href="https://github.com/wanghao-SunSky/cs329z-chinese" target="_blank" rel="noopener">wanghao-SunSky/cs329z-chinese</a></b> — 603★（+3）斯坦福 CS329Z《Engineering AI Agents》中文教程：19 讲+4 项实践，LLM、RAG、工具调用、记忆、多智能体、评测与安全全覆盖。 - <b><a href="https://github.com/liyupi/dafeiyu-cleaner" target="_blank" rel="noopener">liyupi/dafeiyu-cleaner</a></b> — 155★（新上榜）DeepSeek 蓝色大肥鱼消除计划：识别并清理 B 站评论区里由 DeepSeek 大模型、AI Agent 驱动的机器人账号，离线规则 + DeepSeek API 精判。 - <b><a href="https://github.com/tuotuoLyu/FPO" target="_blank" rel="noopener">tuotuoLyu/FPO</a></b> — 132★（±0）视觉-语言-动作模型的流匹配策略强化微调官方代码（ICRA 投稿）。 - <b><a href="https://github.com/sumuru789/DK-VLM" target="_blank" rel="noopener">sumuru789/DK-VLM</a></b> — 125★（±0）DK-VLM：用几何作位置信息的视觉语言模型空间推理，官方实现。 - <b><a href="https://github.com/RainBowLuoCS/Gamer" target="_blank" rel="noopener">RainBowLuoCS/Gamer</a></b> — 123★（新上榜）通用视觉-语言-动作基础模型：面向长时程实时游戏 Agent，官方实现。 - <b><a href="https://github.com/NVlabs/alpamayo2-edge" target="_blank" rel="noopener">NVlabs/alpamayo2-edge</a></b> — 51★（新上榜）英伟达 Alpamayo 2 Edge：20 亿参数车载推理视觉-语言-动作模型，自适应推理生成轨迹与因果解释。 - <b><a href="https://github.com/reductoai/parsejudge" target="_blank" rel="noopener">reductoai/parsejudge</a></b> — 4★（新上榜）开源文档解析基准：横向对比 PDF 解析与 OCR API（Reducto、LlamaParse、Azure、Textract、Mistral OCR 等）。 *考研相关小项目（star 很低，仅作线索，数字与昨日持平）：<a href="https://github.com/DzmingLi/kaoyan-math-official-resources" target="_blank" rel="noopener">DzmingLi/kaoyan-math-official-resources</a>（7★）考研数学官方材料汇总：考试大纲、历年真题；<a href="https://github.com/3456038583-gif/kaoyan-math-site" target="_blank" rel="noopener">3456038583-gif/kaoyan-math-site</a>（5★）2010–2026 考研数学（数一/数二/数三）真题速查站：按年份、科目、难度筛选，错题本，原卷 PDF 对照；<a href="https://github.com/kennySzhucheng/yantu" target="_blank" rel="noopener">kennySzhucheng/yantu</a>（5★）研途·备考打卡提醒：把备考计划变成每天可执行任务的 Android 应用，配置驱动、离线无账号、Excel 课表导入；<a href="https://github.com/y4580482/0854-kaoyan-selector" target="_blank" rel="noopener">y4580482/0854-kaoyan-selector</a>（3★）27 考研 0854 电子信息择校速查：147 所院校/1053 个方向，含初试线与录取最低分；<a href="https://github.com/BlueFans26/Kaoyan-English-Upgrader" target="_blank" rel="noopener">BlueFans26/Kaoyan-English-Upgrader</a>（3★）离线优先的考研英语综合备考站：英语一/英语二客观题真题、英语二主观题 AI 批改与背单词。*</p></div><article class="card lead">
+<div class="card-top"><span class="idx">01</span><span class="lead-k">头条</span></div>
+<h3>社区热议：</h3>
+<p>▪ <b>HN：“No AI Slop Manifesto”登上首页，300+ 人签名（11-15）</b>——AI Engineer 代码峰会现场写就的宣言，主张“无论 AI 帮了多少忙，意图、品味与后果都归人所有”，签名者来自 Baseten、SpaceX、OpenAI、PostHog、Shopify 等公司；同期 Ethan Mollick 盘点了最招人烦的 AI 回复套路。对你：写代码、做产品时 AI 味太重会被一眼看穿，这份宣言算是给“人味”立了个规矩，考后做 SmartVocab 推广文案时值得对照着看。</p>
+<p>▪ 来源：https://latent.space/p/ainews-the-no-ai-slop-manifesto/</p>
+<p>▪ <b>HN：“所有 AI 生成的代码都应该开源”获 943 points（11-15）</b>——当日 HN 热帖之一，主张 AI 生成的代码应默认开源，评论区争论激烈。对你：kaoyan_chain 的开源与论文规划本来就定在考后再议，这条讨论正好是考后可以翻出来参考的舆论风向。</p>
+<p>▪ 来源：https://whatisthelatest.ai/digest/</p>
+<p class="note">检索口径说明：本期 GitHub 检索沿用无鉴权 Search API（与昨日一致）；OXR 星数经单仓 API 直查核对。</p>
+</article></section>
+<footer>由 Muse 每日自动生成 · 仅供学习交流<br>
+<a class="arch" href="archive.html">往期日报归档 →</a></footer>
+</main>
+<button class="top" aria-label="回到顶部">↑</button>
+<script>
+document.documentElement.classList.add('js');
+const cards=document.querySelectorAll('.card');
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){
+    const c=e.target;c.classList.add('show');io.unobserve(c);
+    setTimeout(()=>{c.style.transitionDelay='0ms';},500);
+  }
+}),{threshold:.05});
+cards.forEach((c,i)=>{c.style.transitionDelay=Math.min((i%4)*40,120)+'ms';io.observe(c);});
+const bar=document.getElementById('progress'),top=document.querySelector('.top');
+addEventListener('scroll',()=>{
+  const h=document.documentElement;
+  const max=h.scrollHeight-h.clientHeight;
+  bar.style.width=(max>0?h.scrollTop/max*100:0)+'%';
+  top.classList.toggle('show',h.scrollTop>600);
+},{passive:true});
+top.onclick=()=>scrollTo({top:0,behavior:'smooth'});
+const secs=[...document.querySelectorAll('.sec')];
+const links=[...document.querySelectorAll('.nav a')];
+const so=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){links.forEach(a=>a.classList.toggle('active',a.hash==='#'+e.target.id));}
+}),{rootMargin:'-38% 0px -55% 0px'});
+secs.forEach(s=>so.observe(s));
+</script>
+</body>
+</html>
